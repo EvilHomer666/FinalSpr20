@@ -9,10 +9,12 @@ public class DetectCollisions : MonoBehaviour
     [SerializeField] bool holdsPowerUp;
     [SerializeField] GameObject powerUpDrop;
     [SerializeField] Transform powerUpSpawn;
+    [SerializeField] GameObject onDestroyExplosion;
     private ProjectileImpact damageMultiplier;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private float minimumDamage = 1f;
+    private float collateralDamage = 0.25f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class DetectCollisions : MonoBehaviour
     // On trigger enter function over-ride - Destroy target and projectile on collision
     private void OnTriggerEnter(Collider other)
     {
+        // Player fire check
         if (other.gameObject.tag == "PlayerProjectile")
         {
             Debug.Log("Target Hit!");
@@ -56,10 +59,14 @@ public class DetectCollisions : MonoBehaviour
             {
                 if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "EnemyShip")
                 {
+                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
                     soundManager.EnemyShipDestroyed();
                 }
                 if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
                 {
+                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
                     soundManager.LargeAsteroidDestroyed();
                 }
 
@@ -72,6 +79,39 @@ public class DetectCollisions : MonoBehaviour
                     // Spawn power-up drops at enemies last position upon destruction
                     Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
                 }
+                Destroy(gameObject);
+            }
+        }
+
+        // Enemy fire check
+        if (other.gameObject.tag == "EnemyProjectile")
+        {
+            Debug.Log("Collateral Damage!");
+            Destroy(other.gameObject);
+            enemyHitPoints -= collateralDamage;
+
+            if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "EnemyShip")
+            {
+                soundManager.EnemyShipEngaged();
+            }
+            if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+            {
+                soundManager.LargeAsteroidHit();
+            }
+
+            if (enemyHitPoints <= 0)
+            {
+                if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "EnemyShip")
+                {
+                    soundManager.EnemyShipDestroyed();
+                }
+                if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+                {
+                    soundManager.LargeAsteroidDestroyed();
+                }
+
+                Debug.Log("Object Destroyed!");
+                //Destroy(other.gameObject);
                 Destroy(gameObject);
             }
         }

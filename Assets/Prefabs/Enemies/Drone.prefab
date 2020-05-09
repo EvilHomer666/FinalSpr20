@@ -67,8 +67,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.364906, y: 8.069536, z: 18.613108}
-  m_Center: {x: -2.2417116, y: 1.9632936, z: -3.603876}
+  m_Size: {x: 10.260384, y: 8.069536, z: 18.613108}
+  m_Center: {x: 1.310555, y: 1.9632938, z: -3.6038759}
 --- !u!114 &1472822911085698472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,8 +86,7 @@ MonoBehaviour:
   holdsPowerUp: 0
   powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
-  impactExplosion: {fileID: 5593790033811497799, guid: 896433a640c06ee4181bc9ca3e4c31fd,
-    type: 3}
+  onDestroyExplosion: {fileID: 0}
 --- !u!114 &8278087502135295272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7612731166133790875}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -13.2}
+  m_LocalPosition: {x: -6.43, y: 0.76, z: -13.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3361832115572346857}
@@ -368,6 +367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837920161576836521, guid: c5a4e694fc57a6542bdae0eb4167c686,
+        type: 3}
+      propertyPath: m_Name
+      value: engines
       objectReference: {fileID: 0}
     - target: {fileID: 4837920161576836525, guid: c5a4e694fc57a6542bdae0eb4167c686,
         type: 3}

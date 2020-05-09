@@ -83,7 +83,7 @@ MonoBehaviour:
   holdsPowerUp: 0
   powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
-  impactExplosion: {fileID: 5593790033811497799, guid: 896433a640c06ee4181bc9ca3e4c31fd,
+  onDestroyExplosion: {fileID: 3316011983485124095, guid: 4ce971c426b9e774f9492d39a8ac8f02,
     type: 3}
 --- !u!114 &5839260588150684323
 MonoBehaviour:

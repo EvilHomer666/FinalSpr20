@@ -126,7 +126,7 @@ MonoBehaviour:
   holdsPowerUp: 0
   powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
-  impactExplosion: {fileID: 5593790033811497799, guid: 896433a640c06ee4181bc9ca3e4c31fd,
+  onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
 --- !u!54 &802150544448439465
 Rigidbody:

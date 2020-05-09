@@ -11,5 +11,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.back * Time.deltaTime * enemySpeed);
+        GameObject.Find("engines").GetComponent<ParticleSystem>().Play();
     }
 }
