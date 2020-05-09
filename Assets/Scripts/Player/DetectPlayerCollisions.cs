@@ -81,7 +81,7 @@ public class DetectPlayerCollisions : MonoBehaviour
             // Player Game Over check
             if (playerCurrentHitPoints <= 0)
             {
-                // Instantiate VFX on player death
+                // Instantiate VFX on player death - second line plays sub-particle element in parent
                 Instantiate(playerExplosion, transform.position, transform.rotation);
                 GameObject.Find("ParticleBurst").GetComponent<ParticleSystem>().Play();
                 Destroy(gameObject);
