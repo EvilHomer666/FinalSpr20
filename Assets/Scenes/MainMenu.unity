@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: -19}
+  m_AnchoredPosition: {x: 10, y: -19}
   m_SizeDelta: {x: 500, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51908006
@@ -176,7 +176,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
+  m_text: 'A Game by Edgar Espino
+
+    Columbia College Chicago IAM SP20-GAME 225-01
+
+    Instructor: Michael Hadley
+
+
+    Assets:
 
     \u2022<indent=1em>UI, sounds, fonts & models by Kenney. https://www.kenney.nl/</indent>
 
@@ -189,7 +196,10 @@ MonoBehaviour:
     \u2022<indent=1em>Boss 3D model by Rxanadu https://opengameart.org/content/floating-tank</indent>
 
     \u2022<indent=1em>Particle Effect Pack by Gaph: https://assetstore.unity.com/packages/vfx/particles/spells/48-particle-effect-pack-13998
-    </indent>'
+    </indent>
+
+
+    MetalBlast, Copyright 2020'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f575a60791181748aa3257b60b4dc81, type: 2}
   m_sharedMaterial: {fileID: -3715981051741601035, guid: 4f575a60791181748aa3257b60b4dc81,
@@ -225,7 +235,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1018,10 +1028,10 @@ RectTransform:
   m_Father: {fileID: 382356371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -175, y: 212}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: -824, y: -590}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616520704
 MonoBehaviour:
@@ -1077,7 +1087,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 4
-  m_textAlignment: 544
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1313,8 +1323,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Play
+      - m_Target: {fileID: 2073457103}
+        m_MethodName: ShowCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2999,7 +3009,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1, y: -211}
-  m_SizeDelta: {x: 125, y: 30}
+  m_SizeDelta: {x: 125, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2089816249
 MonoBehaviour:

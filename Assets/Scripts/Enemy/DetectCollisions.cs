@@ -12,6 +12,7 @@ public class DetectCollisions : MonoBehaviour
     private ProjectileImpact damageMultiplier;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
+    private float minimumDamage = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +34,14 @@ public class DetectCollisions : MonoBehaviour
         {
             Debug.Log("Target Hit!");
             Destroy(other.gameObject);
-            enemyHitPoints -= damageMultiplier.damageValueMultiplier;
-
+            if(damageMultiplier != null)
+            {
+                enemyHitPoints -= damageMultiplier.damageValueMultiplier;
+            }
+            else
+            {
+                enemyHitPoints -= minimumDamage;
+            }
 
             if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "EnemyShip")
             {

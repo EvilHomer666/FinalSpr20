@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
+    [SerializeField] PlayerController player;
     public GameObject[] tutorialTips;
     public GameObject tutorialSpawner;
     private int tutorialTipsIndex;
-    public float waitTime = 2.0f;
-    public PlayerController player;
-
+    public float waitTime;
 
     // Start is called before the first frame update
     void Start()
