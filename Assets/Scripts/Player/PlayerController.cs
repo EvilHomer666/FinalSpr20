@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     public float playerSpeedCap = 25;
     public int speedReset = 10;
+    // For use with tutorial class
+    public bool fireAllowed = true;
+    public bool hasHealth = true;
+    public bool hasSpeed = true;
 
 
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire against them
@@ -59,15 +63,19 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * playerSpeed);
 
-        // Projectile launch condition with for each element to read array
-        if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        while(fireAllowed ==true)
         {
-            foreach (var projectile in cannons)
+            // Projectile launch condition with for each element to read array
+            if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Instantiate(projectile, cannonSpawn.position, cannonSpawn.rotation);
+                foreach (var projectile in cannons)
+                {
+                    Instantiate(projectile, cannonSpawn.position, cannonSpawn.rotation);
+                }
+                soundManager.PlayerFireLaserLv1();
             }
-            soundManager.PlayerFireLaserLv1();
         }
+
     }
 
     // Update player speed method
