@@ -9,9 +9,11 @@ public class DetectCollisions : MonoBehaviour
     [SerializeField] bool holdsPowerUp;
     [SerializeField] GameObject powerUpDrop;
     [SerializeField] Transform powerUpSpawn;
+    [SerializeField] GameObject impactExplosion;
     private int damageValue = 1;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
+    private WeaponAttack playerProjectileImpact;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class DetectCollisions : MonoBehaviour
 
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
+
+        playerProjectileImpact = FindObjectOfType<WeaponAttack>();
     }
 
     // On trigger enter function over-ride - Destroy target and projectile on collision
@@ -29,19 +33,20 @@ public class DetectCollisions : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerProjectile")
         {
-            Debug.Log("Target Hit!");  
+            Debug.Log("Target Hit!");
+
             Destroy(other.gameObject);
             enemyHitPoints -= damageValue;
 
             if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "EnemyShip")
             {
                 soundManager.EnemyShipEngaged();
-
+                //playerProjectileImpact.ImpactExplosion();
             }
             if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
             {
                 soundManager.LargeAsteroidHit();
-
+                //playerProjectileImpact.ImpactExplosion();
             }
 
             if (enemyHitPoints <= 0)

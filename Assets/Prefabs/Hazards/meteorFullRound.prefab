@@ -124,10 +124,10 @@ MonoBehaviour:
   scoreValue: 150
   enemyHitPoints: 3
   holdsPowerUp: 0
-  impactExposion: {fileID: 5593790033811497799, guid: 896433a640c06ee4181bc9ca3e4c31fd,
-    type: 3}
   powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
+  impactExplosion: {fileID: 5593790033811497799, guid: 896433a640c06ee4181bc9ca3e4c31fd,
+    type: 3}
 --- !u!54 &802150544448439465
 Rigidbody:
   m_ObjectHideFlags: 0
