@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TitleTumble : MonoBehaviour
 {
-    private float spinSpeed = 7.0f;
+    private float spinSpeed = 2.0f;
 
     // Update is called once per frame
     void Update()
