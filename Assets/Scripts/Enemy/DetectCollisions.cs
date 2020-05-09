@@ -5,11 +5,11 @@ using UnityEngine;
 public class DetectCollisions : MonoBehaviour
 {
     [SerializeField] int scoreValue;
-    [SerializeField] int enemyHitPoints;
+    [SerializeField] float enemyHitPoints;
     [SerializeField] bool holdsPowerUp;
     [SerializeField] GameObject powerUpDrop;
     [SerializeField] Transform powerUpSpawn;
-    private ProjectileImpact damageTaken;
+    private ProjectileImpact damageMultiplier;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
 
@@ -23,7 +23,7 @@ public class DetectCollisions : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
 
-        damageTaken = FindObjectOfType<ProjectileImpact>();
+        damageMultiplier = FindObjectOfType<ProjectileImpact>();
     }
 
     // On trigger enter function over-ride - Destroy target and projectile on collision
@@ -33,7 +33,8 @@ public class DetectCollisions : MonoBehaviour
         {
             Debug.Log("Target Hit!");
             Destroy(other.gameObject);
-            enemyHitPoints -= damageTaken.damageValue;
+            enemyHitPoints -= damageMultiplier.damageValueMultiplier;
+
 
             if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "EnemyShip")
             {

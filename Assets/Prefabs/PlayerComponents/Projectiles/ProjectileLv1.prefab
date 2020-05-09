@@ -124,10 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95929ddd2640dc242ad6176a6f290d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLv01: 40
   impactExplosion: {fileID: 7830264614960845730, guid: 896433a640c06ee4181bc9ca3e4c31fd,
     type: 3}
-  damageValue: 1
+  speedLv01: 40
+  isSpread: 0
+  isHoming: 0
+  damageValueMultiplier: 1
 --- !u!65 &1211848329386703948
 BoxCollider:
   m_ObjectHideFlags: 0

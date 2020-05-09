@@ -9,7 +9,7 @@ public class ProjectileImpact : MonoBehaviour
     [SerializeField] float speedLv01;
     [SerializeField] bool isSpread;
     [SerializeField] bool isHoming;
-    public int damageValue;
+    public float damageValueMultiplier; // << To be used in enemy detect collisions script to apply damage from projectile
 
     // Update is called once per frame
     private void Update()

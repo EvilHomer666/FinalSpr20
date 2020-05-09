@@ -7,12 +7,14 @@ public class TutorialManager : MonoBehaviour
     public GameObject[] tutorialTips;
     public GameObject tutorialSpawner;
     private int tutorialTipsIndex;
+    public float waitTime = 2.0f;
+    public PlayerController player;
 
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        player.fireAllowed = false;
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class TutorialManager : MonoBehaviour
             else if (tutorialTipsIndex == 1)
             {
                 // How to shot
+                player.fireAllowed = false;
                 if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     tutorialTipsIndex ++;
@@ -61,10 +64,17 @@ public class TutorialManager : MonoBehaviour
             }
             else if (tutorialTipsIndex == 4)
             {
-                // Continue
-                tutorialSpawner.SetActive(true);
+                if (waitTime <= 0)
+                {
+                    // Continue
+                    tutorialSpawner.SetActive(true);
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
 
-            }
-        }
+            } 
+        } 
     }
 }
