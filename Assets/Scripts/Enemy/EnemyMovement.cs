@@ -6,14 +6,11 @@ public class EnemyMovement : MonoBehaviour
 {
     // Enemy speed
     [SerializeField] float enemySpeed;
-    [SerializeField] GameObject engine;
+    [SerializeField] GameObject engines;
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.back * Time.deltaTime * enemySpeed);
-        //GetComponent<ParticleSystem>().Play(engine);
-
-
     }
 }

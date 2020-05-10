@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 10
-  engine: {fileID: 0}
+  engines: {fileID: 9219304931292485361}
 --- !u!114 &3590772968789362460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +266,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 649a5bb8acedccb469d001fbaee35bb9, type: 3}
+--- !u!1 &9219304931292485361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8929434879494944238, guid: 649a5bb8acedccb469d001fbaee35bb9,
+    type: 3}
+  m_PrefabInstance: {fileID: 295607322941940511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9219304931292711633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8929434879494515150, guid: 649a5bb8acedccb469d001fbaee35bb9,
