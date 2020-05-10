@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] PlayerController player;
-    public GameObject[] tutorialTips;
-    public GameObject tutorialSpawner;
+    [SerializeField] GameObject tutorialSpawner;
+    [SerializeField] GameObject[] tutorialTips;  // << Array to store on-screen tips
     private int tutorialTipsIndex;
+    private PlayerController playerController;
+    private SpeedPowerUp speedPowerUp;
+    private HealthPowerUp healthPowerUp;
     public float waitTime;
+    public bool isTutorial;
 
     // Start is called before the first frame update
     void Start()
     {
-        player.fireAllowed = false;
+        playerController = FindObjectOfType<PlayerController>();
+        playerController.fireAllowed = false;
     }
 
     // Update is called once per frame
@@ -34,7 +38,8 @@ public class TutorialManager : MonoBehaviour
 
         if (tutorialTipsIndex == 0)
         {
-            // How to move  and avoid enemies/hazards 
+            isTutorial = true;
+            // How to move 
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) ||
                 Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || 
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) ||
@@ -42,38 +47,45 @@ public class TutorialManager : MonoBehaviour
             {
                 tutorialTipsIndex ++;
             }
-            else if (tutorialTipsIndex == 1)
+            if (tutorialTipsIndex == 1)
             {
-                // How to shot
-                player.fireAllowed = false;
+                // How to shot 
+                playerController.fireAllowed = true;
                 if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+                {                    
+                    tutorialTipsIndex++;
+                }
+            }
+            if (tutorialTipsIndex == 2)
+            {
+                // Pick Up Health 
+                //if (healthPowerUp.hasHealth == true)                     
                 {
                     tutorialTipsIndex ++;
                 }
-            }
-            else if (tutorialTipsIndex == 2)
-            {
-                // Pick Up Health
 
             }
-            else if (tutorialTipsIndex == 3)
+            if (tutorialTipsIndex == 3)
             {
-                // Pick Up Speed
+                // Pick Up Speed 
+               // if (speedPowerUp.hasSpeed == true)
+                {
+                    tutorialTipsIndex ++;
+                }
 
             }
-            else if (tutorialTipsIndex == 4)
+            if (tutorialTipsIndex == 4)
             {
                 if (waitTime <= 0)
                 {
-                    // Continue
+                    // Destroy enemy!
                     tutorialSpawner.SetActive(true);
                 }
                 else
                 {
                     waitTime -= Time.deltaTime;
                 }
-
-            } 
+            }
         } 
     }
 }

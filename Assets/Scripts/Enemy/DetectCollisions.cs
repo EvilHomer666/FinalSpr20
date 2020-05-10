@@ -111,7 +111,6 @@ public class DetectCollisions : MonoBehaviour
                 }
 
                 Debug.Log("Object Destroyed!");
-                //Destroy(other.gameObject);
                 Destroy(gameObject);
             }
         }

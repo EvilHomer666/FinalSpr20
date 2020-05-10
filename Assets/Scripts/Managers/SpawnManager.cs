@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] float startDelay = 1.75f;
+    [SerializeField] float startDelay;
     private float spawnPosX = 15f;
     private float spawnRangeY = 7f;
     private float spawnPosZ = -9.3f;
     private ScoreManager scoreManager;
-    private int scoreHighWaterMarkA = 10000;
-    private int scoreHighWaterMarkB = 20000;
-    private int scoreHighWaterMarkC = 30000;
+    private int scoreHighWaterMarkA = 100000;
+    private int scoreHighWaterMarkB = 200000;
+    private int scoreHighWaterMarkC = 300000;
     private float spawnRate = 0.25f;
+    private float minSpawnInterval = 0.5f;
     public float spawnInterval = 1.25f;
 
     // Spawn manager array for enemies
@@ -54,9 +55,14 @@ public class SpawnManager : MonoBehaviour
         Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
     }
 
-    // Custom method to increment spawning enemies delay
+    // Custom method to decrease spawning enemies delay
     void incrementSpawnRate()
     {
-        spawnInterval = spawnInterval - spawnRate;
+        if (spawnInterval > minSpawnInterval)
+        {
+            spawnInterval = spawnInterval - spawnRate;
+        }
     }
 }
+
+

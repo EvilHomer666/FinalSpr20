@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 1.5
+  engine: {fileID: 4016130840033698644, guid: 5863697278010c845a785eea345e66d2, type: 3}
 --- !u!114 &1955507539525477643
 MonoBehaviour:
   m_ObjectHideFlags: 0

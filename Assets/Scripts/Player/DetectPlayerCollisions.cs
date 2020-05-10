@@ -12,13 +12,13 @@ public class DetectPlayerCollisions : MonoBehaviour
     private GameManager gameManager;
     private SoundManager soundManager;
     private PlayerController playerControllerSpeedReset;
+    private SpeedPowerUp speedPowerUp;
     public int enginesLv1 = 1;
     public int playerMaxHitPoints;
     public int playerCurrentHitPoints;
     public LifeBar lifeBar;
 
     // private PlayerController polarityModifierSwitch; // << TO DO to be implemented with player's ability to use enemy fire against them
-
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +33,13 @@ public class DetectPlayerCollisions : MonoBehaviour
         lifeBar = FindObjectOfType<LifeBar>();
 
         playerControllerSpeedReset = FindObjectOfType<PlayerController>();
+        speedPowerUp = FindObjectOfType<SpeedPowerUp>();
 
         // Initialize Life-Hit points
         playerCurrentHitPoints = playerMaxHitPoints;
-        lifeBar.SetMaxLife(playerMaxHitPoints);
+        lifeBar.SetMaxLife(playerCurrentHitPoints);
 
-        // polarityModifierSwitch = FindObjectOfType<PlayerController>(); // << TO DO to be implemented with player's ability to use enemy fire against them
+        // polarityModifierSwitch = FindObjectOfType<PlayerController>(); // << TO DO to be implemented with player's ability to use return enemy fire
     }
 
     // Update is called once per frame
