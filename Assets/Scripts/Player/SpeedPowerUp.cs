@@ -35,7 +35,8 @@ public class SpeedPowerUp : MonoBehaviour
         transform.Translate(Vector3.left * Time.deltaTime * powerUpLocalSpeed);
     }
 
-    // On trigger enter function over-ride - Destroy power up on collision player NOTE TO SELF: None of this will work without colliders set to trigger - must revise, it's buggy.
+    // On trigger enter function over-ride - Destroy power up on collision player 
+    // NOTE TO SELF: None of this will work without colliders set to trigger - must revise, it's buggy.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && playerControllerSpeedBoost.playerSpeed < playerControllerSpeedBoost.playerSpeedCap)

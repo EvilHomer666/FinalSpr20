@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    // Stage Music
+    [SerializeField] AudioClip Level_01;
+    [SerializeField] AudioClip Boss_01;
+
     // Player SFX clips
     [SerializeField] AudioClip blowShield;
     [SerializeField] AudioClip recoverShield;
@@ -32,7 +36,19 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Custom functions to access sound FXs
+    // Custom functions to access sound FXs and music tracks
+    // Stage Music
+    public void StageMusic_01()
+    {
+        audioSource.PlayOneShot(Level_01, 0.5f);
+        return;
+    }
+    public void BossMusic_01()
+    {
+        audioSource.PlayOneShot(Boss_01, 0.5f);
+        return;
+    }
+
     // Player SFX
     public void PlayerShieldDamage()
     {
@@ -66,7 +82,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayerFireLaserLv1()
     {
-        audioSource.PlayOneShot(shootLaserLv1, 1.0f);
+        audioSource.PlayOneShot(shootLaserLv1, 1.5f);
         return;
     }
 
