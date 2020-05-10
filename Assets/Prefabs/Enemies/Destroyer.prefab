@@ -166,7 +166,8 @@ MonoBehaviour:
   holdsPowerUp: 0
   powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
-  onDestroyExplosion: {fileID: 0}
+  onDestroyExplosion: {fileID: 504431175277295389, guid: 9efffbabb8a0c5a46bbb2cf07a0f7e60,
+    type: 3}
 --- !u!114 &1145044464100138498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +304,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3764595098818998963}
     m_Modifications:
+    - target: {fileID: 4016130840015452724, guid: 5863697278010c845a785eea345e66d2,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016130840015452724, guid: 5863697278010c845a785eea345e66d2,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016130840015452724, guid: 5863697278010c845a785eea345e66d2,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016130840015471508, guid: 5863697278010c845a785eea345e66d2,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4016130840023428726, guid: 5863697278010c845a785eea345e66d2,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -327,6 +348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LargeEngineLv2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016130840033804146, guid: 5863697278010c845a785eea345e66d2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.57
       objectReference: {fileID: 0}
     - target: {fileID: 4016130840033804148, guid: 5863697278010c845a785eea345e66d2,
         type: 3}
