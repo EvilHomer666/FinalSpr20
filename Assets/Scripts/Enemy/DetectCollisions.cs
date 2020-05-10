@@ -14,7 +14,7 @@ public class DetectCollisions : MonoBehaviour
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private float minimumDamage = 1f;
-    private float collateralDamage = 0.25f;
+    private float collateralDamage = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -103,10 +103,14 @@ public class DetectCollisions : MonoBehaviour
             {
                 if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "EnemyShip")
                 {
+                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
                     soundManager.EnemyShipDestroyed();
                 }
                 if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
                 {
+                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
                     soundManager.LargeAsteroidDestroyed();
                 }
 
