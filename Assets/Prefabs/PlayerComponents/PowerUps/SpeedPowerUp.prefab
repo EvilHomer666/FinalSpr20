@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 2634817474163664550}
   - component: {fileID: -5072102138286727055}
   m_Layer: 0
-  m_Name: Speed
+  m_Name: SpeedPowerUp
   m_TagString: Speed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6590288448442052280}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.37, y: 0, z: -9.2}
+  m_LocalPosition: {x: 5.37, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 7364389422289037035}

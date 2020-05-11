@@ -5,13 +5,13 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] float startDelay;
-    private float spawnPosX = 15f;
-    private float spawnRangeY = 7f;
-    private float spawnPosZ = -9.3f;
     private ScoreManager scoreManager;
-    private int scoreHighWaterMarkA = 100000;
-    private int scoreHighWaterMarkB = 200000;
-    private int scoreHighWaterMarkC = 300000;
+    private float spawnPosX = 18f;
+    private float spawnRangeY = 9.8f;
+    private float spawnPosZ = 0.0f;
+    private int scoreHighWaterMarkA = 4000;
+    private int scoreHighWaterMarkB = 6000;
+    private int scoreHighWaterMarkC = 9000;
     private float spawnRate = 0.25f;
     private float minSpawnInterval = 0.5f;
     public float spawnInterval = 1.25f;

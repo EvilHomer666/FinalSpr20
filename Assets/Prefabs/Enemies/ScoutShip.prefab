@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6178122679401980838}
   - component: {fileID: 1732513421977940273}
   - component: {fileID: 3590772968789362460}
+  - component: {fileID: 725604080792341574}
   m_Layer: 0
   m_Name: ScoutShip
   m_TagString: EnemyShip
@@ -61,7 +62,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7249371538421419211}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -9.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1959246298781478379}
@@ -197,6 +198,25 @@ MonoBehaviour:
     type: 3}
   enemyFireSpawn: {fileID: 1959246298781478379}
   delay: 0.5
+--- !u!114 &725604080792341574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249371538421419211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e3c0caf80d6de4e984662b93953edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evadeWait: {x: 0.5, y: 1, z: 0}
+  evadeWindow: {x: 1, y: 2}
+  evadeDelay: {x: 1, y: 2}
+  xboundary: 20
+  yboundary: 9.8
+  anticipation: 7.5
+  evade: 4
 --- !u!1001 &295607322941940511
 PrefabInstance:
   m_ObjectHideFlags: 0
