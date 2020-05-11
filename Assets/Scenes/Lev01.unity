@@ -483,7 +483,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5518868, g: 0.97369975, b: 1, a: 1}
+      maxColor: {r: 0.7311321, g: 0.9834905, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1564,17 +1564,17 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.9715028, b: 1, a: 1}
-        key1: {r: 0.19579923, g: 0.60995793, b: 0.754717, a: 1}
-        key2: {r: 0, g: 1, b: 0.96890664, a: 1}
-        key3: {r: 0.4481132, g: 0.66555345, b: 1, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 0.46600214, g: 0.7378596, b: 0.8301887, a: 1}
+        key2: {r: 1, g: 1, b: 1, a: 1}
+        key3: {r: 0.7688679, g: 0.8606651, b: 1, a: 0}
         key4: {r: 0.45443216, g: 0.8679245, b: 0.86391723, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 5783
         ctime1: 12336
-        ctime2: 31611
+        ctime2: 31804
         ctime3: 48959
         ctime4: 59945
         ctime5: 65535
@@ -10508,6 +10508,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355640068572456922, guid: 927880ec605a39642845b1b6e1c08eff,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927880ec605a39642845b1b6e1c08eff, type: 3}

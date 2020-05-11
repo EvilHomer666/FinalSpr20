@@ -183,7 +183,7 @@ MonoBehaviour:
     Instructor: Michael Hadley
 
 
-    Assets:
+    Assets by:
 
     \u2022<indent=1em>UI, sounds, fonts & models by Kenney. https://www.kenney.nl/</indent>
 
@@ -1962,8 +1962,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 58
+  m_fontSizeBase: 58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2264,7 +2264,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 0, g: 0.97320366, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2273,9 +2273,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0.42
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -2306,7 +2306,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -2665,7 +2665,6 @@ RectTransform:
   - {fileID: 1007095994}
   - {fileID: 966978459}
   - {fileID: 1619362653}
-  - {fileID: 8296172667644042616}
   m_Father: {fileID: 2073457102}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2762,7 +2761,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1024, y: 768}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3045,7 +3044,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8296172667644042616}
   - component: {fileID: 1683572321}
-  - component: {fileID: 8296172667644042617}
   m_Layer: 5
   m_Name: TitleAvatar
   m_TagString: Untagged
@@ -3053,37 +3051,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8296172667644042616
-RectTransform:
+--- !u!4 &8296172667644042616
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172667644042615}
   m_LocalRotation: {x: -0.2686021, y: 0.18815914, z: -0.15459181, w: 0.9319605}
-  m_LocalPosition: {x: 0, y: 0, z: -25.1}
-  m_LocalScale: {x: 0.95813406, y: 0.958134, z: 0.9581349}
+  m_LocalPosition: {x: -9.3, y: -2.7, z: -38}
+  m_LocalScale: {x: 0.8926365, y: 0.8926364, z: 0.8926374}
   m_Children:
   - {fileID: 4819495812746965114}
-  m_Father: {fileID: 1970302824}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -26.262001, y: 28.927002, z: -25.723001}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -521.3, y: -323.7}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8296172667644042617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667644042615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 1
-  m_VerticalFit: 1
