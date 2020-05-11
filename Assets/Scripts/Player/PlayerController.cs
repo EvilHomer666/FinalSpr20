@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     // Movement variables
     [SerializeField] Transform cannonSpawn;
-    private float xRange = 15.4f;
-    private float yRange = 9.3f;
+    [SerializeField] float xRange = 15.4f;
+    [SerializeField] float yRange = 9.3f;
     private float horizontalInput;
     private float verticalInput;
     private SoundManager soundManager;

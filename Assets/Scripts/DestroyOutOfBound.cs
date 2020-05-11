@@ -7,6 +7,9 @@ public class DestroyOutOfBound : MonoBehaviour
     // Custom method to destroy!!!!!
     private void OnTriggerExit(Collider other)
     {
-        Destroy(other.gameObject);
+        if (other.gameObject.tag != "Player")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

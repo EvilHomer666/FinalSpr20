@@ -79,7 +79,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 139982ee37a243d40aab3b2b96b2c253, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonSpawn: {fileID: 7616816175232074090}
+  xRange: 15.3
+  yRange: 9.6
   playerSpeed: 10
   playerSpeedCap: 25
   speedReset: 10
@@ -416,15 +418,10 @@ PrefabInstance:
       propertyPath: TrailModule.dieWithParticles
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6972188768554961958, guid: af3c2fdd3b8c64f449b110ec427a2521,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6972188768562649188, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: 4.5904e-41
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768562649188, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
@@ -434,12 +431,12 @@ PrefabInstance:
     - target: {fileID: 6972188768562649188, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 5.35e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768562649188, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1.0045e-41
+      value: -781662200
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768568628550, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
@@ -581,31 +578,6 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115411991338454509, guid: 9da2063da6e41c84ebf9a0087f6127e1,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115411991338454509, guid: 9da2063da6e41c84ebf9a0087f6127e1,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 1.9870693e+38
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115411991338454509, guid: 9da2063da6e41c84ebf9a0087f6127e1,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: 5.35e-43
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115411991338454509, guid: 9da2063da6e41c84ebf9a0087f6127e1,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 5.0127e-41
-      objectReference: {fileID: 0}
     - target: {fileID: 9115411991349058799, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -723,18 +695,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 106614197371171380, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 5.843e-42
+      objectReference: {fileID: 0}
+    - target: {fileID: 106614197371171380, guid: d4ff621dd26c22b4990b252ba8a721c3,
+        type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: -11.688021
+      value: 6e-44
       objectReference: {fileID: 0}
     - target: {fileID: 106614197371171380, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 3.429
+      value: 2.3509926e-38
       objectReference: {fileID: 0}
     - target: {fileID: 106614197371171380, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: -9.193981
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 106614197381538610, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
@@ -995,11 +972,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 106614197396743792, guid: d4ff621dd26c22b4990b252ba8a721c3,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 106614197396774864, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}

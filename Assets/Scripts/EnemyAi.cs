@@ -5,10 +5,9 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     // The worst most fake Ai maneuver - using Vector2 to simplify
-    [SerializeField] Vector2 evadeWait;
+    [SerializeField] Vector3 evadeWait;
     [SerializeField] Vector2 evadeWindow;
     [SerializeField] Vector2 evadeDelay;
-    private float xMin, xMax, yMin, yMax;
     [SerializeField] float xboundary, yboundary;
     [SerializeField] float anticipation;
     [SerializeField] float evade;
@@ -31,7 +30,7 @@ public class EnemyAi : MonoBehaviour
     IEnumerator Evade()
     {
         // Wait time before enemy action
-        yield return new WaitForSeconds(Random.Range(evadeWait.y, evadeWait.x));
+        yield return new WaitForSeconds(Random.Range(evadeWait.x, evadeWait.z));
 
         while (true)
         {
