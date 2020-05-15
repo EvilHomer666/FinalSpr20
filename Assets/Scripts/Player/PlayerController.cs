@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     public float playerSpeedCap = 25;
     public int speedReset = 10;
+
     // For use with tutorial
     public bool fireAllowed = true;
 
@@ -27,7 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
-
         playerSpeed = 10;
         //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
     }

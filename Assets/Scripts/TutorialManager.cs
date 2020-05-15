@@ -11,7 +11,6 @@ public class TutorialManager : MonoBehaviour
     private SpeedPowerUp speedPowerUp;
     private HealthPowerUp healthPowerUp;
     public float waitTime;
-    public bool isTutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +37,6 @@ public class TutorialManager : MonoBehaviour
 
         if (tutorialTipsIndex == 0)
         {
-            isTutorial = true;
             // How to move 
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) ||
                 Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || 
@@ -66,15 +64,6 @@ public class TutorialManager : MonoBehaviour
 
             }
             if (tutorialTipsIndex == 3)
-            {
-                // Pick Up Speed 
-               // if (speedPowerUp.hasSpeed == true)
-                {
-                    tutorialTipsIndex ++;
-                }
-
-            }
-            if (tutorialTipsIndex == 4)
             {
                 if (waitTime <= 0)
                 {

@@ -3,6 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialSpawner : MonoBehaviour
+{
+    public float startDelay; // << make private when adjusted
+    private float spawnPosX = 18f;
+    private float spawnRangeY = 9.8f;
+    private float spawnPosZ = 0.0f;
+    private float spawnRate = 0.25f;
+    public float spawnInterval = 1.25f;
+
+    // Spawn manager array for enemies
+    public GameObject[] enemyPrefabs;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Method to call a function at a certain time
+        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
+
+        GameObject scoreManagerObject = GameObject.FindWithTag("Score Manager");
+    }
+
+    // Custom functions to spawn random enemies
+    void SpawnRandomEnemy()
+    {
+        // Randomly generate enemies
+        int enemyIndex = Random.Range(0, enemyPrefabs.Length);
+        Vector3 spawnPos = new Vector3(spawnPosX, Random.Range(-spawnRangeY, spawnRangeY), spawnPosZ);
+        Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 //{
 //    [SerializeField] GameObject smallMeteor;
 //    [SerializeField] GameObject largeMeteor;
@@ -24,7 +64,7 @@ public class TutorialSpawner : MonoBehaviour
 
 //            //Instantiate(asteroid, transform.position, Quaternion.identity);
 //            timeBetweenEnemy = startTimeBetweenEnemies;
-//            numberOfEnemies --;
+//            numberOfEnemies--;
 //        }
 //        else
 //        {
@@ -33,31 +73,31 @@ public class TutorialSpawner : MonoBehaviour
 //    }
 //}
 
-{ 
-    [SerializeField] float startDelay;
-    [SerializeField] float spawnInterval;
-    private float spawnPosX = 15f;
-    private float spawnRangeY = 7f;
-    private float spawnPosZ = -9.3f;
+//{ 
+    //[SerializeField] float startDelay;
+    //[SerializeField] float spawnInterval;
+    //private float spawnPosX = 15f;
+    //private float spawnRangeY = 7f;
+    //private float spawnPosZ = -9.3f;
 
-    // Spawn manager array for enemies
-    public GameObject[] enemyPrefabs;
+    //// Spawn manager array for enemies
+    //public GameObject[] enemyPrefabs;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Method to call a function at a certain time
-        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    // Method to call a function at a certain time
+    //    InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
 
-        GameObject scoreManagerObject = GameObject.FindWithTag("Score Manager");
-    }
+    //    GameObject scoreManagerObject = GameObject.FindWithTag("Score Manager");
+    //}
 
-    // Custom functions to spawn random enemies and power ups
-    void SpawnRandomEnemy()
-    {
-        // Randomly generate enemies
-        int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-        Vector3 spawnPos = new Vector3(spawnPosX, Random.Range (-spawnRangeY, spawnRangeY), spawnPosZ);
-        Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
-    }
-}
+    //// Custom functions to spawn random enemies and power ups
+    //void SpawnRandomEnemy()
+    //{
+    //    // Randomly generate enemies
+    //    int enemyIndex = Random.Range(0, enemyPrefabs.Length);
+    //    Vector3 spawnPos = new Vector3(spawnPosX, Random.Range (-spawnRangeY, spawnRangeY), spawnPosZ);
+    //    Instantiate(enemyPrefabs[enemyIndex], spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
+    //}
+//}

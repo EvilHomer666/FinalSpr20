@@ -2624,14 +2624,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777879490}
   m_CullTransparentMesh: 0
---- !u!362 &1818595287
-WorldAnchor:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5335179308840596995}
-  serializedVersion: 2
 --- !u!1 &1970302823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,7 +3018,6 @@ GameObject:
   - component: {fileID: 4819495812746965114}
   - component: {fileID: 4284101948363988195}
   - component: {fileID: 1627289020189971181}
-  - component: {fileID: 1818595287}
   m_Layer: 5
   m_Name: spaceCraft1_8angles
   m_TagString: Untagged
