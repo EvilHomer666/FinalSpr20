@@ -10,6 +10,7 @@ public class PlayerAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Reference the Animator
         flyInAnimation = GetComponent<Animator>();
     }
 
@@ -22,6 +23,7 @@ public class PlayerAnimations : MonoBehaviour
     {
         while(true)
         {
+            // Wait for a second before applying root motion to the player object
             yield return new WaitForSeconds(animationLapse);
             flyInAnimation.applyRootMotion = true;
         }
