@@ -6,16 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class SkipTutorial : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void StartGame()
-    {
-    }
+    // Reference to Level transition script
+    private LevelTransition levelTransition;
 
+    private void Start()
+    {
+        // Initialize script
+        levelTransition = FindObjectOfType<LevelTransition>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button8))
         {
-            SceneManager.LoadScene("Lev01");
+            levelTransition.FadeToNextLevel();
         }
     }
 }
