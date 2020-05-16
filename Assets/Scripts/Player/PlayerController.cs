@@ -12,13 +12,12 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     private SoundManager soundManager;
-    //private Scene activeScene;
-    //private string sceneName;
     public float playerSpeed;
     public float playerSpeedCap = 25;
     public int speedReset = 10;
     // For use with tutorial
     public bool canEngage;
+    public bool hasSpeed;
 
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire against them
 
@@ -31,11 +30,6 @@ public class PlayerController : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         playerSpeed = 10;
-        canEngage = true;
-        // Tutorial scene check
-        //activeScene = SceneManager.GetActiveScene();
-        //CanEngage();
-
         //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
     }
 
@@ -87,18 +81,4 @@ public class PlayerController : MonoBehaviour
     {
         playerSpeed += speedBoost;
     }
-
-    //// Tutorial scene check
-    //public void CanEngage()
-    //{
-    //    sceneName = activeScene.name;
-    //    if (sceneName == "Lev00")
-    //    {
-    //        canEngage = false;
-    //    }
-    //    if (sceneName != "Lev00")
-    //    {
-    //        canEngage = true;
-    //    }
-    //}
 }

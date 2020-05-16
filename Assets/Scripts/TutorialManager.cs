@@ -5,26 +5,23 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     [SerializeField] GameObject[] tutorialTips;  // << Array to store on-screen tips
-    private int tutorialTipsIndex;
     private PlayerController playerController;
     private DetectPlayerCollisions playerHitPoints;
-    private SpawnManager tutorialSpawner;
-    //private SpeedPowerUp speedPowerUp;
-    //private HealthPowerUp healthPowerUp;
-    //private int enemiesDestroyed = 0;
-    //private int enemyCount;
-    private float waitTime = 2.0f;
+    private int tutorialTipsIndex;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Set tutorial variables
         playerController = FindObjectOfType<PlayerController>();
-        playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();
-        GameObject tutorialSpawnerObject = GameObject.FindGameObjectWithTag("SpawnManager");
-        tutorialSpawner = tutorialSpawnerObject.GetComponent<SpawnManager>();
-
+        playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();        
         playerController.canEngage = false;
-        //enemyCount = enemiesDestroyed;
+        playerController.hasSpeed = true;
+
+        if(playerController.hasSpeed == true)
+        {
+            playerController.playerSpeed = 20;
+        }
     }
 
     // Update is called once per frame
@@ -50,7 +47,7 @@ public class TutorialManager : MonoBehaviour
                 Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) ||
                 Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
-                Input.GetKeyDown(KeyCode.Joystick1Button10) || Input.GetKeyDown(KeyCode.Joystick1Button11)) // << Buggy!! O_o?
+                Input.GetKeyDown(KeyCode.JoystickButton10) || Input.GetKeyDown(KeyCode.JoystickButton11)) // << Buggy!! O_o?
             {
                 tutorialTipsIndex++;
                 playerController.canEngage = true;
@@ -61,16 +58,11 @@ public class TutorialManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     // Display how to shot
-                    if (waitTime <= 0)
-                    {
-                        // Display how to engage enemy 
-                        tutorialSpawner.
-                        tutorialTipsIndex++;
-                    }
-                    else
-                    {
-                        waitTime -= Time.deltaTime;
-                    }
+                    //if ()
+                    //{
+                    //    // Display how to engage enemy 
+                    //}
+
                 }
             }
             //else if (tutorialTipsIndex == 2)

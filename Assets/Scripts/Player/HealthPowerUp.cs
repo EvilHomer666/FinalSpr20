@@ -11,10 +11,7 @@ public class HealthPowerUp : MonoBehaviour
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;
-    //private Scene activeScene;
-    //private string sceneName;
     public LifeBar lifeBar;
-    //public bool hasHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +27,6 @@ public class HealthPowerUp : MonoBehaviour
         playerCollisions = FindObjectOfType<DetectPlayerCollisions>();
 
         lifeBar = FindObjectOfType<LifeBar>();
-
-        //// Tutorial scene check
-        //activeScene = SceneManager.GetActiveScene();
 
     }
 
@@ -53,8 +47,6 @@ public class HealthPowerUp : MonoBehaviour
             soundManager.PlayerShieldUp();
             scoreManager.IncrementScore(scoreValue);
             Destroy(gameObject);
-            // Tutorial scene condition
-            //hasHP();
             Debug.Log("Power Up!");
         }
 
@@ -66,13 +58,4 @@ public class HealthPowerUp : MonoBehaviour
             Debug.Log("Pick Up!");
         }
     }
-
-    //public void hasHP()
-    //{
-    //    sceneName = activeScene.name;
-    //    if (sceneName == "Lev00")
-    //    {
-    //        hasHealth = true;
-    //    }
-    //}
 }

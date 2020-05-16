@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ed5b275b73c345962a5490ffdefb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  engine: {fileID: 8929434879494944238, guid: 649a5bb8acedccb469d001fbaee35bb9, type: 3}
   enemySpeed: 6
-  engine: {fileID: 0}
+  hasPropulsion: 0
 --- !u!114 &-3235544059330763131
 MonoBehaviour:
   m_ObjectHideFlags: 0

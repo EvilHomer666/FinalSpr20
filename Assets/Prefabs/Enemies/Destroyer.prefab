@@ -180,8 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ed5b275b73c345962a5490ffdefb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 1.5
   engine: {fileID: 4330082557442575523}
+  enemySpeed: 1.5
+  hasPropulsion: 0
 --- !u!114 &1955507539525477643
 MonoBehaviour:
   m_ObjectHideFlags: 0

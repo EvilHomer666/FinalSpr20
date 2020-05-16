@@ -181,10 +181,12 @@ MonoBehaviour:
   cannonSpawn: {fileID: 7616816175232074090}
   xRange: 15.3
   yRange: 9.6
+  horizontalInput: 0
+  verticalInput: 0
   playerSpeed: 10
   playerSpeedCap: 25
   speedReset: 10
-  fireAllowed: 1
+  canEngage: 1
   cannons:
   - {fileID: 1211848329386703990, guid: 5453b14486f3fac4eb817178dee34fbc, type: 3}
 --- !u!114 &7616816176136511944
@@ -566,8 +568,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
-      propertyPath: InitialModule.startLifetime.minMaxState
-      value: 0
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
@@ -602,7 +609,7 @@ PrefabInstance:
     - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 25
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 9115411991349058799, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
@@ -664,10 +671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lv1
       objectReference: {fileID: 0}
-    - target: {fileID: 9115411992425087923, guid: 9da2063da6e41c84ebf9a0087f6127e1,
+    - target: {fileID: 9115411992425087926, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
-      propertyPath: m_Name
-      value: Smoke
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9115411992425087926, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}

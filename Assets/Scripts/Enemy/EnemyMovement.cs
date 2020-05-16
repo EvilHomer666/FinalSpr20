@@ -5,15 +5,13 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     // Enemy speed
-    [SerializeField] float enemySpeed;
     [SerializeField] GameObject engine;
+    [SerializeField] GameObject extraFx;
+    [SerializeField] float enemySpeed;
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.back * Time.deltaTime * enemySpeed);
-        //GetComponent<ParticleSystem>().Play(engine);
-
-
     }
 }

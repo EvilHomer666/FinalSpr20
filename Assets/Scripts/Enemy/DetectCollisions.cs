@@ -37,7 +37,7 @@ public class DetectCollisions : MonoBehaviour
         {
             Debug.Log("Target Hit!");
             Destroy(other.gameObject);
-            if(damageMultiplier != null)
+            if (damageMultiplier != null)
             {
                 enemyHitPoints -= damageMultiplier.damageValueMultiplier;
             }
@@ -50,73 +50,124 @@ public class DetectCollisions : MonoBehaviour
             {
                 soundManager.EnemyShipEngaged();
             }
-            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+            else if (enemyHitPoints <= 0)
             {
-                soundManager.LargeAsteroidHit();
-            }
-
-            if (enemyHitPoints <= 0)
-            {
-                if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "EnemyShip")
-                {
-                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                    soundManager.EnemyShipDestroyed();
-                }
-                if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
-                {
-                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                    soundManager.LargeAsteroidDestroyed();
-                }
-
-                Debug.Log("Target Destroyed!");
-                // Add score value of destroyed enemy to score variable in ScoreManager script and destroy player projectile and enemy/hazard
+                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+                soundManager.EnemyShipDestroyed();
                 scoreManager.IncrementScore(scoreValue);
-                //Destroy(other.gameObject);
-                if (gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
-                {
-                    // Spawn power-up drops at enemies last position upon destruction
-                    Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
-                }
                 Destroy(gameObject);
-            }
-        }
+                Debug.Log("Target Destroyed!");
 
-        // Enemy fire check
-        if (other.gameObject.tag == "EnemyProjectile")
-        {
-            Debug.Log("Collateral Damage!");
-            Destroy(other.gameObject);
-            enemyHitPoints -= collateralDamage;
-
-            if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "EnemyShip")
-            {
-                soundManager.EnemyShipEngaged();
             }
-            if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+
+            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard")
             {
                 soundManager.LargeAsteroidHit();
             }
-
-            if (enemyHitPoints <= 0)
+            else if (enemyHitPoints <= 0)
             {
-                if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "EnemyShip")
-                {
-                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                    soundManager.EnemyShipDestroyed();
-                }
-                if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
-                {
-                    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                    soundManager.LargeAsteroidDestroyed();
-                }
-
-                Debug.Log("Object Destroyed!");
+                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+                soundManager.LargeAsteroidDestroyed();
+                scoreManager.IncrementScore(scoreValue);
                 Destroy(gameObject);
+                Debug.Log("Target Destroyed!");
+            }
+
+            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+            {
+                soundManager.LargeAsteroidHit();
+            }
+            else if (enemyHitPoints <= 0)
+            {
+                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+                soundManager.LargeAsteroidDestroyed();
+                scoreManager.IncrementScore(scoreValue);
+                Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
+                Destroy(gameObject);
+                Debug.Log("Target Destroyed!");
             }
         }
     }
 }
+
+
+            //if (enemyHitPoints <= 0)
+            //{
+            //    if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "EnemyShip")
+            //    {
+            //        Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+            //        GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+            //        soundManager.EnemyShipDestroyed();
+            //    }
+            //    if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard" || 
+            //        gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+            //    {
+            //        Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+            //        GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+            //        soundManager.LargeAsteroidDestroyed();
+            //    }
+
+//Debug.Log("Target Destroyed!");
+// Add score value of destroyed enemy to score variable in ScoreManager script and destroy player projectile and enemy/hazard
+//scoreManager.IncrementScore(scoreValue);
+//Destroy(other.gameObject);
+//    if (gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+//    {
+//        // Spawn power-up drops at enemies last position upon destruction
+//        Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
+//    }
+//    //Destroy(gameObject);
+//}
+//else if (other.gameObject.tag == "Player" && enemyHitPoints <= 1)
+//{
+//    Debug.Log("Head On Collision!");
+//    Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+//    GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+//    if (damageMultiplier != null)
+//    {
+//        enemyHitPoints -= damageMultiplier.damageValueMultiplier;
+//    }
+//    Destroy(gameObject);
+//}
+//}
+
+// Enemy friendly fire check
+//if (other.gameObject.tag == "EnemyProjectile")
+//{
+//    Debug.Log("Collateral Damage!");
+//    Destroy(other.gameObject);
+//    enemyHitPoints -= collateralDamage;
+
+//    if (other.gameObject.tag == "EnemyProjectile")
+//    {
+//        soundManager.EnemyShipEngaged();
+//    }
+//    if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+//    {
+//        soundManager.LargeAsteroidHit();
+//    }
+
+//    if (enemyHitPoints <= 0)
+//    {
+//        if (other.gameObject.tag == "EnemyProjectile")
+//        {
+//            Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+//            GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+//            soundManager.EnemyShipDestroyed();
+//        }
+//        if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP" || gameObject.tag == "Hazard")
+//        {
+//            Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+//            GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+//            soundManager.LargeAsteroidDestroyed();
+//        }
+
+//        Debug.Log("Object Destroyed!");
+//        Destroy(gameObject);
+//    }
+//}
+//}
+//}

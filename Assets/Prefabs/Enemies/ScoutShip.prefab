@@ -53,7 +53,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5963233033992109784
 Transform:
   m_ObjectHideFlags: 0
@@ -179,8 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ed5b275b73c345962a5490ffdefb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  engine: {fileID: 8452985096234672303, guid: c5a4e694fc57a6542bdae0eb4167c686, type: 3}
   enemySpeed: 10
-  engine: {fileID: 0}
+  hasPropulsion: 0
 --- !u!114 &3590772968789362460
 MonoBehaviour:
   m_ObjectHideFlags: 0
