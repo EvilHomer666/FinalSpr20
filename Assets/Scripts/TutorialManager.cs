@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] GameObject tutorialSpawner;
     [SerializeField] GameObject[] tutorialTips;  // << Array to store on-screen tips
     private int tutorialTipsIndex;
     private PlayerController playerController;
-    private SpeedPowerUp speedPowerUp;
-    private HealthPowerUp healthPowerUp;
-    public float waitTime;
+    private DetectPlayerCollisions playerHitPoints;
+    private SpawnManager tutorialSpawner;
+    //private SpeedPowerUp speedPowerUp;
+    //private HealthPowerUp healthPowerUp;
+    //private int enemiesDestroyed = 0;
+    //private int enemyCount;
+    private float waitTime = 2.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
-        playerController.fireAllowed = false;
+        playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();
+        GameObject tutorialSpawnerObject = GameObject.FindGameObjectWithTag("SpawnManager");
+        tutorialSpawner = tutorialSpawnerObject.GetComponent<SpawnManager>();
+
+        playerController.canEngage = false;
+        //enemyCount = enemiesDestroyed;
     }
 
     // Update is called once per frame
@@ -37,44 +45,56 @@ public class TutorialManager : MonoBehaviour
 
         if (tutorialTipsIndex == 0)
         {
-            // How to move 
+            // Display how to move tip
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) ||
-                Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || 
+                Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) ||
-                Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+                Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
+                Input.GetKeyDown(KeyCode.Joystick1Button10) || Input.GetKeyDown(KeyCode.Joystick1Button11)) // << Buggy!! O_o?
             {
-                tutorialTipsIndex ++;
+                tutorialTipsIndex++;
+                playerController.canEngage = true;
             }
-            if (tutorialTipsIndex == 1)
+            else if (tutorialTipsIndex == 1)
             {
-                // How to shot 
-                playerController.fireAllowed = true;
-                if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
-                {                    
-                    tutorialTipsIndex++;
-                }
-            }
-            if (tutorialTipsIndex == 2)
-            {
-                // Pick Up Health 
-                //if (healthPowerUp.hasHealth == true)                     
-                {
-                    tutorialTipsIndex ++;
-                }
 
+                if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    // Display how to shot
+                    if (waitTime <= 0)
+                    {
+                        // Display how to engage enemy 
+                        tutorialSpawner.
+                        tutorialTipsIndex++;
+                    }
+                    else
+                    {
+                        waitTime -= Time.deltaTime;
+                    }
+                }
             }
-            if (tutorialTipsIndex == 3)
+            //else if (tutorialTipsIndex == 2)
+            //{
+            //    if (waitTime <= 0)
+            //    {
+            //        // Display how to engage enemy 
+            //        tutorialSpawner.SetActive(true);
+            //        tutorialTipsIndex++;
+            //    }
+            //    else
+            //    {
+            //        waitTime -= Time.deltaTime;
+            //    }
+            //}
+            else if (tutorialTipsIndex == 2)
             {
-                if (waitTime <= 0)
+                // Pick Up Health and exit
+                if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
                 {
-                    // Destroy enemy!
-                    tutorialSpawner.SetActive(true);
-                }
-                else
-                {
-                    waitTime -= Time.deltaTime;
+                    // TO DO flash skip prompt
                 }
             }
-        } 
+        }
     }
 }
+

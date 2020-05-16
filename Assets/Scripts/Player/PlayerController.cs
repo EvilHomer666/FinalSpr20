@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,15 +9,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform cannonSpawn;
     [SerializeField] float xRange = 15.4f;
     [SerializeField] float yRange = 9.3f;
-    private float horizontalInput;
-    private float verticalInput;
+    public float horizontalInput;
+    public float verticalInput;
     private SoundManager soundManager;
+    //private Scene activeScene;
+    //private string sceneName;
     public float playerSpeed;
     public float playerSpeedCap = 25;
     public int speedReset = 10;
-
     // For use with tutorial
-    public bool fireAllowed = true;
+    public bool canEngage;
 
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire against them
 
@@ -29,6 +31,11 @@ public class PlayerController : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         playerSpeed = 10;
+        canEngage = true;
+        // Tutorial scene check
+        //activeScene = SceneManager.GetActiveScene();
+        //CanEngage();
+
         //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
     }
 
@@ -60,7 +67,7 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * playerSpeed);
 
-        if (fireAllowed == true)
+        if (canEngage == true)
         {
             // Projectile launch condition with for each element to read array
             if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
@@ -80,4 +87,18 @@ public class PlayerController : MonoBehaviour
     {
         playerSpeed += speedBoost;
     }
+
+    //// Tutorial scene check
+    //public void CanEngage()
+    //{
+    //    sceneName = activeScene.name;
+    //    if (sceneName == "Lev00")
+    //    {
+    //        canEngage = false;
+    //    }
+    //    if (sceneName != "Lev00")
+    //    {
+    //        canEngage = true;
+    //    }
+    //}
 }
