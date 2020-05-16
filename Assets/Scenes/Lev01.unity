@@ -10796,6 +10796,5 @@ PrefabInstance:
       propertyPath: lifeBar
       value: 
       objectReference: {fileID: 141289620}
-    m_RemovedComponents:
-    - {fileID: 1972227583, guid: ce5478765c4791543b404667261322d8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5478765c4791543b404667261322d8, type: 3}

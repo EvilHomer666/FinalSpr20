@@ -168,6 +168,7 @@ MonoBehaviour:
   powerUpSpawn: {fileID: 0}
   onDestroyExplosion: {fileID: 504431175277295389, guid: 9efffbabb8a0c5a46bbb2cf07a0f7e60,
     type: 3}
+  impactExplosion: {fileID: 0}
 --- !u!114 &1145044464100138498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engine: {fileID: 4330082557442575523}
+  extraFx: {fileID: 0}
   enemySpeed: 1.5
-  hasPropulsion: 0
 --- !u!114 &1955507539525477643
 MonoBehaviour:
   m_ObjectHideFlags: 0

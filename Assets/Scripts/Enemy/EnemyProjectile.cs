@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProjectileAttack : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     // Projectile variables
     [SerializeField] float speedLv01;

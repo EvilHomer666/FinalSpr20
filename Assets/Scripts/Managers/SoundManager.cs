@@ -116,7 +116,7 @@ public class SoundManager : MonoBehaviour
     }
     public void LargeAsteroidDestroyed()
     {
-        audioSource.PlayOneShot(largeAsteroidDestroyed, 3.0f);
+        audioSource.PlayOneShot(largeAsteroidDestroyed, 2.0f);
         return;
     }
     public void SmallAsteroidDestroyed()

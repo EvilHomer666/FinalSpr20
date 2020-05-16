@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   engine: {fileID: 0}
+  extraFx: {fileID: 0}
   enemySpeed: 15
 --- !u!65 &7602078617052042971
 BoxCollider:
@@ -155,10 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 0
   enemyHitPoints: 1
-  holdsPowerUp: 1
-  powerUpDrop: {fileID: 4760844904095616668, guid: 3976d62b4004b75469f79ee38cca4452,
-    type: 3}
-  powerUpSpawn: {fileID: 7317076469866860491}
+  holdsPowerUp: 0
+  powerUpDrop: {fileID: 0}
+  powerUpSpawn: {fileID: 0}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
 --- !u!54 &802150544448439465

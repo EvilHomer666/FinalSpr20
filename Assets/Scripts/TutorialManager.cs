@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
     private PlayerController playerController;
     private DetectPlayerCollisions playerHitPoints;
     private int tutorialTipsIndex;
+    private bool enemyEngaged;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class TutorialManager : MonoBehaviour
         playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();        
         playerController.canEngage = false;
         playerController.hasSpeed = true;
+        enemyEngaged = false;
 
         if(playerController.hasSpeed == true)
         {
@@ -60,9 +62,9 @@ public class TutorialManager : MonoBehaviour
                     // Display how to shot
                     //if ()
                     //{
-                    //    // Display how to engage enemy 
+                        
                     //}
-
+                    //tutorialTipsIndex++;
                 }
             }
             //else if (tutorialTipsIndex == 2)
