@@ -7,6 +7,7 @@ public class BlinkingText : MonoBehaviour
 {
     private Text blinkingText;
     private float waitTime = 0.75f;
+
     // Start is called before the first frame update
     void Start()
     {

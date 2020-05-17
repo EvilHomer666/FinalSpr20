@@ -5,17 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    // Movement variables
     [SerializeField] Transform cannonSpawn;
     [SerializeField] float xRange = 15.4f;
     [SerializeField] float yRange = 9.3f;
+    private SoundManager soundManager;
     public float horizontalInput;
     public float verticalInput;
-    private SoundManager soundManager;
     public float playerSpeed;
     public float playerSpeedCap = 25;
     public int speedReset = 10;
-    // For use with tutorial
     public bool canEngage;
     public bool hasSpeed;
 
@@ -30,7 +28,8 @@ public class PlayerController : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         playerSpeed = 10;
-        //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
+
+            //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
     }
 
     // Update is called once per frame

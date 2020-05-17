@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip dangerWarning;
     [SerializeField] AudioClip collectPowerUp;
     [SerializeField] AudioClip shootLaserLv1;
+    [SerializeField] AudioClip confirmed;
 
     // TO DO Optimize how these area accessed in DetectsCollisions script
     // Enemies SFX clips
@@ -83,6 +84,11 @@ public class SoundManager : MonoBehaviour
     public void PlayerFireLaserLv1()
     {
         audioSource.PlayOneShot(shootLaserLv1, 1.5f);
+        return;
+    }
+    public void PlayerInputConfirmed()
+    {
+        audioSource.PlayOneShot(confirmed, 1.5f);
         return;
     }
 

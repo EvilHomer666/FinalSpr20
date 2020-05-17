@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectPlayerCollisions : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class DetectPlayerCollisions : MonoBehaviour
     private SoundManager soundManager;
     private PlayerController playerControllerSpeedReset;
     private SpeedPowerUp speedPowerUp;
+    private Scene activeScene;
+    private string sceneName;
     public int enginesLv1 = 1;
     public int playerMaxHitPoints;
     public int playerCurrentHitPoints;
@@ -35,7 +38,10 @@ public class DetectPlayerCollisions : MonoBehaviour
         playerControllerSpeedReset = FindObjectOfType<PlayerController>();
         speedPowerUp = FindObjectOfType<SpeedPowerUp>();
 
+        activeScene = SceneManager.GetActiveScene();
+
         // Initialize Life-Hit points
+        TutorialMode();
         playerCurrentHitPoints = playerMaxHitPoints;
         lifeBar.SetMaxLife(playerCurrentHitPoints);
 
@@ -115,6 +121,16 @@ public class DetectPlayerCollisions : MonoBehaviour
         if (playerCurrentHitPoints > playerMaxHitPoints)
         {
             playerCurrentHitPoints = playerMaxHitPoints;
+        }
+    }
+
+    // Tutorial scene check
+    private void TutorialMode()
+    {
+        sceneName = activeScene.name;
+        if (sceneName == "Lev00")
+        {
+            playerMaxHitPoints = 2;
         }
     }
 }
