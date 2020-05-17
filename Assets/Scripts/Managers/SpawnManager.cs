@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] float startDelay;
     private ScoreManager scoreManager;
     private float spawnPosX = 18f;
     private float spawnRangeY = 9.8f;
@@ -15,18 +14,19 @@ public class SpawnManager : MonoBehaviour
     private float spawnRate = 0.25f;
     private float minSpawnInterval = 0.5f;
     public float spawnInterval = 1.25f;
+    public float startDelay;
 
-    // Spawn manager array for enemies
+    // Spawn manager array for enemy prefabs
     public GameObject[] enemyPrefabs;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Method to call a function at a certain time
-        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
+            // Method to call a function at a certain time
+            InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
 
-        GameObject scoreManagerObject = GameObject.FindWithTag("Score Manager");
-        scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
+            GameObject scoreManagerObject = GameObject.FindWithTag("Score Manager");
+            scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame

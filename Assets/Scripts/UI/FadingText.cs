@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FadingText : MonoBehaviour
 {
     private Text fadingText;
-    private float waitTime = 5.0f;
+    private float waitTime = 1.5f;
 
     // Start is called before the first frame update
     void Start()

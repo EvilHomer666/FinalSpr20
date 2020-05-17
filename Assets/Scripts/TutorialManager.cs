@@ -5,24 +5,31 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     [SerializeField] GameObject[] tutorialTips;  // << Array to store on-screen tips
+    [SerializeField] GameObject tutorialSpawnManager;
     private PlayerController playerController;
     private DetectPlayerCollisions playerHitPoints;
     private int tutorialTipsIndex;
     private bool enemyEngaged;
+    private bool hazardHpDestroyed;
+    public int tutorialPlayerHitPoints = 2;
+    private int playerTutorialSpeed = 25;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         // Set tutorial variables
         playerController = FindObjectOfType<PlayerController>();
-        playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();        
+        playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();
         playerController.canEngage = false;
         playerController.hasSpeed = true;
-        enemyEngaged = false;
+        hazardHpDestroyed = false;
+        playerHitPoints.playerCurrentHitPoints = tutorialPlayerHitPoints;
+        playerHitPoints.lifeBar.SetMaxLife(tutorialPlayerHitPoints);
 
         if(playerController.hasSpeed == true)
         {
-            playerController.playerSpeed = 20;
+            playerController.playerSpeed = playerTutorialSpeed;
         }
     }
 
@@ -44,51 +51,48 @@ public class TutorialManager : MonoBehaviour
 
         if (tutorialTipsIndex == 0)
         {
-            // Display how to move tip
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) ||
-                Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
-                Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) ||
-                Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
-                Input.GetKeyDown(KeyCode.JoystickButton10) || Input.GetKeyDown(KeyCode.JoystickButton11)) // << Buggy!! O_o?
+            // Display how to move tip - if player moves move onto how to fire
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
+                Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
+                Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) // << That worked, thanks Michael! ^_^
             {
                 tutorialTipsIndex++;
-                playerController.canEngage = true;
             }
-            else if (tutorialTipsIndex == 1)
+        }
+        else if (tutorialTipsIndex == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
+                // Display how to shot tip - enemies will begin to spawn soon after
 
-                if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    // Display how to shot
-                    //if ()
-                    //{
-                        
-                    //}
-                    //tutorialTipsIndex++;
-                }
+                playerController.canEngage = true;
+                tutorialTipsIndex++;
             }
-            //else if (tutorialTipsIndex == 2)
-            //{
-            //    if (waitTime <= 0)
-            //    {
-            //        // Display how to engage enemy 
-            //        tutorialSpawner.SetActive(true);
-            //        tutorialTipsIndex++;
-            //    }
-            //    else
-            //    {
-            //        waitTime -= Time.deltaTime;
-            //    }
-            //}
-            else if (tutorialTipsIndex == 2)
+        }
+        else if (tutorialTipsIndex == 2)
+        {
+            // Display engage and evade to stay alive tip
+
+            tutorialSpawnManager.SetActive(true);
+            tutorialTipsIndex++;
+        }
+        else if (tutorialTipsIndex == 3)
+        {
+            // Pick up health tip
+            if (playerHitPoints)
             {
-                // Pick Up Health and exit
-                if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
-                {
-                    // TO DO flash skip prompt
-                }
+                // Enable flashing skip prompt
+            }
+        }
+        else if (tutorialTipsIndex == 4)
+        {
+            // Pick up health tip
+            if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
+            {
+                // Enable flashing skip prompt
             }
         }
     }
 }
+
 
