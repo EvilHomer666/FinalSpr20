@@ -37,4 +37,13 @@ public class LevelTransition : MonoBehaviour
             FadeToLevel(SceneManager.GetActiveScene().buildIndex + 2);
         }
     }
+
+
+    // Method to manually Fade out on trigger from last level back to first
+    public void LevelLoop()
+    {
+        {
+            FadeToLevel(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
 }

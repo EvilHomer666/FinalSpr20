@@ -53,9 +53,9 @@ public class ScoreManager : MonoBehaviour
     private void Level02ModeCheck()
     {
         sceneName = activeScene.name;
-        if (sceneName == "Lev00")
+        if (sceneName == "Lev02")
         {
-            level02Check.wasEnemyEngaged = true;
+            levelTransition.LevelLoop();
         }
     }
 }
