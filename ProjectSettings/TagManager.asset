@@ -33,6 +33,7 @@ TagManager:
   - SpawnManager
   - ImpactSpawn
   - ImpactExplosion
+  - ProximityWarning
   layers:
   - Default
   - TransparentFX

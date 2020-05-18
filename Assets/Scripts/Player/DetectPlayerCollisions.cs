@@ -16,6 +16,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     private SpeedPowerUp speedPowerUp;
     private Scene activeScene;
     private string sceneName;
+    private int tutorialHandiCap = 2;
     public int enginesLv1 = 1;
     public int playerMaxHitPoints;
     public int playerCurrentHitPoints;
@@ -29,21 +30,17 @@ public class DetectPlayerCollisions : MonoBehaviour
         // Initialize references
         GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
         gameManager = gameManagerObject.GetComponent<GameManager>();
-
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
-
         lifeBar = FindObjectOfType<LifeBar>();
-
         playerControllerSpeedReset = FindObjectOfType<PlayerController>();
         speedPowerUp = FindObjectOfType<SpeedPowerUp>();
-
         activeScene = SceneManager.GetActiveScene();
 
-        // Initialize Life-Hit points
-        TutorialMode();
+        // Initialize Life-Hit points and check for tutorial mode
         playerCurrentHitPoints = playerMaxHitPoints;
         lifeBar.SetMaxLife(playerCurrentHitPoints);
+        TutorialModeCheck();
 
         // polarityModifierSwitch = FindObjectOfType<PlayerController>(); // << TO DO to be implemented with player's ability to use return enemy fire
     }
@@ -125,12 +122,13 @@ public class DetectPlayerCollisions : MonoBehaviour
     }
 
     // Tutorial scene check
-    private void TutorialMode()
+    private void TutorialModeCheck()
     {
         sceneName = activeScene.name;
         if (sceneName == "Lev00")
         {
-            playerMaxHitPoints = 2;
+            playerCurrentHitPoints -= tutorialHandiCap;
+            lifeBar.SetLife(playerCurrentHitPoints);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectCollisions : MonoBehaviour
 {
@@ -14,8 +15,11 @@ public class DetectCollisions : MonoBehaviour
     private ProjectileImpact damageMultiplier;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
+    private TutorialManager tutorialCheck;
+    private Scene activeScene;
     private float minimumDamage = 1f;
     private float collateralDamage = 0.5f;
+    private string sceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +31,11 @@ public class DetectCollisions : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
 
+        tutorialCheck = FindObjectOfType<TutorialManager>();
+
         damageMultiplier = FindObjectOfType<ProjectileImpact>();
+        activeScene = SceneManager.GetActiveScene();
+
     }
 
     // On trigger enter function over-ride - Destroy target and projectile on collision
@@ -78,6 +86,7 @@ public class DetectCollisions : MonoBehaviour
 
             if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
             {
+                TutorialModeCheck();
                 soundManager.LargeAsteroidHit();
             }
             if (enemyHitPoints <= 0 && holdsPowerUp == true)
@@ -93,7 +102,7 @@ public class DetectCollisions : MonoBehaviour
         }
 
 
-        // Enemy friendly
+        // Enemy friendly fire
         if (other.gameObject.tag == "EnemyProjectile")
         {
             Debug.Log("Collateral damage!");
@@ -134,6 +143,16 @@ public class DetectCollisions : MonoBehaviour
                 Destroy(gameObject);
                 Debug.Log("Enemy Destroyed!");
             }
+        }
+    }
+
+    // Tutorial scene check
+    private void TutorialModeCheck()
+    {
+        sceneName = activeScene.name;
+        if (sceneName == "Lev00")
+        {
+            tutorialCheck.wasEnemyEngaged = true;
         }
     }
 }

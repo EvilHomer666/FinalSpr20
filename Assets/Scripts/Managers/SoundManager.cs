@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip collectPowerUp;
     [SerializeField] AudioClip shootLaserLv1;
     [SerializeField] AudioClip confirmed;
+    [SerializeField] AudioClip proximityWarning;
 
     // TO DO Optimize how these area accessed in DetectsCollisions script
     // Enemies SFX clips
@@ -91,6 +92,12 @@ public class SoundManager : MonoBehaviour
         audioSource.PlayOneShot(confirmed, 1.5f);
         return;
     }
+    public void ProximityWarning()
+    {
+        audioSource.PlayOneShot(proximityWarning, 0.5f);
+        return;
+    }
+
 
     // Enemy SFX
     public void EnemyShipEngaged()
@@ -117,7 +124,7 @@ public class SoundManager : MonoBehaviour
     }
     public void SmallAsteroidHit()
     {
-        audioSource.PlayOneShot(smallAsteroidHit, 1.7f);
+        audioSource.PlayOneShot(smallAsteroidHit, 1.5f);
         return;
     }
     public void LargeAsteroidDestroyed()
@@ -127,7 +134,7 @@ public class SoundManager : MonoBehaviour
     }
     public void SmallAsteroidDestroyed()
     {
-        audioSource.PlayOneShot(smallAsteroidDestroyed, 1.7f);
+        audioSource.PlayOneShot(smallAsteroidDestroyed, 1.5f);
         return;
     }
 }

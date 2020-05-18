@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2198523439189919430}
   - component: {fileID: 8176666178852187248}
   m_Layer: 0
-  m_Name: meteorSmallTutorial
+  m_Name: fireMeteorSmall
   m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,12 +156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b170dbfa4d3f428458277364ab469e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 25
+  scoreValue: 1
   enemyHitPoints: 1
   holdsPowerUp: 0
   powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
+    type: 3}
+  impactExplosion: {fileID: 5879626478361469977, guid: fa8e411afb828874695ac9d873ac9444,
     type: 3}
 --- !u!54 &2198523439189919430
 Rigidbody:

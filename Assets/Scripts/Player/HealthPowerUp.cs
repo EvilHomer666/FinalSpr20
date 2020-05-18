@@ -8,6 +8,7 @@ public class HealthPowerUp : MonoBehaviour
     [SerializeField] int healthValue;
     [SerializeField] float powerUpLocalSpeed;
     [SerializeField] int scoreValue;
+    private int survivorBonus = 3;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;
@@ -53,7 +54,7 @@ public class HealthPowerUp : MonoBehaviour
         if (other.gameObject.tag == "Player" && playerCollisions.playerCurrentHitPoints == playerCollisions.playerMaxHitPoints)
         {
             soundManager.PlayerCollectedPowerUp();
-            scoreManager.IncrementScore(scoreValue);
+            scoreManager.IncrementScore(scoreValue * survivorBonus);
             Destroy(gameObject);
             Debug.Log("Pick Up!");
         }

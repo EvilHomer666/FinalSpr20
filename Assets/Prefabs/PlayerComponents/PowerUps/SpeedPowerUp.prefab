@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedBoostValue: 5
-  powerUpLocalSpeed: 3
-  scoreValue: 1500
+  powerUpLocalSpeed: 5
+  scoreValue: 100
 --- !u!1 &6590288448442052280
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] Text scoreText;
     [SerializeField] Text timerText;
-    private float time;
+    private TutorialManager level02Check;
+    private string sceneName;
+    private Scene activeScene;
+    private LevelTransition levelTransition;
+    private float time = 120.0f;
     public int score;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Set score defaults
+        // Set score defaults and references
+        level02Check = FindObjectOfType<TutorialManager>();
+        levelTransition = FindObjectOfType<LevelTransition>();
         score = 0;
         UpdateScoreText();
     }
@@ -22,8 +29,12 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         // Update timer in real time to text
-        time += Time.deltaTime;
-        timerText.text = $"Time: {time.ToString("n2")}";
+        time -= Time.deltaTime;
+        timerText.text = $"Time to hyper jump: {time.ToString("n2")}";
+        if (time <=0)
+        {
+            levelTransition.FadeToNextLevel();
+        }
     }
 
     // Add score value and update text
@@ -37,5 +48,14 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScoreText()
     {
         scoreText.text = $"Score: {score}";
+    }
+
+    private void Level02ModeCheck()
+    {
+        sceneName = activeScene.name;
+        if (sceneName == "Lev00")
+        {
+            level02Check.wasEnemyEngaged = true;
+        }
     }
 }

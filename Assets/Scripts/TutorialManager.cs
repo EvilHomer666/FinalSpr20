@@ -1,35 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
     [SerializeField] GameObject[] tutorialTips;  // << Array to store on-screen tips
     [SerializeField] GameObject tutorialSpawnManager;
+    [SerializeField] GameObject onScreenProximityWarning;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private PlayerController playerController;
     private DetectPlayerCollisions playerHitPoints;
+    private DetectCollisions enemyEngaged;
+    private BlinkingText blinkingText;
+    private LevelTransition levelTransition;
     private int tutorialTipsIndex;
-    private bool enemyEngaged;
     private bool hazardHpDestroyed;
     private int playerTutorialSpeed = 20;
+    private int HowToMove = 0;
+    private int HowToShot = 1;
+    private int EngageEnemy = 2;
+    private int PowerUps = 3;
+    private int RecoverHealth = 4;
+    private int Exit = 5;
+    private int minScoretoContinue = 50;
+    public bool wasEnemyEngaged;
+    private bool coroutineRunning;
+
 
     // Start is called before the first frame update
     void Start()
-    {        // Set tutorial variables
+    {        // Set tutorial references and variables
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         playerController = FindObjectOfType<PlayerController>();
         playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();
         scoreManager = FindObjectOfType<ScoreManager>();
+        enemyEngaged = FindObjectOfType<DetectCollisions>();
+        blinkingText = FindObjectOfType<BlinkingText>();
+        levelTransition = FindObjectOfType<LevelTransition>();
         playerController.canEngage = false;
         playerController.hasSpeed = true;
-        hazardHpDestroyed = false;
-        //playerHitPoints.playerCurrentHitPoints = playerHitPoints.playerMaxHitPoints;
-        //playerHitPoints.lifeBar.SetMaxLife(playerHitPoints.playerCurrentHitPoints);
-
-        if(playerController.hasSpeed == true)
+        hazardHpDestroyed = false;        
+        if (playerController.hasSpeed == true)
         {
             playerController.playerSpeed = playerTutorialSpeed;
         }
@@ -51,7 +65,8 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        if (tutorialTipsIndex == 0)
+        // Start tutorial tips
+        if (tutorialTipsIndex == HowToMove)
         {
             // Display how to move tip - if player moves move onto how to fire
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
@@ -62,36 +77,68 @@ public class TutorialManager : MonoBehaviour
                 tutorialTipsIndex++;
             }
         }
-        else if (tutorialTipsIndex == 1)
+        else if (tutorialTipsIndex == HowToShot)
         {
             if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 // Display how to shot tip - enemies will begin to spawn soon after
                 soundManager.PlayerInputConfirmed();
                 playerController.canEngage = true;
-                tutorialSpawnManager.SetActive(true);
                 tutorialTipsIndex++;
             }
         }
-        else if (tutorialTipsIndex == 2)
+        else if (tutorialTipsIndex == EngageEnemy)
         {
-            if(scoreManager.score == 700)
-            {
+            coroutineRunning = true;
+            StartCoroutine("WaitForSeconds");          
+            coroutineRunning = false;
+
+            if (scoreManager.score >= minScoretoContinue)
+            {                
                 // Display engage and evade to stay alive tip
-                soundManager.PlayerInputConfirmed();
                 tutorialTipsIndex++;
             }
-
         }
-        else if (tutorialTipsIndex == 3)
+        else if (tutorialTipsIndex == PowerUps)
+        {
+            StopCoroutine("WaitForSeconds");
+            if (wasEnemyEngaged == true)
+            {
+                // Display enemies drop power up tip
+                tutorialTipsIndex++;
+            }
+        }
+        else if (tutorialTipsIndex == RecoverHealth)
         {
             // Pick up health tip
             if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
             {
-                // Enable flashing skip prompt
-                soundManager.PlayerInputConfirmed();
+                tutorialTipsIndex++;
             }
         }
+        else if (tutorialTipsIndex == Exit)
+        {
+            if (wasEnemyEngaged == true)
+            {
+                Debug.Log("EXIT NOW!");
+                // TO DO Enable flashing skip prompt
+                levelTransition.FadeToNextLevel();
+            }
+        }
+    }
+
+    IEnumerator WaitForSeconds()
+    {
+        while (coroutineRunning == true)
+        {
+            yield return new WaitForSeconds(3.0f);
+            soundManager.ProximityWarning();
+            tutorialSpawnManager.SetActive(true);
+            yield return new WaitForSeconds(4.0f);
+
+            //onScreenProximityWarning.SetActive(false); << BUGGY!!! O_o
+        }
+
     }
 }
 

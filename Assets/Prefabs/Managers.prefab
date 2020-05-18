@@ -221,6 +221,7 @@ Transform:
   - {fileID: 7545472614570605681}
   - {fileID: 7545472615099513868}
   - {fileID: 7545472616500081376}
+  - {fileID: 807226594961377212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -267,8 +268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea02934a6af4c04aa2da3078c382b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 1.75
   spawnInterval: 1.25
+  startDelay: 1.75
   enemyPrefabs:
   - {fileID: 7249371538421419211, guid: c645a283b71a8814fbc23fd5b06a468d, type: 3}
   - {fileID: 3191066816298102909, guid: c758d0d855f9ec644a911bcd12c49914, type: 3}
@@ -330,6 +331,8 @@ MonoBehaviour:
   dangerWarning: {fileID: 8300000, guid: 47b2e2df8f1ef0f46bffb11cf84f60d8, type: 3}
   collectPowerUp: {fileID: 8300000, guid: bd4da289d6618df41bcc15a665ae2c4e, type: 3}
   shootLaserLv1: {fileID: 8300000, guid: 383fc8374d5606c4fa15556b21375472, type: 3}
+  confirmed: {fileID: 8300000, guid: e4a1ab6ea04f7a545914f98f04d7bd7d, type: 3}
+  proximityWarning: {fileID: 8300000, guid: 0b16dc8cdddb24b488db85a6e0e0df70, type: 3}
   enemyShipEngaged: {fileID: 8300000, guid: b761d8acf3ab9774c99b6dd19371daf9, type: 3}
   enemyShipDestroyed: {fileID: 8300000, guid: 3332342fca3e9ab459235aae90474273, type: 3}
   enemyHomingProjectile: {fileID: 8300000, guid: aa7475cfd65dcc74c878b5023cbd9017,
@@ -436,3 +439,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8385910733118795697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 807226594961377212}
+  - component: {fileID: 6634344126507434753}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &807226594961377212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385910733118795697}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 176.69997, y: -7.377318, z: -4.3987503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7545472615621776227}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6634344126507434753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385910733118795697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59496de2983b1bd4d827c68bce8c4a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialTips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  tutorialSpawnManager: {fileID: 0}
+  proximityWarning: {fileID: 0}
+  wasEnemyEngaged: 0

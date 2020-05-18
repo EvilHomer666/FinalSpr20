@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthValue: 1
   powerUpLocalSpeed: 3
-  scoreValue: 750
+  scoreValue: 100
   lifeBar: {fileID: 0}
 --- !u!1 &4760844904095616668
 GameObject:

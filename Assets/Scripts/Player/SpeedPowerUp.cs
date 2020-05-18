@@ -7,6 +7,7 @@ public class SpeedPowerUp : MonoBehaviour
     [SerializeField] float speedBoostValue;
     [SerializeField] float powerUpLocalSpeed;
     [SerializeField] int scoreValue;
+    private int speedDemonBonus = 3;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private PlayerController playerControllerSpeedBoost;
@@ -52,7 +53,7 @@ public class SpeedPowerUp : MonoBehaviour
             playerCollisions.playerCurrentHitPoints == playerCollisions.enginesLv1)
         {
             soundManager.PlayerCollectedPowerUp();
-            scoreManager.IncrementScore(scoreValue);
+            scoreManager.IncrementScore(scoreValue * speedDemonBonus);
             Destroy(gameObject);
             Debug.Log("Pick Up!");
         }
