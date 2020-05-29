@@ -17,16 +17,18 @@ public class TutorialManager : MonoBehaviour
     private LevelTransition levelTransition;
     private int tutorialTipsIndex;
     private bool hazardHpDestroyed;
-    private int playerTutorialSpeed = 20;
+    private bool coroutineRunning;
+    // Tutorial tips
     private int HowToMove = 0;
     private int HowToShot = 1;
     private int EngageEnemy = 2;
     private int PowerUps = 3;
     private int RecoverHealth = 4;
     private int Exit = 5;
+    // Tutorial tips end
     private int minScoretoContinue = 50;
     public bool wasEnemyEngaged;
-    private bool coroutineRunning;
+
 
 
     // Start is called before the first frame update
@@ -41,18 +43,13 @@ public class TutorialManager : MonoBehaviour
         blinkingText = FindObjectOfType<BlinkingText>();
         levelTransition = FindObjectOfType<LevelTransition>();
         playerController.canEngage = false;
-        playerController.hasSpeed = true;
-        hazardHpDestroyed = false;        
-        if (playerController.hasSpeed == true)
-        {
-            playerController.playerSpeed = playerTutorialSpeed;
-        }
+        hazardHpDestroyed = false;          
     }
 
     // Update is called once per frame
     void Update()
     {
-        // For loop to switch between tutorials
+        // For loop to switch between tutorial tips
         for (int i = 0; i < tutorialTips.Length; i++)
         {
             if (i == tutorialTipsIndex)
@@ -68,7 +65,7 @@ public class TutorialManager : MonoBehaviour
         // Start tutorial tips
         if (tutorialTipsIndex == HowToMove)
         {
-            // Display how to move tip - if player moves move onto how to fire
+            // Display how to move tip - if player moves, move onto how to fire
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
                 Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) // << That worked, thanks Michael! ^_^
@@ -81,9 +78,10 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
-                // Display how to shot tip - enemies will begin to spawn soon after
+                // Display how to shot tip - if player fires, move onto engage and evade
+                playerController.ProjectileLaunchCondition();
                 soundManager.PlayerInputConfirmed();
-                playerController.canEngage = true;
+                playerController.canEngage = true;              
                 tutorialTipsIndex++;
             }
         }
@@ -91,11 +89,10 @@ public class TutorialManager : MonoBehaviour
         {
             coroutineRunning = true;
             StartCoroutine("WaitForSeconds");          
-            coroutineRunning = false;
 
             if (scoreManager.score >= minScoretoContinue)
-            {                
-                // Display engage and evade to stay alive tip
+            {
+                // Display engage and evade to stay alive tip - if player is engaged, move onto power up tip
                 tutorialTipsIndex++;
             }
         }
@@ -110,7 +107,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if (tutorialTipsIndex == RecoverHealth)
         {
-            // Pick up health tip
+            // Pick up health tip - if player gets power up and regains health, move onto exit
             if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
             {
                 tutorialTipsIndex++;
@@ -121,8 +118,7 @@ public class TutorialManager : MonoBehaviour
             if (wasEnemyEngaged == true)
             {
                 Debug.Log("EXIT NOW!");
-                // TO DO Enable flashing skip prompt
-                levelTransition.FadeToNextLevel();
+                levelTransition.FadeToNextLevel(); // TO DO Add hyper speed animation 
             }
         }
     }
@@ -132,13 +128,14 @@ public class TutorialManager : MonoBehaviour
         while (coroutineRunning == true)
         {
             yield return new WaitForSeconds(3.0f);
+            onScreenProximityWarning.SetActive(true);
             soundManager.ProximityWarning();
             tutorialSpawnManager.SetActive(true);
-            yield return new WaitForSeconds(4.0f);
-
-            //onScreenProximityWarning.SetActive(false); << BUGGY!!! O_o
+            yield return new WaitForSeconds(3.77f);
+            onScreenProximityWarning.SetActive(false);
+            yield return new WaitForSeconds(0.25f);
         }
-
+        coroutineRunning = false;
     }
 }
 

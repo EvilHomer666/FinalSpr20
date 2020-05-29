@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public float playerSpeedCap = 25;
     public int speedReset = 10;
     public bool canEngage;
-    public bool hasSpeed;
 
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire against them
 
@@ -62,17 +61,22 @@ public class PlayerController : MonoBehaviour
 
         if (canEngage == true)
         {
-            // Projectile launch condition with for each element to read array
-            if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                foreach (var projectile in cannons)
-                {
-                    Instantiate(projectile, cannonSpawn.position, cannonSpawn.rotation);
-                }
-                soundManager.PlayerFireLaserLv1();
-            }
+            ProjectileLaunchCondition();
         }
 
+    }
+
+    public void ProjectileLaunchCondition()
+    {
+        // Projectile launch condition with for each element to read array
+        if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            foreach (var projectile in cannons)
+            {
+                Instantiate(projectile, cannonSpawn.position, cannonSpawn.rotation);
+            }
+            soundManager.PlayerFireLaserLv1();
+        }
     }
 
     // Update player speed method

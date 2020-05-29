@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     private string sceneName;
     private Scene activeScene;
     private LevelTransition levelTransition;
-    private float time = 120.0f;
+    private float time = 60.0f;
     public int score;
 
     // Start is called before the first frame update

@@ -416,15 +416,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2355640067312458466, guid: 927880ec605a39642845b1b6e1c08eff,
+    - target: {fileID: 1041046230107030438, guid: 927880ec605a39642845b1b6e1c08eff,
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355640067326552605, guid: 927880ec605a39642845b1b6e1c08eff,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Score: '
       objectReference: {fileID: 0}
     - target: {fileID: 2355640067680793119, guid: 927880ec605a39642845b1b6e1c08eff,
         type: 3}
@@ -546,38 +541,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 2355640068572456921, guid: 927880ec605a39642845b1b6e1c08eff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355640068572456922, guid: 927880ec605a39642845b1b6e1c08eff,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3984161782231419552, guid: 927880ec605a39642845b1b6e1c08eff,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902195373366047381, guid: 927880ec605a39642845b1b6e1c08eff,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436450403924026334, guid: 927880ec605a39642845b1b6e1c08eff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8436450403924026334, guid: 927880ec605a39642845b1b6e1c08eff,
-        type: 3}
-      propertyPath: m_TagString
-      value: ProximityWarning
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3984161782231419552, guid: 927880ec605a39642845b1b6e1c08eff, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927880ec605a39642845b1b6e1c08eff, type: 3}
 --- !u!1 &215666127
 GameObject:
@@ -1585,7 +1549,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onScreenProximityWarning
       value: 
-      objectReference: {fileID: 1824692107}
+      objectReference: {fileID: 1900542448}
     - target: {fileID: 7545472614570605680, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
       propertyPath: gameOverText
@@ -1847,6 +1811,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 201205982}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1824692109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824692107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8804b29a8802241a591a2b006e6e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1855350029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +1967,12 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1900542448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1041046230107030438, guid: 927880ec605a39642845b1b6e1c08eff,
+    type: 3}
+  m_PrefabInstance: {fileID: 201205982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068205271
 GameObject:
   m_ObjectHideFlags: 0

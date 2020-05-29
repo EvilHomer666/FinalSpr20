@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     private Animator flyInAnimation;
-    private float animationLapse = 1.0f;
+    private float flyInAnimationLapse = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class PlayerAnimations : MonoBehaviour
         while(true)
         {
             // Wait for a second before applying root motion to the player object
-            yield return new WaitForSeconds(animationLapse);
+            yield return new WaitForSeconds(flyInAnimationLapse);
             flyInAnimation.applyRootMotion = true;
         }
     }
