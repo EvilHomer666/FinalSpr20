@@ -131,7 +131,7 @@ public class TutorialManager : MonoBehaviour
             onScreenProximityWarning.SetActive(true);
             soundManager.ProximityWarning();
             tutorialSpawnManager.SetActive(true);
-            yield return new WaitForSeconds(3.77f);
+            yield return new WaitForSeconds(3.75f);
             onScreenProximityWarning.SetActive(false);
             yield return new WaitForSeconds(0.25f);
         }

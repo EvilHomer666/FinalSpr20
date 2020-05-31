@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(PauseTime());
     }
 
-    // Custom coroutine (THESE THINGS ARE AWESOME!!!!) method to allow player SFX to finish before pausing for game over screen. Will expand in future builds.
+    // Coroutine method to allow player SFX to finish before pausing for game over screen. Will expand in future builds.
     IEnumerator PauseTime()
     {
         yield return new WaitForSeconds(pauseDelay);
