@@ -17,7 +17,8 @@ public class EnemyProjectileImpact : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "EnemyShip" || other.gameObject.tag == "Hazard" || 
-            other.gameObject.tag == "HazardHP" || other.gameObject.tag == "HazardSP" || other.gameObject.tag == "Player")
+            other.gameObject.tag == "HazardHP" || other.gameObject.tag == "HazardSP" || 
+            other.gameObject.tag == "Player")
         {
             ImpactHit();
         }

@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] GameObject[] tutorialTips;  // << Array to store on-screen tips
     [SerializeField] GameObject tutorialSpawnManager;
     [SerializeField] GameObject onScreenProximityWarning;
+    private PlayerWeaponsController playerWeapons;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private PlayerController playerController;
@@ -42,6 +43,7 @@ public class TutorialManager : MonoBehaviour
         enemyEngaged = FindObjectOfType<DetectCollisions>();
         blinkingText = FindObjectOfType<BlinkingText>();
         levelTransition = FindObjectOfType<LevelTransition>();
+        playerWeapons = FindObjectOfType<PlayerWeaponsController>();
         playerController.canEngage = false;
         hazardHpDestroyed = false;          
     }
@@ -79,7 +81,7 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 // Display how to shot tip - if player fires, move onto engage and evade
-                playerController.ProjectileLaunchCondition();
+                playerWeapons.ProjectileLaunchCondition();
                 soundManager.PlayerInputConfirmed();
                 playerController.canEngage = true;              
                 tutorialTipsIndex++;

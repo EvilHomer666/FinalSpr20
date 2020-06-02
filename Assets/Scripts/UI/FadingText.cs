@@ -5,64 +5,24 @@ using UnityEngine.UI;
 
 public class FadingText : MonoBehaviour
 {
-    private Text fadingText;
-    private float waitTime = 1.5f;
+    // Variables for "typing" style fading text
+    private string currentText = "";
+    public string fullText; // Instead of entering text in the inspector text box
+    public float delay = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        fadingText = GetComponent<Text>();
-        StartCoroutine("FadeIn");
+        StartCoroutine(ShowText());
     }
 
-    // Custom methods for blinking text
-
-
-
-    //public void StartFadeIn()
-    //{
-    //    StopCoroutine("Fade");
-    //    StartCoroutine("Fade");
-    //}
-
-    //public void StartFadeOut()
-    //{
-    //    StopCoroutine("Fade");
-
-    //}
-
-    //IEnumerator Fade()
-    //{
-    //    while (true)
-    //    {
-    //        // Switch to turn on and off the RGB and alpha elements of the text making it "fade in"
-    //        switch (fadingText.color.a.ToString())
-    //        {
-    //            // Turn on
-    //            case "0":
-    //                fadingText.color = new Color(fadingText.color.r, fadingText.color.g, fadingText.color.b, 1);
-    //                yield return new WaitForSeconds(waitTime);
-    //                break;
-
-    //            // Turn off
-    //            case "1":
-    //                fadingText.color = new Color(fadingText.color.r, fadingText.color.g, fadingText.color.b, 0);
-    //                yield return new WaitForSeconds(waitTime);
-    //                break;
-    //        }
-    //    }
-    //}
-
-    IEnumerator FadeOut()
+    IEnumerator ShowText()
     {
-        fadingText.color = new Color(fadingText.color.r, fadingText.color.g, fadingText.color.b, 0);
-        yield return new WaitForSeconds(waitTime);
-    }
-    IEnumerator FadeIn()
-    {
-        yield return new WaitForSeconds(waitTime);
-        fadingText.color.a.ToString();
-        fadingText.color = new Color(fadingText.color.r, fadingText.color.g, fadingText.color.b, 1);
-
+        for (int i = 0; i < fullText.Length; i++)
+        {
+            currentText = fullText.Substring(0, i);
+            GetComponent<Text>().text = currentText;
+            yield return new WaitForSeconds(delay);
+        }
     }
 }

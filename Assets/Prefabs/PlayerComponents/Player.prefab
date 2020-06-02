@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7616816176136511947}
   - component: {fileID: 7616816176136511945}
   - component: {fileID: 7616816176136511990}
+  - component: {fileID: 4049745748431617614}
   - component: {fileID: 7616816176136511944}
   - component: {fileID: 1409242938}
   - component: {fileID: 1978186520}
@@ -177,18 +178,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b176fcee6d539c04c8c4fe33f55694ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonSpawn: {fileID: 7616816175232074090}
   xRange: 15.3
   yRange: 9.6
-  horizontalInput: 0
-  verticalInput: 0
   playerSpeed: 10
   playerSpeedCap: 25
   speedReset: 10
   canEngage: 1
-  hasSpeed: 0
-  cannons:
-  - {fileID: 1211848329386703990, guid: 5453b14486f3fac4eb817178dee34fbc, type: 3}
+--- !u!114 &4049745748431617614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915631703478282562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d8aecb8f6f3aa4bb88b71a77f694d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerProjectileLv1: {fileID: 1211848329386703950, guid: 5453b14486f3fac4eb817178dee34fbc,
+    type: 3}
+  playerProjectileLv2: {fileID: 4502333437135280059, guid: 107a0b02bd9638846bcb0c2162c16ea4,
+    type: 3}
+  fireRate: 0.25
+  cannons: []
 --- !u!114 &7616816176136511944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7616816175232074091}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.7, z: -9.94}
+  m_LocalPosition: {x: 0, y: 0.54, z: -9.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3228774419964517201}
@@ -453,6 +466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: TrailModule.dieWithParticles
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972188768554961958, guid: af3c2fdd3b8c64f449b110ec427a2521,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768568628550, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
@@ -598,6 +616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9115411991349058799, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
@@ -953,6 +976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 106614197396743792, guid: d4ff621dd26c22b4990b252ba8a721c3,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 106614197396774864, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}

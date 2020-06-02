@@ -5,36 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] Transform cannonSpawn;
     [SerializeField] float xRange = 15.4f;
     [SerializeField] float yRange = 9.3f;
-    private SoundManager soundManager;
-    public float horizontalInput;
-    public float verticalInput;
+    private PlayerWeaponsController playerWeapons;
+    private Rigidbody playerRigidBody;
+    private float horizontalInput;
+    private float verticalInput;
     public float playerSpeed;
     public float playerSpeedCap = 25;
     public int speedReset = 10;
     public bool canEngage;
 
-    // public bool polarityModifier; // << TO DO Add player ability to use enemy fire against them
-
-    // Weapons array
-    public Transform[] cannons;
-
     // Start is called before the first frame update
     void Start()
     {
-        GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
-        soundManager = soundManagerObject.GetComponent<SoundManager>();
+        playerWeapons = FindObjectOfType<PlayerWeaponsController>();
+        playerRigidBody = GetComponent<Rigidbody>();
         playerSpeed = 10;
-
-            //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Check for horizontal & vertical player movement boundaries
+        if (canEngage == true)
+        {
+            playerWeapons.ProjectileLaunchCondition();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // Check for horizontal & vertical player movement boundary
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -58,25 +58,6 @@ public class PlayerController : MonoBehaviour
 
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * playerSpeed);
-
-        if (canEngage == true)
-        {
-            ProjectileLaunchCondition();
-        }
-
-    }
-
-    public void ProjectileLaunchCondition()
-    {
-        // Projectile launch condition with for each element to read array
-        if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            foreach (var projectile in cannons)
-            {
-                Instantiate(projectile, cannonSpawn.position, cannonSpawn.rotation);
-            }
-            soundManager.PlayerFireLaserLv1();
-        }
     }
 
     // Update player speed method

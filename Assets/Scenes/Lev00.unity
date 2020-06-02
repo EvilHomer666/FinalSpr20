@@ -233,7 +233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -443, y: 244.3}
+  m_AnchoredPosition: {x: -443, y: 245.2}
   m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69026370
@@ -655,6 +655,7 @@ GameObject:
   - component: {fileID: 226886502}
   - component: {fileID: 226886504}
   - component: {fileID: 226886503}
+  - component: {fileID: 226886505}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -712,7 +713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hyperdrive engaged...
+  m_Text: Tutorial Complete
 --- !u!222 &226886504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -721,6 +722,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226886501}
   m_CullTransparentMesh: 0
+--- !u!114 &226886505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226886501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8804b29a8802241a591a2b006e6e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &346994680
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +957,7 @@ GameObject:
   - component: {fileID: 1217192028}
   - component: {fileID: 1217192030}
   - component: {fileID: 1217192029}
+  - component: {fileID: 1217192031}
   m_Layer: 5
   m_Name: Engage
   m_TagString: Untagged
@@ -990,18 +1004,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06dbd5528c64bae41b7e7f9691cd42a0, type: 3}
-    m_FontSize: 180
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 180
+    m_MinSize: 12
+    m_MaxSize: 12
     m_Alignment: 0
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Evade and engage enemies to stay alive
+  m_Text: 
 --- !u!222 &1217192030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1010,6 +1024,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217192027}
   m_CullTransparentMesh: 0
+--- !u!114 &1217192031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217192027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.025
+  fullText: Evade and engage enemies to stay alive.
 --- !u!1 &1261234504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1049,7 @@ GameObject:
   - component: {fileID: 1261234505}
   - component: {fileID: 1261234507}
   - component: {fileID: 1261234506}
+  - component: {fileID: 1261234508}
   m_Layer: 5
   m_Name: CollectPowerUps
   m_TagString: Untagged
@@ -1067,18 +1096,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06dbd5528c64bae41b7e7f9691cd42a0, type: 3}
-    m_FontSize: 180
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 180
+    m_MinSize: 12
+    m_MaxSize: 12
     m_Alignment: 0
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Collect energy to get your shields up
+  m_Text: 
 --- !u!222 &1261234507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1087,6 +1116,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261234504}
   m_CullTransparentMesh: 0
+--- !u!114 &1261234508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261234504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.025
+  fullText: Collect energy to get your shields up.
 --- !u!1001 &1288900180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2106,18 +2149,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06dbd5528c64bae41b7e7f9691cd42a0, type: 3}
-    m_FontSize: 180
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 180
+    m_MinSize: 12
+    m_MaxSize: 12
     m_Alignment: 0
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Some enemies drop powerups when they are destroyed
+  m_Text: 
 --- !u!224 &631547301543731525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2354,18 +2397,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06dbd5528c64bae41b7e7f9691cd42a0, type: 3}
-    m_FontSize: 125
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 125
+    m_MinSize: 12
+    m_MaxSize: 12
     m_Alignment: 0
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Move by pressing the WASD or arrow keys
+  m_Text: 
 --- !u!222 &2155169266249952105
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2385,6 +2428,7 @@ GameObject:
   - component: {fileID: 2155169266249952119}
   - component: {fileID: 2155169266249952105}
   - component: {fileID: 2155169266249952104}
+  - component: {fileID: 2155169266249952120}
   m_Layer: 5
   m_Name: Movement
   m_TagString: Untagged
@@ -2411,6 +2455,20 @@ RectTransform:
   m_AnchoredPosition: {x: -347, y: -48.000015}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2155169266249952120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155169266249952118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.025
+  fullText: Move by pressing the WASD or arrow keys.
 --- !u!1 &3228981241562287703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2480,7 @@ GameObject:
   - component: {fileID: 8712430754888217427}
   - component: {fileID: 4177578341444629963}
   - component: {fileID: 204756149610315467}
+  - component: {fileID: 3228981241562287704}
   m_Layer: 5
   m_Name: PowerUps
   m_TagString: Untagged
@@ -2429,6 +2488,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &3228981241562287704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228981241562287703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.025
+  fullText: Some enemies drop powerups when they are destroyed.
 --- !u!222 &4177578341444629963
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2523,18 +2596,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 06dbd5528c64bae41b7e7f9691cd42a0, type: 3}
-    m_FontSize: 180
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 180
+    m_MinSize: 12
+    m_MaxSize: 12
     m_Alignment: 0
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Fire by pressing the space or the left mouse button
+  m_Text: 
 --- !u!1 &6485205465296952249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2619,7 @@ GameObject:
   - component: {fileID: 631547301543731525}
   - component: {fileID: 8549507327011742312}
   - component: {fileID: 5859862070556253484}
+  - component: {fileID: 6485205465296952250}
   m_Layer: 5
   m_Name: FireWeapon
   m_TagString: Untagged
@@ -2553,6 +2627,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &6485205465296952250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6485205465296952249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.025
+  fullText: Fire by pressing the space or the left mouse button.
 --- !u!1001 &7616816175292147369
 PrefabInstance:
   m_ObjectHideFlags: 0
