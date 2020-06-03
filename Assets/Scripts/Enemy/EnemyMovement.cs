@@ -8,10 +8,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject engine;
     [SerializeField] GameObject extraFx;
     [SerializeField] float enemySpeed;
+    private Rigidbody rigidBody;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        transform.Translate(Vector3.back * Time.deltaTime * enemySpeed);
+        rigidBody = GetComponent<Rigidbody>();
+        rigidBody.velocity = -transform.forward * enemySpeed;
     }
 }

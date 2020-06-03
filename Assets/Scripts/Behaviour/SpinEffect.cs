@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SpinEffect : MonoBehaviour
 {
-    [SerializeField] int spinSpeed;
+    [SerializeField] float spinSpeed;
+    private Rigidbody rigidBody;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        transform.Rotate(Vector3.forward, Random.Range(20.0f, 60.0f) * spinSpeed * Time.deltaTime);
+        rigidBody = GetComponent<Rigidbody>();
+        rigidBody.angularVelocity = Random.insideUnitSphere * spinSpeed;
     }
 }
