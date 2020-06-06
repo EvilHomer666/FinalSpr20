@@ -47,6 +47,7 @@ public class TutorialManager : MonoBehaviour
         blinkingText = FindObjectOfType<BlinkingText>();
         levelTransition = FindObjectOfType<LevelTransition>();
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
+        tutorialTipsIndex = 0;
         hazardHpDestroyed = false;
         dangerWarning = false;
         wasEnemyEngaged = false; // << change to min number of enemies destroyed
