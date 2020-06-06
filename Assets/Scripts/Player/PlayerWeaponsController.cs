@@ -20,8 +20,9 @@ public class PlayerWeaponsController : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         canFire = true;
-    //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
-}
+
+        //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
+    }
 
     public void ProjectileLaunchCondition()
     {
@@ -40,7 +41,7 @@ public class PlayerWeaponsController : MonoBehaviour
 
     private void FireCondition()
     {
-        // Projectile launch condition with for each element to read array
+        // Projectile launch condition with for each element to read array - REPEATING 
         if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             foreach (var projectile in cannons)

@@ -1036,8 +1036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.025
   fullText: Evade and engage enemies to stay alive.
+  delay: 0.025
 --- !u!1 &1261234504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,8 +1128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.025
   fullText: Collect energy to get your shields up.
+  delay: 0.025
 --- !u!1001 &1288900180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2026,6 +2026,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 201205982}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2002527047 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7616816175232074090, guid: ce5478765c4791543b404667261322d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7616816175292147369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068205271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,8 +2473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.025
   fullText: Move by pressing the WASD or arrow keys.
+  delay: 0.025
 --- !u!1 &3228981241562287703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,8 +2506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.025
   fullText: Some enemies drop powerups when they are destroyed.
+  delay: 0.025
 --- !u!222 &4177578341444629963
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2639,8 +2645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.025
   fullText: Fire by pressing the space or the left mouse button.
+  delay: 0.025
 --- !u!1001 &7616816175292147369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2708,6 +2714,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4049745748431617614, guid: ce5478765c4791543b404667261322d8,
+        type: 3}
+      propertyPath: cannons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049745748431617614, guid: ce5478765c4791543b404667261322d8,
+        type: 3}
+      propertyPath: cooldownTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049745748431617614, guid: ce5478765c4791543b404667261322d8,
+        type: 3}
+      propertyPath: cannons.Array.data[0]
+      value: 
+      objectReference: {fileID: 2002527047}
     - target: {fileID: 7616816176136511944, guid: ce5478765c4791543b404667261322d8,
         type: 3}
       propertyPath: lifeBar
@@ -2716,6 +2737,11 @@ PrefabInstance:
     - target: {fileID: 7616816176136511990, guid: ce5478765c4791543b404667261322d8,
         type: 3}
       propertyPath: hasSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616816176136511990, guid: ce5478765c4791543b404667261322d8,
+        type: 3}
+      propertyPath: canEngage
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

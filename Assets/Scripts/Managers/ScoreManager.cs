@@ -26,16 +26,16 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    //void Update()
-    //{
-    //    // Update timer in real time to text
-    //    time -= Time.deltaTime;
-    //    timerText.text = $"Contact in minus: {time.ToString("n2")}";
-    //    if (time <=0)
-    //    {
-    //        levelTransition.FadeToNextLevel();
-    //    }
-    //}
+    void Update()
+    {
+        // Update timer in real time to text
+        time -= Time.deltaTime;
+        timerText.text = $"Contact in minus: {time.ToString("n2")}";
+        if (time <= 0)
+        {
+            levelTransition.FadeToNextLevel();
+        }
+    }
 
     // Add score value and update text
     public void IncrementScore(int updatedScore)

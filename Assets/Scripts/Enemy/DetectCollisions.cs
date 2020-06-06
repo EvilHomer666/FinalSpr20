@@ -86,11 +86,11 @@ public class DetectCollisions : MonoBehaviour
 
             if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
             {
-                TutorialModeCheck();
                 soundManager.LargeAsteroidHit();
             }
             if (enemyHitPoints <= 0 && holdsPowerUp == true)
             {
+                TutorialModeCheck();
                 Instantiate(onDestroyExplosion, transform.position, transform.rotation);
                 GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
                 soundManager.LargeAsteroidDestroyed();
