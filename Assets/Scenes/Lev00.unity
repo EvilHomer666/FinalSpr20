@@ -551,7 +551,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1085949250, guid: 927880ec605a39642845b1b6e1c08eff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 927880ec605a39642845b1b6e1c08eff, type: 3}
 --- !u!1 &215666127
 GameObject:
@@ -1128,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: Collect energy to get your shields up.
+  fullText: Collect this energy to get your shields up before the timer runs out.
   delay: 0.025
 --- !u!1001 &1288900180
 PrefabInstance:
@@ -2506,7 +2507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: Some enemies drop powerups when they are destroyed.
+  fullText: Some enemies drop energy when they are destroyed.
   delay: 0.025
 --- !u!222 &4177578341444629963
 CanvasRenderer:

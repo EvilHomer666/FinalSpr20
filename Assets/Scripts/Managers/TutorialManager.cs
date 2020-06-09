@@ -19,9 +19,7 @@ public class TutorialManager : MonoBehaviour
     private int tutorialTipsIndex;
     private bool hazardHpDestroyed;
     private bool dangerWarning;
-    private bool tutorialPause;
-    private bool timerPause;
-    private float time = 0.0f;
+    private bool isPaused;
     // Tutorial tips variables start
     private int HowToMove = 0;
     private int HowToShot = 1;
@@ -32,8 +30,6 @@ public class TutorialManager : MonoBehaviour
     // Tutorial tips variables end
     private int minScoretoContinue = 50;
     public bool wasEnemyEngaged;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -47,16 +43,19 @@ public class TutorialManager : MonoBehaviour
         blinkingText = FindObjectOfType<BlinkingText>();
         levelTransition = FindObjectOfType<LevelTransition>();
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
-        tutorialTipsIndex = 0;
         hazardHpDestroyed = false;
         dangerWarning = false;
-        wasEnemyEngaged = false; // << change to min number of enemies destroyed
-        timerPause = false;
+        wasEnemyEngaged = false; // << TO DO change to min number of enemies destroyed
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isPaused == true)
+        {
+            return;
+        }
         // For loop to switch between tutorial tips
         for (int i = 0; i < tutorialTips.Length; i++)
         {
@@ -78,8 +77,8 @@ public class TutorialManager : MonoBehaviour
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
                 Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
-                timerPause = true;
                 StartCoroutine(timePause());
+                tutorialTipsIndex++;
             }
         }
 
@@ -93,8 +92,8 @@ public class TutorialManager : MonoBehaviour
                 dangerWarning = true;
                 StartCoroutine(ProximityWarning());
 
-                timerPause = true;
                 StartCoroutine(timePause());
+                tutorialTipsIndex++;
             }
         }
 
@@ -106,8 +105,8 @@ public class TutorialManager : MonoBehaviour
 
             if (scoreManager.score > minScoretoContinue)
             {
-                timerPause = true;
                 StartCoroutine(timePause());
+                tutorialTipsIndex++;
             }
         }
 
@@ -116,8 +115,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (wasEnemyEngaged == true)
             {
-                timerPause = true;
                 StartCoroutine(timePause());
+                tutorialTipsIndex++;
             }
         }
 
@@ -126,8 +125,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
             {
-                timerPause = true;
                 StartCoroutine(timePause());
+
             }
         }
         else if (tutorialTipsIndex == Exit)
@@ -156,17 +155,13 @@ public class TutorialManager : MonoBehaviour
 
     IEnumerator timePause()
     {
-        if (timerPause == true)
-        {
+        
+        //while (isPaused == true)
+        //{
+            isPaused = true;
             yield return new WaitForSeconds(3.0f);
-            NextTip();
-        }
-    }
-
-    private void NextTip()
-    {
-        tutorialTipsIndex++;
-        timerPause = false;
+            isPaused = false;
+        //}
     }
 }
 
