@@ -54,10 +54,12 @@ public class PlayerController : MonoBehaviour
 
         // Player input movement
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.back * horizontalInput * Time.deltaTime * playerSpeed);
+        transform.Translate(Vector3.back * -horizontalInput * Time.deltaTime * playerSpeed);
+        transform.rotation = Quaternion.Euler(0, 90, Input.GetAxis("Horizontal") * 30);
 
         verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * playerSpeed);
+        transform.rotation = Quaternion.Euler(0, 90, Input.GetAxis("Vertical") * 30);
     }
 
     // Update player speed method

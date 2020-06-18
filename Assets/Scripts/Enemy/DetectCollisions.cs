@@ -59,47 +59,35 @@ public class DetectCollisions : MonoBehaviour
             {
                 soundManager.EnemyShipEngaged();
             }
+
+            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+            {
+                soundManager.LargeAsteroidHit();                    
+            }
+
             if (enemyHitPoints <= 0)
             {
                 Instantiate(onDestroyExplosion, transform.position, transform.rotation);
                 GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                soundManager.EnemyShipDestroyed();
+                if (gameObject.tag == "EnemyShip")
+                {
+                    soundManager.EnemyShipDestroyed();
+                }
+                if (gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+                {
+                    soundManager.LargeAsteroidDestroyed();
+                }
+                if (holdsPowerUp == true)
+                {
+                    TutorialModeCheck();
+                    Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
+                }
                 scoreManager.IncrementScore(scoreValue);
-                Destroy(gameObject);
-                Debug.Log("Target Destroyed!");
-
-            }
-
-            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard")
-            {
-                soundManager.LargeAsteroidHit();
-            }
-            if (enemyHitPoints <= 0)
-            {
-                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                soundManager.LargeAsteroidDestroyed();
-                scoreManager.IncrementScore(scoreValue);
-                Destroy(gameObject);
-                Debug.Log("Target Destroyed!");
-            }
-
-            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
-            {
-                soundManager.LargeAsteroidHit();
-            }
-            if (enemyHitPoints <= 0 && holdsPowerUp == true)
-            {
-                TutorialModeCheck();
-                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                soundManager.LargeAsteroidDestroyed();
-                scoreManager.IncrementScore(scoreValue);
-                Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
                 Destroy(gameObject);
                 Debug.Log("Target Destroyed!");
             }
         }
+        
 
 
         // Enemy friendly fire
@@ -127,7 +115,6 @@ public class DetectCollisions : MonoBehaviour
                 soundManager.EnemyShipDestroyed();
                 Destroy(gameObject);
                 Debug.Log("Enemy Destroyed!");
-
             }
 
             if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
@@ -145,7 +132,6 @@ public class DetectCollisions : MonoBehaviour
             }
         }
     }
-
     // Tutorial scene check
     private void TutorialModeCheck()
     {

@@ -188,7 +188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  timerText: {fileID: 0}
   score: 0
 --- !u!1 &7545472615621776228
 GameObject:
@@ -488,5 +487,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   tutorialSpawnManager: {fileID: 0}
-  proximityWarning: {fileID: 0}
+  onScreenProximityWarning: {fileID: 0}
   wasEnemyEngaged: 0

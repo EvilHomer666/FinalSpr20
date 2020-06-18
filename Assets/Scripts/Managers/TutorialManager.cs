@@ -13,8 +13,6 @@ public class TutorialManager : MonoBehaviour
     private SoundManager soundManager;
     private PlayerController playerController;
     private DetectPlayerCollisions playerHitPoints;
-    private DetectCollisions enemyEngaged;
-    private BlinkingText blinkingText;
     private LevelTransition levelTransition;
     private int tutorialTipsIndex;
     private bool hazardHpDestroyed;
@@ -26,7 +24,6 @@ public class TutorialManager : MonoBehaviour
     private int EngageEnemy = 2;
     private int PowerUps = 3;
     private int RecoverHealth = 4;
-    private int Exit = 5;
     // Tutorial tips variables end
     private int minScoretoContinue = 50;
     public bool wasEnemyEngaged;
@@ -39,13 +36,11 @@ public class TutorialManager : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
         playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();
         scoreManager = FindObjectOfType<ScoreManager>();
-        enemyEngaged = FindObjectOfType<DetectCollisions>();
-        blinkingText = FindObjectOfType<BlinkingText>();
         levelTransition = FindObjectOfType<LevelTransition>();
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
         hazardHpDestroyed = false;
         dangerWarning = false;
-        wasEnemyEngaged = false; // << TO DO change to min number of enemies destroyed
+        wasEnemyEngaged = false;
         
     }
 
@@ -85,7 +80,8 @@ public class TutorialManager : MonoBehaviour
         // Display HOW TO SHOOT tip - if player fires, move onto engage and evade
         else if (tutorialTipsIndex == HowToShot)
         {            
-            if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
+                Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 playerWeapons.ProjectileLaunchCondition();
                 playerController.canEngage = true;
@@ -126,25 +122,17 @@ public class TutorialManager : MonoBehaviour
             if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
             {
                 StartCoroutine(timePause());
-
-            }
-        }
-        else if (tutorialTipsIndex == Exit)
-        {
-            if (wasEnemyEngaged == true)
-            {
-                Debug.Log("EXIT NOW!");
                 StopCoroutine(timePause());
                 levelTransition.FadeToNextLevel(); // TO DO Add hyper speed animation 
             }
-        }
+        }       
     }
 
     IEnumerator ProximityWarning()
     {
         while (dangerWarning == true)
         {
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(6.0f);
             onScreenProximityWarning.SetActive(true);
             soundManager.ProximityWarning();
             tutorialSpawnManager.SetActive(true);
@@ -154,14 +142,10 @@ public class TutorialManager : MonoBehaviour
     }
 
     IEnumerator timePause()
-    {
-        
-        //while (isPaused == true)
-        //{
+    {       
             isPaused = true;
             yield return new WaitForSeconds(3.0f);
             isPaused = false;
-        //}
     }
 }
 
