@@ -12,7 +12,7 @@ public class HealthPowerUp : MonoBehaviour
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;
-    public LifeBar lifeBar;
+    private LifeBar lifeBar;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class HealthPowerUp : MonoBehaviour
         transform.Translate(Vector3.left * Time.deltaTime * powerUpLocalSpeed);
     }
 
-    // On trigger enter function over-ride - Destroy power up on collision player NOTE TO SELF: None of this will work without colliders set to trigger - must revise, it's buggy.
+    // On trigger enter function over-ride - Destroy power up on collision player NOTE TO SELF: None of this will work without colliders set to trigger.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && playerCollisions.playerCurrentHitPoints < playerCollisions.playerMaxHitPoints)

@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5632951393555039038}
+  - component: {fileID: 2328367668028950901}
   - component: {fileID: 5970027234987621030}
   - component: {fileID: 8028794597042116205}
   - component: {fileID: 1157102337816082624}
@@ -21,25 +21,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &5632951393555039038
-RectTransform:
+--- !u!4 &2328367668028950901
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144102959616929183}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.2}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 862607364384198980}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5970027234987621030
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -105,8 +100,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.4302497
-  m_Center: {x: 4.9999986, y: 0.59999907, z: 4.9999957}
+  m_Radius: 4.5538006
+  m_Center: {x: 5.0655975, y: 2.9216386e-14, z: 5.0244174}
 --- !u!114 &8779967893241417285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +117,6 @@ MonoBehaviour:
   healthValue: 1
   powerUpLocalSpeed: 3
   scoreValue: 100
-  lifeBar: {fileID: 0}
 --- !u!1 &4760844904095616668
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +126,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 862607364384198980}
-  - component: {fileID: 975595444117842433}
   m_Layer: 0
   m_Name: HealthPowerUp
   m_TagString: Health
@@ -147,24 +140,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4760844904095616668}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
-  - {fileID: 5632951393555039038}
+  - {fileID: 2328367668028950901}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!135 &975595444117842433
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4760844904095616668}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.5478628
-  m_Center: {x: 3.472567, y: -5.902601e-14, z: -5.7209897}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

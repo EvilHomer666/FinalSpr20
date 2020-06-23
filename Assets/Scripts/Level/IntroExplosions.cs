@@ -5,7 +5,7 @@ using UnityEngine;
 public class IntroExplosions : MonoBehaviour
 { 
     private float spawnPosX = 15.0f;
-    private float spawnPosXx = 5.0f;
+    private float spawnPosXx = 7.0f;
     private float spawnRangeY = 8.0f;
     private float spawnPosZ = 0.0f;
     public float spawnInterval = 1.25f;

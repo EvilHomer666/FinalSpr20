@@ -40,8 +40,7 @@ public class TutorialManager : MonoBehaviour
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
         hazardHpDestroyed = false;
         dangerWarning = false;
-        wasEnemyEngaged = false;
-        
+        wasEnemyEngaged = false;        
     }
 
     // Update is called once per frame

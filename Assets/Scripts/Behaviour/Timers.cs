@@ -20,7 +20,6 @@ public class Timers : MonoBehaviour
         levelTransition = FindObjectOfType<LevelTransition>();
         activeScene = SceneManager.GetActiveScene();
         sceneName = activeScene.name;
-
     }
 
     void Update()
