@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 3154206371285850582}
   - component: {fileID: 3154206371285850587}
   - component: {fileID: 3154206371285850586}
+  - component: {fileID: 442685635}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -408,6 +409,22 @@ MonoBehaviour:
   playerSpeedCap: 25
   speedReset: 10
   canEngage: 1
+--- !u!54 &442685635
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405263183748241372}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &3154206371303390852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -475,11 +492,6 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9115411991349058797, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,11 +501,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115411991349058797, guid: 9da2063da6e41c84ebf9a0087f6127e1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9115411991349058799, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
@@ -689,11 +696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: TrailModule.dieWithParticles
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6972188768554961958, guid: af3c2fdd3b8c64f449b110ec427a2521,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768568628550, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
@@ -1089,11 +1091,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 106614197396743792, guid: d4ff621dd26c22b4990b252ba8a721c3,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 106614197396774864, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
