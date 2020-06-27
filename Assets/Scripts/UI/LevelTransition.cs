@@ -38,6 +38,7 @@ public class LevelTransition : MonoBehaviour
         }
     }
 
+
     // Method to manually Fade out on trigger from last level back to first
     public void LevelLoop()
     {

@@ -44,9 +44,8 @@ public class Timers : MonoBehaviour
         // Hyper Jump Countdown
         time -= Time.deltaTime;
         timerText.text = $"Time to Hyper Jump: {time.ToString("n2")}";
-        if (time <= 1)
+        if (time <= 0)
         {
-            // Transition out of tutorial on timer end
             levelTransition.FadeToNextLevel();
         }
     }
