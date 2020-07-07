@@ -34,7 +34,6 @@ TagManager:
   - ImpactSpawn
   - ImpactExplosion
   - ProximityWarning
-  - CannonFlash
   layers:
   - Default
   - TransparentFX
@@ -44,7 +43,7 @@ TagManager:
   - UI
   - 
   - 
-  - BulletsLayer
+  - Post-Processing
   - 
   - 
   - 

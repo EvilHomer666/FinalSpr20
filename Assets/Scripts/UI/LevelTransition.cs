@@ -9,7 +9,7 @@ public class LevelTransition : MonoBehaviour
     public Animator transitionAnimator;
 
     /* Custom functions to fade in and out between levels -
-       Method to run the Fade in animation on level start  - sometimes buggy*/
+       Method to run the Fade in animation on level start */
     public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;

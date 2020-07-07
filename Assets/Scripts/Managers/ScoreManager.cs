@@ -26,6 +26,6 @@ public class ScoreManager : MonoBehaviour
     // Update score text method
     public void UpdateScoreText()
     {
-        scoreText.text = $"{score}";
+        scoreText.text = $"Score: {score}";
     }
 }

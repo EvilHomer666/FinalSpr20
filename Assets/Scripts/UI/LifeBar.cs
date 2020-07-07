@@ -17,4 +17,5 @@ public class LifeBar : MonoBehaviour
     {
         slider.value = life;
     }
+
 }
