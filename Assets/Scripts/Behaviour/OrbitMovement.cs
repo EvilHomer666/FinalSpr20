@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrbitMovement : MonoBehaviour
 {
-    // Enemy speed
+    // Background battle enemy speed
     [SerializeField] float orbitSpeed;
     private Rigidbody rigidBody;
 

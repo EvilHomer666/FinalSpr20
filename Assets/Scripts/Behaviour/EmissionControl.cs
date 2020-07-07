@@ -15,7 +15,7 @@ public class EmissionControl : MonoBehaviour
 
     void Update()
     {
-        if (time >= 3.0f)
+        if (time >= 2.0f)
         {
             emitting = !emitting;
             if (emitting)

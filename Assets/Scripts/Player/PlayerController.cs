@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float yRange = 9.3f;
     private float horizontalInput;
     private float verticalInput;
-    private float tilt = 25.0f;
+    private float tilt = 30.0f;
     public float playerSpeed;
     public float playerSpeedCap = 25;
     public int speedReset = 10;

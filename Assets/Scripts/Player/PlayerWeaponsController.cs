@@ -7,11 +7,13 @@ public class PlayerWeaponsController : MonoBehaviour
     [SerializeField] GameObject playerProjectileLv1;
     [SerializeField] GameObject playerProjectileLv2;
     [SerializeField] float cooldownTime;
+    private Rigidbody rigidBody;
     private bool canFire;
     private SoundManager soundManager;
-    // Cannons array
-    public Transform[] cannons;
-
+    // Cannon arrays
+    public Transform[] cannonsFront;
+    public Transform[] cannonsLateral;
+    
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire 
 
     // Start is called before the first frame update
@@ -41,15 +43,26 @@ public class PlayerWeaponsController : MonoBehaviour
 
     private void FireCondition()
     {
-        // Projectile launch condition with for each element to read array - REPEATING 
+        // Projectile launch condition with for each element to read array - Front cannons 
         if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
-            foreach (var projectile in cannons)
+            foreach (var projectile in cannonsFront)
             {
                 Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
             }
             soundManager.PlayerFireLaserLv1();
         }
+
+        // Projectile launch condition with for each element to read array - Lateral cannons 
+        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            foreach (var projectile in cannonsLateral)
+            {
+                Instantiate(playerProjectileLv2, projectile.position, projectile.rotation);
+            }
+            soundManager.PlayerFireLaserLv1();
+        }
+
         //if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) && Time.time > 3.0f)
         //{
 
