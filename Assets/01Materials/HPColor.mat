@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: HPColor
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: EFFECT_BUMP _ALPHAPREMULTIPLY_ON _EMISSION
+  m_ShaderKeywords: EFFECT_BUMP _ALPHAPREMULTIPLY_ON _EMISSION _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -74,10 +74,10 @@ Material:
     - _EmissionEnabled: 0
     - _FlipbookMode: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.693
-    - _GlossyReflections: 1
+    - _Glossiness: 0.835
+    - _GlossyReflections: 0
     - _LightingEnabled: 0
-    - _Metallic: 0.147
+    - _Metallic: 0.286
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -91,7 +91,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.14117648, g: 0.9137255, b: 0.67516494, a: 1}
+    - _Color: {r: 0.017799927, g: 0.754717, b: 0.42026418, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0.06666667, g: 0.34901962, b: 0.24313726, a: 1}
+    - _EmissionColor: {r: 0, g: 95.87451, b: 67.76471, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
