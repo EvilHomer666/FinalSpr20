@@ -7,16 +7,14 @@ public class PercentageCalc : MonoBehaviour
 {
     private Text percetageText;
 
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called before Update and the first frame update
+    void Awake()
     {
         percetageText = GetComponent<Text>();
     }
 
-public void textUpdate(float value)
+    public void textUpdate(float value)
     {
-        //percetageText.text = Mathf.RoundToInt(value * 50) + "%";
-
         percetageText.text = $"Shields: {Mathf.RoundToInt(value * 25) + "%"}";
     }
 }
