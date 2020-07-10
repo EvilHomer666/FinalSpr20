@@ -7,7 +7,7 @@ public class SpeedPowerUp : MonoBehaviour
     [SerializeField] float speedBoostValue;
     [SerializeField] float powerUpLocalSpeed;
     [SerializeField] int scoreValue;
-    private int speedDemonBonus = 3;
+    private int speedDemonBonus = 5;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private PlayerController playerControllerSpeedBoost;

@@ -8,7 +8,7 @@ public class DetectCollisions : MonoBehaviour
     [SerializeField] int scoreValue;
     [SerializeField] float enemyHitPoints;
     [SerializeField] bool holdsPowerUp;
-    [SerializeField] GameObject powerUpDrop;
+   // [SerializeField] GameObject powerUpDrop;
     [SerializeField] Transform powerUpSpawn;
     [SerializeField] GameObject onDestroyExplosion;
     [SerializeField] GameObject impactExplosion;
@@ -20,6 +20,9 @@ public class DetectCollisions : MonoBehaviour
     private float minimumDamage = 1f;
     private float collateralDamage = 0.5f;
     private string sceneName;
+
+    // Spawn manager array for powerup prefabs
+    public GameObject[] powerUpPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +83,11 @@ public class DetectCollisions : MonoBehaviour
                 if (holdsPowerUp == true)
                 {
                     TutorialModeCheck();
-                    Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
+                   // Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
+
+                    int powerUpIndex = Random.Range(0, powerUpPrefabs.Length);
+                    Instantiate(powerUpPrefabs[powerUpIndex], powerUpSpawn.position, powerUpPrefabs[powerUpIndex].transform.rotation);
+
                 }
                 scoreManager.IncrementScore(scoreValue);
                 Destroy(gameObject);

@@ -8,7 +8,7 @@ public class HealthPowerUp : MonoBehaviour
     [SerializeField] int healthValue;
     [SerializeField] float powerUpLocalSpeed;
     [SerializeField] int scoreValue;
-    private int survivorBonus = 3;
+    private int survivorBonus = 7;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;

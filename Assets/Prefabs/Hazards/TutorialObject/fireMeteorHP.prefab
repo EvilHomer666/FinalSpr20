@@ -60,7 +60,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3519990523129326327}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
@@ -69,7 +69,7 @@ Transform:
   - {fileID: 1218773236393772129}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &8924405878283870930
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -159,13 +159,16 @@ MonoBehaviour:
   scoreValue: 150
   enemyHitPoints: 1
   holdsPowerUp: 1
-  powerUpDrop: {fileID: 7740250537136289177, guid: f64cf27a3c0aee14aabd03042f00f694,
-    type: 3}
   powerUpSpawn: {fileID: 4564138543477295449}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
   impactExplosion: {fileID: 5879626478361469977, guid: fa8e411afb828874695ac9d873ac9444,
     type: 3}
+  powerUpPrefabs:
+  - {fileID: 361044688055882194, guid: b0a60a448c9ba0645ab515b2216171be, type: 3}
+  - {fileID: 6804282791039596158, guid: bd6c136b334554345898841e5e721b26, type: 3}
+  - {fileID: 5809500027139407859, guid: ebcabfbc114c4d5409f927cbfa11c6e2, type: 3}
+  - {fileID: 7740250537136289177, guid: f64cf27a3c0aee14aabd03042f00f694, type: 3}
 --- !u!54 &5908061017632850491
 Rigidbody:
   m_ObjectHideFlags: 0
