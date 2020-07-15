@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private float tilt = 25.0f;
     public float playerSpeed;
     public float playerSpeedCap = 25;
-    public int speedReset = 10;
+    public float speedReset = 10;
     public bool canEngage;
 
     // Start is called before the first frame update

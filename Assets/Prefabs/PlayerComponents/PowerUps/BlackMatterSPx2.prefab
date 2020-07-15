@@ -228,8 +228,8 @@ GameObject:
   - component: {fileID: 7492616344505662480}
   - component: {fileID: 7492616344505662481}
   - component: {fileID: 7492616344505662478}
-  - component: {fileID: 7492616344505662482}
   - component: {fileID: 9171506619845869632}
+  - component: {fileID: -6769947843951014709}
   m_Layer: 0
   m_Name: BlackMatterSPx2
   m_TagString: Health
@@ -312,21 +312,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7492616344505662482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7492616344505662479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a9dc3aaa855a34a82cafea7ffadd86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthValue: 2
-  powerUpLocalSpeed: 4
-  scoreValue: 200
 --- !u!54 &9171506619845869632
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -343,3 +328,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6769947843951014709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492616344505662479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5291f1b11b474946989d5603e0b885d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBoostValue: 10
+  powerUpLocalSpeed: 4
+  scoreValue: 200

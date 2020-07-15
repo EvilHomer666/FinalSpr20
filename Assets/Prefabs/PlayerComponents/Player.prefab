@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 3154206371285850582}
   - component: {fileID: 3154206371285850587}
   - component: {fileID: 3154206371285850586}
+  - component: {fileID: 1208473821}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -501,6 +502,26 @@ MonoBehaviour:
   playerSpeedCap: 25
   speedReset: 10
   canEngage: 1
+--- !u!114 &1208473821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405263183748241372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec9d8d57e63c1846a47453e67214cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speeds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullSpeedLevel: {fileID: 21300000, guid: 0083b8da8c9ed4f41bf7d1bce8210c91, type: 3}
+  emptySpeedLevel: {fileID: 21300000, guid: f7e27e672ed3c424387bde0979d910ab, type: 3}
+  numberOfSpeeds: 3
+  speedLv: 0
 --- !u!1001 &3154206371303390852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -566,7 +587,7 @@ PrefabInstance:
     - target: {fileID: 9115411991330707885, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 80
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 9115411991349058797, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
@@ -577,6 +598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115411991349058797, guid: 9da2063da6e41c84ebf9a0087f6127e1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 9115411991349058799, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
@@ -661,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 9115411992425087920, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.24
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 9115411992425087923, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
@@ -726,6 +752,11 @@ PrefabInstance:
     - target: {fileID: 6972188768554961958, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972188768554961958, guid: af3c2fdd3b8c64f449b110ec427a2521,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768554961958, guid: af3c2fdd3b8c64f449b110ec427a2521,
@@ -816,7 +847,7 @@ PrefabInstance:
     - target: {fileID: 6972188768569117024, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.89
+      value: -1.09
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768569117030, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
@@ -1101,7 +1132,7 @@ PrefabInstance:
     - target: {fileID: 106614197381538610, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.49
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 106614197381538610, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DetectPlayerCollisions : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class DetectPlayerCollisions : MonoBehaviour
     private SpeedPowerUp speedPowerUp;
     private Scene activeScene;
     private string sceneName;
-    private int tutorialHandiCap = 2;
+    private int tutorialHealthHandiCap = 2;
+    private int playerSpeedLevel;
     public int enginesLv1 = 1;
     public int playerMaxHitPoints;
     public int playerCurrentHitPoints;
@@ -48,7 +50,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Particle system/engine health mechanic
+        // Particle system/engine health & speed mechanic
         while(gameManager.gameOver != true)
         {
             if (playerCurrentHitPoints == enginesLv4)
@@ -83,7 +85,7 @@ public class DetectPlayerCollisions : MonoBehaviour
             }
 
             // Player Game Over check
-            if (playerCurrentHitPoints <= 0)
+            if (playerCurrentHitPoints <= -1)
             {
                 // Instantiate VFX on player death - second line plays sub-particle element in parent
                 Instantiate(playerExplosion, transform.position, transform.rotation);
@@ -127,7 +129,7 @@ public class DetectPlayerCollisions : MonoBehaviour
         sceneName = activeScene.name;
         if (sceneName == "Lev00")
         {
-            playerCurrentHitPoints -= tutorialHandiCap;
+            playerCurrentHitPoints -= tutorialHealthHandiCap;
             lifeBar.SetLife(playerCurrentHitPoints);
         }
     }
