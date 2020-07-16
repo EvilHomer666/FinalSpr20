@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject credits;
+    [SerializeField] Text optionStart;
+    [SerializeField] Text optionTutorial;
+    [SerializeField] Text optionCredits;
+    [SerializeField] Text optionExit;
+    private int numberOfOptions = 4;
+    private int selectedOption;
+
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Lev01");
+        //SceneManager.LoadScene("Lev01");
     }
 
     // Custom methods to show credits, main menu, start & quit game
