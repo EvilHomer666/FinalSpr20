@@ -12,9 +12,106 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Text optionTutorial;
     [SerializeField] Text optionCredits;
     [SerializeField] Text optionExit;
+    private LevelTransition levelTransition;
     private int numberOfOptions = 4;
     private int selectedOption;
 
+    void Start()
+    {
+        levelTransition = GetComponent<LevelTransition>();
+        selectedOption = 1;
+        optionStart.color = new Color32(255, 255, 255, 255);
+        optionTutorial.color = new Color32(133, 146, 158, 225);
+        optionCredits.color = new Color32(133, 146, 158, 225);
+        optionExit.color = new Color32(133, 146, 158, 225);
+    }
+
+    void Update()
+    {
+        // Navigating menu from top to bottom
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) /*|| Input.GetAxis("Vertical") != 0*/)
+        {
+            selectedOption += 1;
+            if (selectedOption > numberOfOptions) // Go back to first option if at end of list
+            {
+                selectedOption = 1;
+            }
+
+            optionStart.color = new Color32(133, 146, 158, 225);
+            optionTutorial.color = new Color32(133, 146, 158, 225);
+            optionCredits.color = new Color32(133, 146, 158, 225);
+            optionExit.color = new Color32(133, 146, 158, 225);
+
+            switch (selectedOption)
+            {
+                case 1:
+                    optionStart.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 2:
+                    optionTutorial.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    optionCredits.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    optionExit.color = new Color32(255, 255, 255, 255);
+                    break;
+            }
+        }
+
+        // Navigating menu from bottom to top
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) /*|| Input.GetAxis("Vertical") != 0*/)
+        {
+            selectedOption -= 1;
+            if (selectedOption < 1) // Go back to first option if at end of list
+            {
+                selectedOption = numberOfOptions;
+            }
+
+            optionStart.color = new Color32(133, 146, 158, 225);
+            optionTutorial.color = new Color32(133, 146, 158, 225);
+            optionCredits.color = new Color32(133, 146, 158, 225);
+            optionExit.color = new Color32(133, 146, 158, 225);
+
+            switch (selectedOption)
+            {
+                case 1:
+                    optionStart.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 2:
+                    optionTutorial.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 3:
+                    optionCredits.color = new Color32(255, 255, 255, 255);
+                    break;
+                case 4:
+                    optionExit.color = new Color32(255, 255, 255, 255);
+                    break;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log("Chose:" + selectedOption);
+
+            switch (selectedOption)
+            {
+                case 1:
+                    levelTransition.ManualFadeOut();
+                    break;
+                case 2:
+                    levelTransition.FadeToNextLevel();
+                    break;
+                case 3:
+                    ShowCredits();
+                    break;
+                case 4:
+                    QuitGame();
+                    break;
+
+            }
+        }
+    }
 
     public void StartGame()
     {
@@ -43,3 +140,4 @@ public class MainMenu : MonoBehaviour
 #endif
     }
 }
+
