@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -16,20 +15,27 @@ public class MainMenu : MonoBehaviour
     private int numberOfOptions = 4;
     private int selectedOption;
 
+    private Color32 startColor;
+    private Color32 mouseOverColor;
+    private bool mouseOver = false;
+
     void Start()
     {
-        levelTransition = GetComponent<LevelTransition>();
+        levelTransition = FindObjectOfType<LevelTransition>();
         selectedOption = 1;
         optionStart.color = new Color32(255, 255, 255, 255);
         optionTutorial.color = new Color32(133, 146, 158, 225);
         optionCredits.color = new Color32(133, 146, 158, 225);
         optionExit.color = new Color32(133, 146, 158, 225);
+
+        startColor = new Color32(255, 255, 255, 255);
+        mouseOverColor = new Color32(133, 146, 158, 225);
     }
 
     void Update()
     {
         // Navigating menu from top to bottom
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) /*|| Input.GetAxis("Vertical") != 0*/)
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             selectedOption += 1;
             if (selectedOption > numberOfOptions) // Go back to first option if at end of list
@@ -60,7 +66,7 @@ public class MainMenu : MonoBehaviour
         }
 
         // Navigating menu from bottom to top
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) /*|| Input.GetAxis("Vertical") != 0*/)
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             selectedOption -= 1;
             if (selectedOption < 1) // Go back to first option if at end of list
@@ -108,14 +114,8 @@ public class MainMenu : MonoBehaviour
                 case 4:
                     QuitGame();
                     break;
-
             }
         }
-    }
-
-    public void StartGame()
-    {
-        //SceneManager.LoadScene("Lev01");
     }
 
     // Custom methods to show credits, main menu, start & quit game

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6559420400184467976}
   - component: {fileID: 6559420400184467978}
   - component: {fileID: 6559420400184467977}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FadeToBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 6559420400299191811}
   - component: {fileID: 6559420400299191810}
   - component: {fileID: 6559420400299191815}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LevelTransitionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
