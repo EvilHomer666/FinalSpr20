@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
+
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,10 +18,6 @@ public class MainMenu : MonoBehaviour
     private int numberOfOptions = 4;
     private int selectedOption;
 
-    private Color32 startColor;
-    private Color32 mouseOverColor;
-    private bool mouseOver = false;
-
     void Start()
     {
         levelTransition = FindObjectOfType<LevelTransition>();
@@ -27,9 +26,6 @@ public class MainMenu : MonoBehaviour
         optionTutorial.color = new Color32(133, 146, 158, 225);
         optionCredits.color = new Color32(133, 146, 158, 225);
         optionExit.color = new Color32(133, 146, 158, 225);
-
-        startColor = new Color32(255, 255, 255, 255);
-        mouseOverColor = new Color32(133, 146, 158, 225);
     }
 
     void Update()

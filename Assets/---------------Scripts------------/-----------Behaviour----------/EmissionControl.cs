@@ -22,7 +22,7 @@ public class EmissionControl : MonoBehaviour
                 material.EnableKeyword("_EMISSION");
             else
                 material.DisableKeyword("_EMISSION");
-            time = 1f * 0.5f;
+            time = Random.Range(0.05f, 0.75f) * 10f;
         }
 
         time += Time.deltaTime;
