@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/---------------Scenes-----------/Lev02.unity
     guid: c3df5c41f0e30dc44b0ab5744692b925
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 204280f52d53e0d47b49b3d8ee36438c,
+      type: 2}
