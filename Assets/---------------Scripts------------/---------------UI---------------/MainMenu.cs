@@ -90,24 +90,26 @@ public class MainMenu : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton0) || 
+            Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) && mainMenu.activeInHierarchy)
         {
             Debug.Log("Chose:" + selectedOption);
 
-            switch (selectedOption)
-            {
-                case 1:
+
+                switch (selectedOption)
+                {
+                    case 1:
                     levelTransition.ManualFadeOut();
                     break;
-                case 2:
+                    case 2:
                     levelTransition.FadeToNextLevel();
                     break;
-                case 3:
-                    ShowCredits();
-                    break;
-                case 4:
-                    QuitGame();
-                    break;
+                    case 3:
+                        ShowCredits();
+                        break;
+                    case 4:
+                        QuitGame();
+                        break;
             }
         }
     }
@@ -121,8 +123,8 @@ public class MainMenu : MonoBehaviour
 
     public void ShowMainMenu()
     {
-        mainMenu.SetActive(true);
-        credits.SetActive(false);
+            mainMenu.SetActive(true);
+            credits.SetActive(false);
     }
 
     public void QuitGame()

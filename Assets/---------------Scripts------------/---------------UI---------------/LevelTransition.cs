@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
-    private int levelToLoad;
+    [SerializeField] Animator transitionAnimator;
     private MainMenu mainMenu;
-    public Animator transitionAnimator;
+    private int levelToLoad;
+    private string sceneName;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class LevelTransition : MonoBehaviour
     public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
-        if(mainMenu.selectedOption != 3)
+        if (mainMenu.selectedOption != 3)
         {
             transitionAnimator.SetTrigger("FadeOut");
         }
@@ -35,24 +36,15 @@ public class LevelTransition : MonoBehaviour
     public void FadeToNextLevel()
     {
         {
-            FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+            FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1); // << Fade to HOW TO PLAY (01) if on Main Menu
         }
     }
 
-    // Method to manually Fade out on trigger from main menu using button event - continue
+    // Method to manually Fade out on trigger from main menu using button
     public void ManualFadeOut()
     {
         {
-            FadeToLevel(SceneManager.GetActiveScene().buildIndex + 2);
-        }
-    }
-
-
-    // Method to manually Fade out on trigger from last level back to first - DEPRECATED
-    public void LevelLoop()
-    {
-        {
-            FadeToLevel(SceneManager.GetActiveScene().buildIndex - 1);
+            FadeToLevel(SceneManager.GetActiveScene().buildIndex + 2); // << Fade to START (02) if on Main Menu
         }
     }
 }

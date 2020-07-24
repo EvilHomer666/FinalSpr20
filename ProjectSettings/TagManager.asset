@@ -48,7 +48,7 @@ TagManager:
   - DirectionalLight
   - Background
   - Foreground
-  - 
+  - FadeOut
   - PlayArea
   - 
   - 
