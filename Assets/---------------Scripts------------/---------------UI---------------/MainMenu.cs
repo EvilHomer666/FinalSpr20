@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
-
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
@@ -16,7 +14,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Text optionExit;
     private LevelTransition levelTransition;
     private int numberOfOptions = 4;
-    private int selectedOption;
+    public int selectedOption;
 
     void Start()
     {

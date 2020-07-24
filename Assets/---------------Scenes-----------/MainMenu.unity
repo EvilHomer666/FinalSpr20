@@ -12287,6 +12287,7 @@ MonoBehaviour:
   optionTutorial: {fileID: 1032492559}
   optionCredits: {fileID: 1040826329}
   optionExit: {fileID: 1218024538}
+  selectedOption: 0
 --- !u!1001 &2086901276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12294,20 +12295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6559420400184468023, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 6559420400299191809, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
       propertyPath: m_Name
       value: LevelTransitionEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400299191809, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6559420400299191814, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
