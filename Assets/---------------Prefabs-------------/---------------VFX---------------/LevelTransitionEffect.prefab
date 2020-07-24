@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6559420400184467978}
   - component: {fileID: 6559420400184467977}
   m_Layer: 0
-  m_Name: FadeToBlack
+  m_Name: BlackFade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 666
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!114 &6559420400299191812
 MonoBehaviour:

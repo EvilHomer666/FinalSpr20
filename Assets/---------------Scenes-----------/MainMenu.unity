@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -12287,6 +12287,7 @@ MonoBehaviour:
   optionTutorial: {fileID: 1032492559}
   optionCredits: {fileID: 1040826329}
   optionExit: {fileID: 1218024538}
+  selectedOption: 0
 --- !u!1001 &2086901276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12294,10 +12295,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6559420400184467977, guid: 7a4bab77a6c32e84b939d180d6590435,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6559420400184468023, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6559420400299191809, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
@@ -12307,7 +12313,12 @@ PrefabInstance:
     - target: {fileID: 6559420400299191809, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559420400299191813, guid: 7a4bab77a6c32e84b939d180d6590435,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
       objectReference: {fileID: 0}
     - target: {fileID: 6559420400299191814, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
