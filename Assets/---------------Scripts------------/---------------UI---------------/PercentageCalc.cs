@@ -15,6 +15,6 @@ public class PercentageCalc : MonoBehaviour
 
     public void textUpdate(float value)
     {
-        percetageText.text = $"Shields:  {Mathf.RoundToInt(value * 25) + "%"}";
+        percetageText.text = $"{Mathf.RoundToInt(value * 25) + "%"}";
     }
 }

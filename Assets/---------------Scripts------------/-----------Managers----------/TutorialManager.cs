@@ -18,12 +18,14 @@ public class TutorialManager : MonoBehaviour
     private bool hazardHpDestroyed;
     private bool dangerWarning;
     private bool isPaused;
-    // Tutorial tips variables start
-    private int HowToMove = 0;
-    private int HowToShot = 1;
-    private int EngageEnemy = 2;
-    private int PowerUps = 3;
-    private int RecoverHealth = 4;
+    // Tutorial tips variables start (7) total
+    private int HowToPlay = 0;
+    private int HowToMove = 1;
+    private int HowToShot = 2;
+    private int EngageEnemy = 3;
+    private int PowerUps = 4;
+    private int RecoverHealth = 5;
+    private int Exit = 6;
     // Tutorial tips variables end
     private int minScoretoContinue = 50;
     public bool wasEnemyEngaged;
@@ -46,10 +48,11 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPaused == true)
+        if (isPaused == true) // << Coroutine condition
         {
             return;
         }
+
         // For loop to switch between tutorial tips
         for (int i = 0; i < tutorialTips.Length; i++)
         {
@@ -64,8 +67,16 @@ public class TutorialManager : MonoBehaviour
         }
 
         // Start tutorial tips here
-        // Display HOW TO MOVE tip - if player moves, move onto how to fire
-        if (tutorialTipsIndex == HowToMove)
+
+        // Display HOW TO PLAY prompt - auto switch on timer << #0
+        if (tutorialTipsIndex == HowToPlay)
+        {
+                StartCoroutine(timePause());
+                tutorialTipsIndex++;
+        }
+
+        // Display HOW TO MOVE tip - if player moves, move onto how to fire << #1
+        else if (tutorialTipsIndex == HowToMove)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
@@ -76,7 +87,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        // Display HOW TO SHOOT tip - if player fires, move onto engage and evade
+        // Display HOW TO SHOOT tip - if player fires, move onto engage and evade << #2
         else if (tutorialTipsIndex == HowToShot)
         {            
             if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
@@ -92,7 +103,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        // Display ENGAGE & EVADE to stay alive tip - if player is engaged, move onto power up tip
+        // Display ENGAGE & EVADE to stay alive tip - if player is engaged, move onto power up tip << #3
         else if (tutorialTipsIndex == EngageEnemy)
         {
             dangerWarning = false;
@@ -105,7 +116,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        // Display ENEMIES DROP POWER UPS tip
+        // Display ENEMIES DROP POWER UPS tip << #4
         else if (tutorialTipsIndex == PowerUps)
         {
             if (wasEnemyEngaged == true)
@@ -115,7 +126,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        // PICK UP HEALTH tip - if player gets power up and regains health, move onto exit
+        // PICK UP HEALTH tip - if player gets power up and regains health, move onto exit << #5
         else if (tutorialTipsIndex == RecoverHealth)
         {
             if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
