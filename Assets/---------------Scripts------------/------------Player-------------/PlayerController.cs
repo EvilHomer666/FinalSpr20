@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    //private InputMaster playerInputController; // << New input system Class reference
-    //private Vector2 Movement; // << New input system Variable for movement
     private PlayerWeaponsController playerWeapons;
     private float xRange = 15.4f;
     private float yRange = 9.3f;
@@ -18,23 +15,6 @@ public class PlayerController : MonoBehaviour
     public float playerSpeedCap = 25;
     public float speedReset = 10;
     public bool canEngage;
-
-    //// New Input System set up start
-    //private void Awake()
-    //{
-    //    playerInputController = new InputMaster();
-    //    playerInputController.PlayerController.Movement.performed += ctx => Movement = ctx.ReadValue<Vector2>(); // << Uses a "ctx" - meaning context - in a Lambda expression
-    //    playerInputController.PlayerController.Movement.canceled += ctx => Movement = Vector2.zero; // << Reset joystick
-    //}
-    //private void OnEnable()
-    //{
-    //    playerInputController.Enable();
-    //}
-    //private void OnDisable()
-    //{
-    //    playerInputController.Disable();
-    //}
-    //// New Input System set up end
 
     // Start is called before the first frame update
     void Start()

@@ -35,6 +35,7 @@ TagManager:
   - ImpactExplosion
   - ProximityWarning
   - PlayerShield
+  - lineRenderer
   layers:
   - Default
   - TransparentFX

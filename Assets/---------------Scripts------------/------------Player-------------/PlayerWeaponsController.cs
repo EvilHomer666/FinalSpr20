@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.InputSystem;
 
 public class PlayerWeaponsController : MonoBehaviour
 {
     [SerializeField] GameObject playerProjectileLv1;
     [SerializeField] GameObject playerProjectileLv2;
     [SerializeField] float cooldownTime;
-    //private InputMaster playerInputController; // << New input system Class reference
     private bool canFire;
     private SoundManager soundManager;
     // Cannons array
@@ -16,22 +14,6 @@ public class PlayerWeaponsController : MonoBehaviour
 
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire 
 
-    //// New Input System set up start
-    //private void Awake()
-    //{
-    //    playerInputController = new InputMaster();
-    //    // A function is still needed below to call the action. In this case: FireCondition()
-    //    playerInputController.PlayerController.Fire.performed += ctx => FireCondition(); // << Uses a "ctx" - meaning context - as a Lambda expression
-    //}
-    //private void OnEnable()
-    //{
-    //    playerInputController.Enable();
-    //}
-    //private void OnDisable()
-    //{
-    //    playerInputController.Disable();
-    //}
-    //// New Input System set up end
 
     // Start is called before the first frame update
     void Start()

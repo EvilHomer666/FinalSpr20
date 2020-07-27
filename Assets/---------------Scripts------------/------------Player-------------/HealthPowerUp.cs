@@ -13,6 +13,7 @@ public class HealthPowerUp : MonoBehaviour
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;
     private LifeBar lifeBar;
+    private Renderer lineRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,8 @@ public class HealthPowerUp : MonoBehaviour
 
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
-
         playerCollisions = FindObjectOfType<DetectPlayerCollisions>();
-
         lifeBar = FindObjectOfType<LifeBar>();
-
     }
 
     // Update is called once per frame
@@ -38,7 +36,7 @@ public class HealthPowerUp : MonoBehaviour
         transform.Translate(Vector3.left * Time.deltaTime * powerUpLocalSpeed);
     }
 
-    // On trigger enter function over-ride - Destroy power up on collision player NOTE TO SELF: None of this will work without colliders set to trigger.
+    // On trigger enter function over-ride - Destroy power up on collision player NOTE TO SELF: None of this will work without colliders set to trigger and rigid bodies.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && playerCollisions.playerCurrentHitPoints < playerCollisions.playerMaxHitPoints)
