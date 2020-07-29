@@ -8,6 +8,7 @@ public class HealthPowerUp : MonoBehaviour
     [SerializeField] int healthValue;
     [SerializeField] float powerUpLocalSpeed;
     [SerializeField] int scoreValue;
+    private PlayerShieldCanvas shieldCanvas;
     private int survivorBonus = 7;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
@@ -26,6 +27,7 @@ public class HealthPowerUp : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         playerCollisions = FindObjectOfType<DetectPlayerCollisions>();
+        shieldCanvas = FindObjectOfType<PlayerShieldCanvas>();
         lifeBar = FindObjectOfType<LifeBar>();
     }
 
@@ -43,6 +45,7 @@ public class HealthPowerUp : MonoBehaviour
         {
             playerCollisions.playerCurrentHitPoints += healthValue;
             lifeBar.SetLife(playerCollisions.playerCurrentHitPoints);
+            shieldCanvas.shieldUpdate();
             soundManager.PlayerShieldUp();
             scoreManager.IncrementScore(scoreValue);
             Destroy(gameObject);
@@ -53,6 +56,7 @@ public class HealthPowerUp : MonoBehaviour
         {
             soundManager.PlayerCollectedPowerUp();
             scoreManager.IncrementScore(scoreValue * survivorBonus);
+            shieldCanvas.shieldUpdate();
             Destroy(gameObject);
             Debug.Log("Pick Up!");
         }
