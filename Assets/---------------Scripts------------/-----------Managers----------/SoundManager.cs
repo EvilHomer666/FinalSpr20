@@ -84,7 +84,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayerFireLaserLv1()
     {
-        audioSource.PlayOneShot(shootLaserLv1, 1.0f);
+        audioSource.PlayOneShot(shootLaserLv1, 1.5f);
         return;
     }
     public void PlayerInputConfirmed()
