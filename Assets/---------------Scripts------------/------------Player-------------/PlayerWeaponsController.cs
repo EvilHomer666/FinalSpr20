@@ -43,7 +43,7 @@ public class PlayerWeaponsController : MonoBehaviour
     private void FireCondition()
     {
         //Projectile launch condition with for each element to read array - REPEATING
-        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             foreach (var projectile in cannons)
             {
