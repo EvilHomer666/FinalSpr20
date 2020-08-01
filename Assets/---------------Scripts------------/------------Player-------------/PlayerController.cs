@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeedCap = 25;
     public float speedReset = 10;
     public bool canEngage;
+    public bool canMove;
 
     // Start is called before the first frame update
     void Start()

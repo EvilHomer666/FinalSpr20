@@ -135,7 +135,7 @@ public class TutorialManager : MonoBehaviour
             {
                 StartCoroutine(timePause());
                 StopCoroutine(timePause());
-                levelTransition.FadeToNextLevel(); // TO DO - Add hyper speed animation 
+                //levelTransition.FadeToNextLevel(); // TO DO - Add hyper speed animation 
             }
         }       
     }
