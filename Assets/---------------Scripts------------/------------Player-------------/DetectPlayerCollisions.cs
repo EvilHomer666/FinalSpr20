@@ -23,7 +23,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     public int enginesLv1 = 1;
     public int playerMaxHitPoints;
     public int playerCurrentHitPoints;
-    public LifeBar lifeBar;
+    private LifeBar lifeBar;
 
     // private PlayerController polarityModifierSwitch; // << TO DO to be implemented with player's ability to use enemy fire against them
 

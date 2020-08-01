@@ -40,6 +40,8 @@ public class TutorialManager : MonoBehaviour
         scoreManager = FindObjectOfType<ScoreManager>();
         levelTransition = FindObjectOfType<LevelTransition>();
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
+        playerController.canEngage = false;
+        playerController.canMove = false;
         hazardHpDestroyed = false;
         dangerWarning = false;
         wasEnemyEngaged = false;        
@@ -71,8 +73,8 @@ public class TutorialManager : MonoBehaviour
         // Display HOW TO PLAY prompt - auto switch on timer << #0
         if (tutorialTipsIndex == HowToPlay)
         {
-                StartCoroutine(timePause());
-                tutorialTipsIndex++;
+            StartCoroutine(timePause());
+            tutorialTipsIndex++;
         }
 
         // Display HOW TO MOVE tip - if player moves, move onto how to fire << #1
@@ -83,6 +85,8 @@ public class TutorialManager : MonoBehaviour
                 Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 StartCoroutine(timePause());
+                playerController.canMove = true;
+                StartCoroutine(timePause());
                 tutorialTipsIndex++;
             }
         }
@@ -91,13 +95,13 @@ public class TutorialManager : MonoBehaviour
         else if (tutorialTipsIndex == HowToShot)
         {            
             if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
-                Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+                Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
             {
-                playerWeapons.ProjectileLaunchCondition();
+                StartCoroutine(timePause());
                 playerController.canEngage = true;
+                //playerWeapons.ProjectileLaunchCondition();
                 dangerWarning = true;
                 StartCoroutine(ProximityWarning());
-
                 StartCoroutine(timePause());
                 tutorialTipsIndex++;
             }
@@ -146,7 +150,7 @@ public class TutorialManager : MonoBehaviour
             onScreenProximityWarning.SetActive(true);
             soundManager.ProximityWarning();
             tutorialSpawnManager.SetActive(true);
-            yield return new WaitForSeconds(3.75f);
+            yield return new WaitForSeconds(4.5f);
             onScreenProximityWarning.SetActive(false);
         }
     }
@@ -154,7 +158,7 @@ public class TutorialManager : MonoBehaviour
     IEnumerator timePause()
     {       
             isPaused = true;
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(3.5f);
             isPaused = false;
     }
 }
