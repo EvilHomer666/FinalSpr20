@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/---------------Scenes-----------/HowToPlay.unity
     guid: 15f5f3388b8ad3143a38756140417244
-  - enabled: 0
+  - enabled: 1
     path: Assets/---------------Scenes-----------/Lev01.unity
     guid: 412970aa3ba7e1a42a6e7a93f1208e37
-  - enabled: 0
+  - enabled: 1
     path: Assets/---------------Scenes-----------/Lev02.unity
     guid: c3df5c41f0e30dc44b0ab5744692b925
   m_configObjects:
