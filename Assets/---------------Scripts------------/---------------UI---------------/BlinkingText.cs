@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BlinkingText : MonoBehaviour
 {
+    [SerializeField] float waitTime = 0.75f;
     private Text blinkingText;
-    private float waitTime = 0.75f;
 
     // Start is called before the first frame update
     void Start()

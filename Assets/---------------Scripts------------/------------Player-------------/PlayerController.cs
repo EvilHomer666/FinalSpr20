@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private PlayerWeaponsController playerWeapons;
-    private float xRange = 15.4f;
+    private float xRange = 18.5f;
     private float yRange = 9.3f;
     private float horizontalInput;
     private float verticalInput;

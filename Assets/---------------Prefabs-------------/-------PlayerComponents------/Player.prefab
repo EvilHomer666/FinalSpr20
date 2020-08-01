@@ -338,7 +338,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -476,7 +476,6 @@ MonoBehaviour:
   enginesLv1: 1
   playerMaxHitPoints: 4
   playerCurrentHitPoints: 4
-  lifeBar: {fileID: 0}
 --- !u!114 &3154206371285850587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +504,7 @@ MonoBehaviour:
   playerSpeedCap: 25
   speedReset: 10
   canEngage: 1
+  canMove: 0
 --- !u!114 &1208473821
 MonoBehaviour:
   m_ObjectHideFlags: 0

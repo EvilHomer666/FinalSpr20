@@ -84,7 +84,6 @@ public class TutorialManager : MonoBehaviour
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
                 Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
-                StartCoroutine(timePause());
                 playerController.canMove = true;
                 StartCoroutine(timePause());
                 tutorialTipsIndex++;
@@ -93,11 +92,10 @@ public class TutorialManager : MonoBehaviour
 
         // Display HOW TO SHOOT tip - if player fires, move onto engage and evade << #2
         else if (tutorialTipsIndex == HowToShot)
-        {            
+        {
             if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
                 Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
             {
-                StartCoroutine(timePause());
                 playerController.canEngage = true;
                 //playerWeapons.ProjectileLaunchCondition();
                 dangerWarning = true;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class IntroExplosions : MonoBehaviour
 { 
-    private float spawnPosX = 15.0f;
-    private float spawnPosXx = 7.0f;
+    private float spawnPosX = 25.0f;
+    private float spawnPosXx = 10.0f;
     private float spawnRangeY = 8.0f;
     private float spawnPosZ = 0.0f;
     public float spawnInterval = 1.25f;
@@ -21,10 +21,10 @@ public class IntroExplosions : MonoBehaviour
         InvokeRepeating("SpawnRandomExplosion", startDelay, spawnInterval);
     }
 
-    // Custom functions to spawn random enemies and power ups
+    // Custom functions to spawn random explosions
     void SpawnRandomExplosion()
     {
-        // Randomly generate enemies
+        // Randomly generate explosions
         int enemyIndex = Random.Range(0, explosionPrefabs.Length);
         Vector3 spawnPos = new Vector3(Random.Range(-spawnPosX,-spawnPosXx), Random.Range(-spawnRangeY, spawnRangeY), spawnPosZ);
         Instantiate(explosionPrefabs[enemyIndex], spawnPos, explosionPrefabs[enemyIndex].transform.rotation);
