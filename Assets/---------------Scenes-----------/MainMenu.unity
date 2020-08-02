@@ -10227,8 +10227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.5, y: -99.100006}
-  m_SizeDelta: {x: 70, y: 15}
+  m_AnchoredPosition: {x: 17.5, y: -105.1}
+  m_SizeDelta: {x: 191, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &772648232
 AudioSource:
@@ -10543,7 +10543,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 17.499876, y: -142.30002}
-  m_SizeDelta: {x: 85, y: 15}
+  m_SizeDelta: {x: 191, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966978460
 MonoBehaviour:
@@ -10674,7 +10674,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 17.499876, y: -120.00001}
-  m_SizeDelta: {x: 125, y: 15}
+  m_SizeDelta: {x: 191, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007095995
 MonoBehaviour:
@@ -11990,8 +11990,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.899809, y: -163.5}
-  m_SizeDelta: {x: 50, y: 15}
+  m_AnchoredPosition: {x: 17.899809, y: -172.8}
+  m_SizeDelta: {x: 191, y: 49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619362654
 MonoBehaviour:
@@ -12107,6 +12107,7 @@ GameObject:
   - component: {fileID: 1970302824}
   - component: {fileID: 1970302826}
   - component: {fileID: 1970302825}
+  - component: {fileID: 1970302827}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -12176,6 +12177,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970302823}
   m_CullTransparentMesh: 0
+--- !u!114 &1970302827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970302823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &2073457098
 GameObject:
   m_ObjectHideFlags: 0
@@ -12187,8 +12203,9 @@ GameObject:
   - component: {fileID: 2073457102}
   - component: {fileID: 2073457101}
   - component: {fileID: 2073457100}
-  - component: {fileID: 2073457099}
   - component: {fileID: 2073457103}
+  - component: {fileID: 2073457099}
+  - component: {fileID: 2073457105}
   m_Layer: 5
   m_Name: TitleScreenUI
   m_TagString: Untagged
@@ -12297,6 +12314,21 @@ MonoBehaviour:
   optionCredits: {fileID: 1040826329}
   optionExit: {fileID: 1218024538}
   selectedOption: 0
+--- !u!114 &2073457105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073457098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1001 &2086901276
 PrefabInstance:
   m_ObjectHideFlags: 0
