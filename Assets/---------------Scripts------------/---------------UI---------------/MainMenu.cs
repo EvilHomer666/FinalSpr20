@@ -16,6 +16,30 @@ public class MainMenu : MonoBehaviour
     private int numberOfOptions = 4;
     public int selectedOption;
 
+    //public GamePadControls menuControls;
+    ////private Vector2 scrollDpad;
+    //private Vector2 scrollJoystick;
+
+    //private void Awake()
+    //{
+    //    menuControls = new GamePadControls();
+
+    //    //menuControls.MenuNavigation.Dpad.performed += ctx => scrollDpad = ctx.ReadValue<Vector2>();
+    //    //menuControls.MenuNavigation.Dpad.canceled += ctx => scrollDpad = Vector2.zero;
+
+    //    menuControls.MenuNavigation.Joystick.performed += ctx => scrollJoystick = ctx.ReadValue<Vector2>();
+    //    menuControls.MenuNavigation.Joystick.canceled += ctx => scrollJoystick = Vector2.zero;
+    //}
+
+    //private void OnEnable()
+    //{
+    //    menuControls.MenuNavigation.Enable();
+    //}
+    //private void OnDisable()
+    //{
+    //    menuControls.MenuNavigation.Disable();
+    //}
+
     void Start()
     {
         levelTransition = FindObjectOfType<LevelTransition>();
@@ -27,7 +51,7 @@ public class MainMenu : MonoBehaviour
     }
 
     void Update()
-    {
+    {       
         // Navigating menu from top to bottom
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
