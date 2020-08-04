@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    // UI Sounds
+    [SerializeField] AudioClip navigationBlip;
+    [SerializeField] AudioClip quit;
+
     // Stage Music
-    [SerializeField] AudioClip Level_01;
-    [SerializeField] AudioClip Boss_01;
+    [SerializeField] AudioClip level_01;
+    [SerializeField] AudioClip boss_01;
 
     // Player SFX clips
     [SerializeField] AudioClip blowShield;
@@ -38,16 +42,28 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    // UI sound methods
+    public void NavigationBlip()
+    {
+        audioSource.PlayOneShot(navigationBlip, 0.5f);
+        return;
+    }
+    public void QuitBlip()
+    {
+        audioSource.PlayOneShot(quit, 0.5f);
+        return;
+    }
+
     // Custom functions to access sound FXs and music tracks
     // Stage Music
     public void StageMusic_01()
     {
-        audioSource.PlayOneShot(Level_01, 0.5f);
+        audioSource.PlayOneShot(level_01, 0.5f);
         return;
     }
     public void BossMusic_01()
     {
-        audioSource.PlayOneShot(Boss_01, 0.5f);
+        audioSource.PlayOneShot(boss_01, 0.5f);
         return;
     }
 

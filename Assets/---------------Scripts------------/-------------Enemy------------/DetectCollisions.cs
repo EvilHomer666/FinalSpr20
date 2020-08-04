@@ -8,7 +8,6 @@ public class DetectCollisions : MonoBehaviour
     [SerializeField] int scoreValue;
     [SerializeField] float enemyHitPoints;
     [SerializeField] bool holdsPowerUp;
-   // [SerializeField] GameObject powerUpDrop;
     [SerializeField] Transform powerUpSpawn;
     [SerializeField] GameObject onDestroyExplosion;
     [SerializeField] GameObject impactExplosion;

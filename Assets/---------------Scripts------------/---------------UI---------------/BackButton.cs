@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class BackButton : MonoBehaviour
 {
-    private MainMenu mainMenu;
+    private TitleScreenMenu mainMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-        mainMenu = FindObjectOfType<MainMenu>();
+        mainMenu = FindObjectOfType<TitleScreenMenu>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.anyKeyDown)
         {
             mainMenu.ShowMainMenu();
         }

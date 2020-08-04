@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelTransition : MonoBehaviour
 {
     [SerializeField] Animator transitionAnimator;
-    private MainMenu mainMenu;
+    private TitleScreenMenu mainMenu;
     private int levelToLoad;
     private string sceneName;
 
     private void Start()
     {
-        mainMenu = FindObjectOfType<MainMenu>();
+        mainMenu = FindObjectOfType<TitleScreenMenu>();
     }
 
     /* Custom functions to fade in and out between levels -
@@ -20,10 +20,7 @@ public class LevelTransition : MonoBehaviour
     public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
-        if (mainMenu.selectedOption != 3)
-        {
-            transitionAnimator.SetTrigger("FadeOut");
-        }
+        transitionAnimator.SetTrigger("FadeOut");
     }
 
     // Method to load the next scene on FadeOut animation event finish
