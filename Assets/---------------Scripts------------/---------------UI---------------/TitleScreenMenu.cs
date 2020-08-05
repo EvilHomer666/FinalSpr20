@@ -6,24 +6,32 @@ using UnityEngine.UI;
 
 public class TitleScreenMenu : MonoBehaviour
 {
+    [SerializeField] Animator quitFadeOutAnimator;
+    [SerializeField] GameObject fadeOutEffect;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject credits;
-    private SoundManager soundManager;
-    private AudioSource navigationBlip;
-    private bool isPaused;
+    //[SerializeField] EventSystem eventSystem;
+    //private GameObject storeInMemory;
+    private bool isRunning = false;
 
-    //private bool isPaused;
-
-    private void Start()
+    // Using a variable to store the value of the first selection of the menu to make it reappear when switching between options
+    void Start()
     {
-        if (isPaused == true) // << Coroutine condition
-        {
-            return;
-        }
-
-        navigationBlip = FindObjectOfType<AudioSource>();
-        GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
-        soundManager = soundManagerObject.GetComponent<SoundManager>();
+        //storeInMemory = eventSystem.firstSelectedGameObject;
+        fadeOutEffect = FindObjectOfType<GameObject>();
+        fadeOutEffect.SetActive(false);
+    }
+    private void Update()
+    {
+        //if(eventSystem.currentSelectedGameObject != storeInMemory)
+        //{
+        //    if (eventSystem.currentSelectedGameObject == null)
+        //    {
+        //        eventSystem.SetSelectedGameObject(storeInMemory);
+        //    }
+        //    else
+        //        storeInMemory = eventSystem.currentSelectedGameObject;
+        //}
     }
 
     // Custom methods to show credits, main menu, start & quit game
@@ -37,24 +45,43 @@ public class TitleScreenMenu : MonoBehaviour
     {
         mainMenu.SetActive(true);
         credits.SetActive(false);
-        navigationBlip.Play();
+    }
+
+    // Coroutine inside wrapper so that it can run from the OnClick event in the button inspector settings
+    public void QuitGameCoroutineWrapper()
+    {
+        if (isRunning == false)
+        {
+            StartCoroutine(TimePause());
+        }
+    }
+    private IEnumerator TimePause()
+    {
+        isRunning = true;
+        // Do your stuff over multiple frames
+        yield return new WaitForSeconds(2.0f);
+        yield return null;
+        isRunning = false;
+        QuitGame();
     }
 
     public void QuitGame()
     {
-        StartCoroutine(timePause());
-    }
-
-    IEnumerator timePause()
-    {
-        soundManager.QuitBlip();
-        isPaused = true;
-        yield return new WaitForSeconds(2.0f);
-        isPaused = false;
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
+    }
+
+    // Set active fadeout game objects on click
+    public void EnableFadeOut()
+    {
+        fadeOutEffect.SetActive(true);
+    }
+
+    public void FadeOut()
+    {
+        quitFadeOutAnimator.SetTrigger("FadeOutAndQuit");
     }
 }
