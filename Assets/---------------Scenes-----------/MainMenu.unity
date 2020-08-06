@@ -9954,12 +9954,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!95 &406152865 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6559420400299191810, guid: 7a4bab77a6c32e84b939d180d6590435,
-    type: 3}
-  m_PrefabInstance: {fileID: 2086901276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &586620170
 GameObject:
   m_ObjectHideFlags: 0
@@ -9973,7 +9967,7 @@ GameObject:
   - component: {fileID: 586620171}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11524,8 +11518,8 @@ Light:
   m_Color: {r: 0, g: 0.97320366, b: 1, a: 1}
   m_Intensity: 0.8
   m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 53.2
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -11578,13 +11572,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512142625}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 117, y: 874, z: -839}
+  m_LocalRotation: {x: 0.64528006, y: -0, z: -0, w: 0.7639461}
+  m_LocalPosition: {x: -0, y: 7.7, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 80.373, y: 0, z: 0}
 --- !u!1 &1551550319
 GameObject:
   m_ObjectHideFlags: 0
@@ -12297,7 +12291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111157f50b35cad42bce3248d0bbbdcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quitFadeOutAnimator: {fileID: 0}
   fadeOutEffect: {fileID: 8936957970990112279}
   mainMenu: {fileID: 1970302823}
   credits: {fileID: 382356368}
@@ -12308,50 +12301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6559420400184467976, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400184467976, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400184467976, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400184467976, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400184467977, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400184468023, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 6559420400299191809, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
       propertyPath: m_Name
       value: LevelTransitionEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400299191809, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6559420400299191813, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 6666
       objectReference: {fileID: 0}
     - target: {fileID: 6559420400299191814, guid: 7a4bab77a6c32e84b939d180d6590435,
         type: 3}
@@ -12458,11 +12411,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6559420400299191815, guid: 7a4bab77a6c32e84b939d180d6590435,
-        type: 3}
-      propertyPath: quitTransitionAnimator
-      value: 
-      objectReference: {fileID: 406152865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a4bab77a6c32e84b939d180d6590435, type: 3}
 --- !u!1 &2089816247
@@ -12837,7 +12785,6 @@ GameObject:
   - component: {fileID: 8936957970990112274}
   - component: {fileID: 8936957970990112277}
   - component: {fileID: 8936957970990112276}
-  - component: {fileID: 8936957970990112280}
   m_Layer: 12
   m_Name: FadeOutAndQuitEffect
   m_TagString: Untagged
@@ -12845,15 +12792,3 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8936957970990112280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8936957970990112279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18885e2bc832bd42831c4301762ef51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

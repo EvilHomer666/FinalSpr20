@@ -5,33 +5,18 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class TitleScreenMenu : MonoBehaviour
-{
-    [SerializeField] Animator quitFadeOutAnimator;
+{    
     [SerializeField] GameObject fadeOutEffect;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject credits;
-    //[SerializeField] EventSystem eventSystem;
-    //private GameObject storeInMemory;
+    private Animator quitFadeOutAnimator;
+    private EventSystem eventSystem;
     private bool isRunning = false;
 
     // Using a variable to store the value of the first selection of the menu to make it reappear when switching between options
     void Start()
     {
-        //storeInMemory = eventSystem.firstSelectedGameObject;
-        fadeOutEffect = FindObjectOfType<GameObject>();
         fadeOutEffect.SetActive(false);
-    }
-    private void Update()
-    {
-        //if(eventSystem.currentSelectedGameObject != storeInMemory)
-        //{
-        //    if (eventSystem.currentSelectedGameObject == null)
-        //    {
-        //        eventSystem.SetSelectedGameObject(storeInMemory);
-        //    }
-        //    else
-        //        storeInMemory = eventSystem.currentSelectedGameObject;
-        //}
     }
 
     // Custom methods to show credits, main menu, start & quit game

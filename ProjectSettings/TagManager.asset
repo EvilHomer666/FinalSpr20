@@ -36,6 +36,8 @@ TagManager:
   - ProximityWarning
   - PlayerShield
   - lineRenderer
+  - Credits
+  - EventSystem
   layers:
   - Default
   - TransparentFX
