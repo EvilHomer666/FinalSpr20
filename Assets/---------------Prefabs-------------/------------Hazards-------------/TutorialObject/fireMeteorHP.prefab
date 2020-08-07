@@ -92,6 +92,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -165,10 +166,7 @@ MonoBehaviour:
   impactExplosion: {fileID: 5879626478361469977, guid: fa8e411afb828874695ac9d873ac9444,
     type: 3}
   powerUpPrefabs:
-  - {fileID: 361044688055882194, guid: b0a60a448c9ba0645ab515b2216171be, type: 3}
-  - {fileID: 6804282791039596158, guid: bd6c136b334554345898841e5e721b26, type: 3}
-  - {fileID: 5809500027139407859, guid: ebcabfbc114c4d5409f927cbfa11c6e2, type: 3}
-  - {fileID: 7740250537136289177, guid: f64cf27a3c0aee14aabd03042f00f694, type: 3}
+  - {fileID: 911274349570765602, guid: f040767946d665545901e9d51c64f8e3, type: 3}
 --- !u!54 &5908061017632850491
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class PlayerShieldCanvas : MonoBehaviour
     [SerializeField] GameObject meshRenderer;
     private float displayTime = 4.0f;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class PlayerShieldCanvas : MonoBehaviour
         StartCoroutine(DisplayPercentageInormation());
     }
 
+    // Percentage UI indicator
     IEnumerator DisplayPercentageInormation()
     {
         playerCanvasAlpha.alpha = 1;

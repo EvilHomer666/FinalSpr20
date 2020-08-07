@@ -85,6 +85,7 @@ public class TutorialManager : MonoBehaviour
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
                 Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
+                StartCoroutine(timePauseHalf());
                 playerController.canMove = true;
                 StartCoroutine(timePause());
                 tutorialTipsIndex++;
@@ -98,6 +99,7 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
                 Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
             {
+                StartCoroutine(timePause());
                 playerController.canEngage = true;
                 dangerWarning = true;
                 StartCoroutine(ProximityWarning());
@@ -137,7 +139,7 @@ public class TutorialManager : MonoBehaviour
             {
                 StartCoroutine(timePause());
                 StopCoroutine(timePause());
-                levelTransition.FadeToNextLevel(); // TO DO - Add hyper speed animation 
+                //levelTransition.FadeToNextLevel(); // TO DO - Add hyper speed animation 
             }
         }       
     }

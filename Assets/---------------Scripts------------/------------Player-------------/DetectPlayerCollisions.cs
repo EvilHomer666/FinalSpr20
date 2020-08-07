@@ -15,6 +15,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     private SoundManager soundManager;
     private PlayerController playerControllerSpeedReset;
     private PlayerShieldCanvas shieldCanvas;
+    private ShieldActivity shieldDamage;
     private SpeedPowerUp speedPowerUp;
     private Scene activeScene;
     private string sceneName;
@@ -40,6 +41,7 @@ public class DetectPlayerCollisions : MonoBehaviour
         speedPowerUp = FindObjectOfType<SpeedPowerUp>();
         activeScene = SceneManager.GetActiveScene();
         shieldCanvas = FindObjectOfType<PlayerShieldCanvas>();
+        shieldDamage = FindObjectOfType<ShieldActivity>();
 
         // Initialize Life-Hit points and check for tutorial mode
         playerCurrentHitPoints = playerMaxHitPoints;
@@ -107,6 +109,7 @@ public class DetectPlayerCollisions : MonoBehaviour
             other.gameObject.tag == "Hazard" || other.gameObject.tag == "HazardSP" || other.gameObject.tag == "HazardHP")
         {
             Debug.Log("Collision!");
+            shieldDamage.shieldIsActive = true;
             playerCurrentHitPoints -= damageValue;
             lifeBar.SetLife(playerCurrentHitPoints);
             shieldCanvas.shieldUpdate();
