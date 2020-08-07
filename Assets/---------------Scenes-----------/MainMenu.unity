@@ -9918,7 +9918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.999756, y: -3.000061}
+  m_AnchoredPosition: {x: 14.999756, y: -3.000122}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382356372
@@ -11648,16 +11648,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A Game by Edgar Espino\r\nColumbia College Chicago IAM SP20-GAME 225-01\r\nInstructor:
+  m_Text: "Developed by Edgar Espino\r\nColumbia College Chicago IAM SP20-GAME 225-01\r\nInstructor:
     Michael Hadley\r\n\r\nAssets:\r\nPlayer space ship model by VoodooPlay, https://assetstore.unity.com/packages/3d/low-poly-combat-drone-82234
-    \n\nOther space ship models by fonts by by Viktor Hahn (Viktor.Hahn@web.de),
-    https://opengameart.org/users/unnamed\r\n\nUI, sounds, fonts by Kenney, https://www.kenney.nl/\n\nBlue
-    Nebula background by DinV Studio, https://assetstore.unity.com/publishers/26983\n\nBoss
+    \n\nAll other space ship models by Viktor Hahn (Viktor.Hahn@web.de), https://opengameart.org/users/unnamed\r\n\nUI
+    buttons, sounds FX, and fonts by Kenney, https://www.kenney.nl/\n\nBlue Nebula
+    background by DinV Studio, https://assetstore.unity.com/publishers/26983\n\nBoss
     Track \"Orbital Colossus\" by Matthew Pablo, http://opengameart.org/users/matthewpablo\n\nStage
     Track \"RailJ by etDeceased Superior Technician, http://www.nosoapradio.us\n\nCat
     sounds by Jeroen Kessels, http://www.kessels.com/CatSounds/\n\nParticle Effect
     Pack by Gaph, https://assetstore.unity.com/packages/vfx/particles/spells/48-particle-effect-pack-13998\n\nEarth
-    skybox by Stagit East, https://assetstore.unity.com/packages/2d/textures-materials/sky/earth-planets-skyboxes-53752\n"
+    skybox by Stagit East, https://assetstore.unity.com/packages/2d/textures-materials/sky/earth-planets-skyboxes-53752\n\nForcefield
+    shader by YiLuen-Shie, https://github.com/vux427/ForceFieldFX\n"
 --- !u!222 &1551550322
 CanvasRenderer:
   m_ObjectHideFlags: 0

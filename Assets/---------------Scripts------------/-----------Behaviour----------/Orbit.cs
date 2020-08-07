@@ -22,11 +22,11 @@ public class Orbit : MonoBehaviour
     }
     void OrbitAroundUp()
     {
-        transform.RotateAround(centerOfGravity.transform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+        transform.RotateAround(centerOfGravity.transform.position, -Vector3.forward, rotationSpeed * Time.deltaTime);
     }
     void OrbitAroundDown()
     {
-        transform.RotateAround(centerOfGravity.transform.position, Vector3.right, rotationSpeed * Time.deltaTime);
+        transform.RotateAround(centerOfGravity.transform.position, -Vector3.right, rotationSpeed * Time.deltaTime);
     }
 
 }

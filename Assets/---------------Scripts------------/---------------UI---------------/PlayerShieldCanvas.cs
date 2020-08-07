@@ -7,7 +7,7 @@ public class PlayerShieldCanvas : MonoBehaviour
 {
     [SerializeField] CanvasGroup playerCanvasAlpha;
     [SerializeField] GameObject meshRenderer;
-    private float displayTime = 3.0f;
+    private float displayTime = 4.0f;
 
     // Start is called before the first frame update
     void Start()
