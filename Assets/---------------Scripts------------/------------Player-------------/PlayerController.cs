@@ -52,15 +52,18 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yRange, transform.position.z);
         }
 
-        // Player input movement
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * playerSpeed, Space.World);
+        if(canMove == true)
+        {
+            // Player input movement
+            horizontalInput = Input.GetAxis("Horizontal");
+            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * playerSpeed, Space.World);
 
-        verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * verticalInput * Time.deltaTime * playerSpeed, Space.World);
+            verticalInput = Input.GetAxis("Vertical");
+            transform.Translate(Vector3.up * verticalInput * Time.deltaTime * playerSpeed, Space.World);
 
-        // Set rotation over x axis
-        transform.rotation = Quaternion.Euler(Input.GetAxis("Vertical") * tilt, 0, 0);
+            // Set rotation over x axis
+            transform.rotation = Quaternion.Euler(Input.GetAxis("Vertical") * tilt, 0, 0);
+        }
     }
 
     // Update player speed method

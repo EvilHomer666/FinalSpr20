@@ -30,7 +30,6 @@ public class BackButton : MonoBehaviour
     // Reset first menu option back to Start TO DO make less messy
     private void UpdateSelection()
     {
-        //EventSystem eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         eventSystem.SetSelectedGameObject(null);
         eventSystem.SetSelectedGameObject(eventSystem.firstSelectedGameObject);
     }

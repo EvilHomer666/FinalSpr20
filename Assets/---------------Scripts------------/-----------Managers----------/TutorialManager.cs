@@ -18,7 +18,7 @@ public class TutorialManager : MonoBehaviour
     private bool hazardHpDestroyed;
     private bool dangerWarning;
     private bool isPaused;
-    // Tutorial tips variables start (7) total
+    // Tutorial tips variables start (7) total?
     private int HowToPlay = 0;
     private int HowToMove = 1;
     private int HowToShot = 2;
@@ -27,7 +27,7 @@ public class TutorialManager : MonoBehaviour
     private int RecoverHealth = 5;
     private int Exit = 6;
     // Tutorial tips variables end
-    private int minScoretoContinue = 50;
+    private int minScoretoContinue = 500;
     public bool wasEnemyEngaged;
 
     // Start is called before the first frame update
@@ -80,6 +80,7 @@ public class TutorialManager : MonoBehaviour
         // Display HOW TO MOVE tip - if player moves, move onto how to fire << #1
         else if (tutorialTipsIndex == HowToMove)
         {
+            StartCoroutine(timePauseHalf());
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
                 Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) ||
                 Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
@@ -93,11 +94,11 @@ public class TutorialManager : MonoBehaviour
         // Display HOW TO SHOOT tip - if player fires, move onto engage and evade << #2
         else if (tutorialTipsIndex == HowToShot)
         {
+            StartCoroutine(timePauseHalf());
             if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
                 Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
             {
                 playerController.canEngage = true;
-                //playerWeapons.ProjectileLaunchCondition();
                 dangerWarning = true;
                 StartCoroutine(ProximityWarning());
                 StartCoroutine(timePause());
@@ -108,6 +109,7 @@ public class TutorialManager : MonoBehaviour
         // Display ENGAGE & EVADE to stay alive tip - if player is engaged, move onto power up tip << #3
         else if (tutorialTipsIndex == EngageEnemy)
         {
+            StartCoroutine(timePauseHalf());
             dangerWarning = false;
             StopCoroutine(ProximityWarning());
 
@@ -121,7 +123,7 @@ public class TutorialManager : MonoBehaviour
         // Display ENEMIES DROP POWER UPS tip << #4
         else if (tutorialTipsIndex == PowerUps)
         {
-            if (wasEnemyEngaged == true)
+            if (wasEnemyEngaged == true) // <<< Create custom enemy spawning point to trigger this at this time instead of at random
             {
                 StartCoroutine(timePause());
                 tutorialTipsIndex++;
@@ -156,8 +158,14 @@ public class TutorialManager : MonoBehaviour
     IEnumerator timePause()
     {       
             isPaused = true;
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(3.25f);
             isPaused = false;
+    }
+    IEnumerator timePauseHalf()
+    {
+        isPaused = true;
+        yield return new WaitForSeconds(1.75f);
+        isPaused = false;
     }
 }
 
