@@ -4942,7 +4942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 4
-  powerUpLocalSpeed: 3
+  powerUpLocalSpeed: 2
   scoreValue: 450
 --- !u!54 &2724692748252169070
 Rigidbody:

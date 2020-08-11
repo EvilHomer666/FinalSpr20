@@ -139,7 +139,5 @@ public class DetectPlayerCollisions : MonoBehaviour
             lifeBar.SetLife(playerCurrentHitPoints);
         }
     }
-
-
 }
 
