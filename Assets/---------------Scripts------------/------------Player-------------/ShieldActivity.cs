@@ -19,7 +19,7 @@ public class ShieldActivity : MonoBehaviour
     {
         shieldRenderer = GetComponent<Renderer>();        
         shieldIsActive = false;
-        //shieldMeshRenderer.SetActive(false);
+        shieldMeshRenderer.SetActive(false);
     }
 
     // Update is called once per frame

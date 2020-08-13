@@ -9,11 +9,12 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] GameObject tutorialSpawnManager;
     [SerializeField] GameObject onScreenProximityWarning;
     [SerializeField] GameObject displayPanel;
+    private AudioSource kittenPurr;
     private PlayerWeaponsController playerWeapons;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private PlayerController playerController;
-    private DetectPlayerCollisions playerHitPoints;
+    private GameManager gameOver;
     private LevelTransition levelTransition;
     private int tutorialTipsIndex;
     private bool hazardHpDestroyed;
@@ -36,8 +37,9 @@ public class TutorialManager : MonoBehaviour
     {        // Set tutorial references and variables on start
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
+        kittenPurr = GetComponent<AudioSource>();
         playerController = FindObjectOfType<PlayerController>();
-        playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();
+        gameOver = FindObjectOfType<GameManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         levelTransition = FindObjectOfType<LevelTransition>();
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
@@ -48,12 +50,19 @@ public class TutorialManager : MonoBehaviour
         wasEnemyEngaged = false;
         displayPanel.gameObject.SetActive(false);
         StartCoroutine(timePauseHalfNoIdex());
+
+        if (gameOver.gameOver == false)
+        {
+            kittenPurr.Play();
+        }
+        else
+            kittenPurr.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isPaused == true) // << Coroutine condition
+        if (isPaused == true) // << Coroutine pause condition
         {
             return;
         }
@@ -89,7 +98,6 @@ public class TutorialManager : MonoBehaviour
         else if (tutorialTipsIndex == HowToShot)
         {
             dangerWarning = true;
-
             StartCoroutine(HowToShoot());
         }
 
@@ -118,22 +126,22 @@ public class TutorialManager : MonoBehaviour
         // PICK UP HEALTH tip << #5
         else if (tutorialTipsIndex == RecoverHealth)
         {
-            if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
-            {
-                //StopCoroutine(timePauseLong());
-                //tutorialTipsIndex++;
-            }
+            //if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
+            //{
+            //    //StopCoroutine(timePauseLong());
+            //    //tutorialTipsIndex++;
+            //}
         }
 
         // EXIT - move onto exit << #6 TODO replace with first large ship encounter then exit
         else if (tutorialTipsIndex == Exit)
         {
-            if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
-            {
-                displayPanel.gameObject.SetActive(false);
-                //StopCoroutine(timePause());
-                //levelTransition.FadeToNextLevel(); // TO DO - Add hyper speed animation 
-            }
+            //    if (playerHitPoints.playerCurrentHitPoints == playerHitPoints.playerMaxHitPoints)
+            //    {
+            //        displayPanel.gameObject.SetActive(false);
+            //        //StopCoroutine(timePause());
+            //        //levelTransition.FadeToNextLevel(); // TO DO - Add hyper speed animation 
+            //    }
         }
     }
 
@@ -141,7 +149,7 @@ public class TutorialManager : MonoBehaviour
     {
         while (dangerWarning == true)
         {
-            yield return new WaitForSeconds(7.5f);
+            yield return new WaitForSeconds(4.0f);
             displayPanel.gameObject.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             onScreenProximityWarning.SetActive(true);
@@ -182,38 +190,38 @@ public class TutorialManager : MonoBehaviour
     {
         displayPanel.gameObject.SetActive(true);
         isPaused = true;
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.75f);
         isPaused = false;
         tutorialTipsIndex++;
     }
 
     IEnumerator Movement()
     {
+        isPaused = true;
+        yield return new WaitForSeconds(0.5f);
+        playerController.canMove = true;
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.UpArrow) ||
             Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) ||
             Input.GetKeyDown(KeyCode.S) || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            isPaused = true;
-            yield return new WaitForSeconds(1.5f);
-            playerController.canMove = true;
             yield return new WaitForSeconds(3.5f);
-            isPaused = false;
             tutorialTipsIndex++;
         }
+        isPaused = false;
     }
 
     IEnumerator HowToShoot()
     {
-    if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
+        isPaused = true;
+        yield return new WaitForSeconds(0.75f);
+        playerController.canEngage = true;
+        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0) ||
         Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
-            isPaused = true;
-            yield return new WaitForSeconds(1.5f);
-            playerController.canEngage = true;
-            yield return new WaitForSeconds(2.0f);
-            isPaused = false;
+            yield return new WaitForSeconds(2.5f);
             tutorialTipsIndex++;
         }
+        isPaused = false;
     }
 }
 

@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private PlayerWeaponsController playerWeapons;
+    private SoundManager KittenPurr;
     private float xRange = 18.5f;
     private float yRange = 9.3f;
     private float horizontalInput;
     private float verticalInput;
     private float tilt = 25.0f;
-    public float playerSpeed;
-    public float playerSpeedCap = 25;
-    public float speedReset = 10;
+    public float playerSpeed; // Default speed == 10 << inspector input has priority over this
+    public float playerSpeedCap = 25.0f;
+    public float speedReset = 10.0f;
     public bool canEngage;
     public bool canMove;
 
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
-        playerSpeed = 10;
+        //playerSpeed = 10.0f;
     }
 
     void Update()
@@ -67,8 +68,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update player speed method
-    public void UpdatePlayerSpeed(float speedBoost)
+    public void UpdatePlayerSpeed(float speedBoostValue)
     {
-        playerSpeed += speedBoost;
+        playerSpeed += speedBoostValue;
     }
 }

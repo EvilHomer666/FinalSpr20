@@ -38,6 +38,7 @@ TagManager:
   - lineRenderer
   - Credits
   - EventSystem
+  - WeaponUpgrade
   layers:
   - Default
   - TransparentFX

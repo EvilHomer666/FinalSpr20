@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
 
         if (isMine == true)
-            rigidBody.velocity = -transform.right * enemySpeed;
+            rigidBody.velocity = transform.right * enemySpeed;
         else
         rigidBody.velocity = -transform.forward * enemySpeed;
     }

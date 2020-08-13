@@ -19,8 +19,9 @@ public class DetectCollisions : MonoBehaviour
     private float minimumDamage = 1f;
     private float collateralDamage = 0.5f;
     private string sceneName;
+    public float damageValue;
 
-    // Spawn manager array for powerup prefabs
+    // Spawn manager array for power up prefabs
     public GameObject[] powerUpPrefabs;
 
     // Start is called before the first frame update
@@ -82,8 +83,6 @@ public class DetectCollisions : MonoBehaviour
                 if (holdsPowerUp == true)
                 {
                     TutorialModeCheck();
-                   // Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
-
                     int powerUpIndex = Random.Range(0, powerUpPrefabs.Length);
                     Instantiate(powerUpPrefabs[powerUpIndex], powerUpSpawn.position, powerUpPrefabs[powerUpIndex].transform.rotation);
 
@@ -132,7 +131,6 @@ public class DetectCollisions : MonoBehaviour
                 Instantiate(onDestroyExplosion, transform.position, transform.rotation);
                 GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
                 soundManager.LargeAsteroidDestroyed();
-                scoreManager.IncrementScore(scoreValue);
                 Destroy(gameObject);
                 Debug.Log("Enemy Destroyed!");
             }

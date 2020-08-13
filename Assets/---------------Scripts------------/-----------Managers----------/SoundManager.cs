@@ -5,8 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     // UI Sounds
-    [SerializeField] AudioClip navigationBlip;
-    [SerializeField] AudioClip quit;
+    [SerializeField] AudioClip purr;
 
     // Stage Music
     [SerializeField] AudioClip level_01;
@@ -42,15 +41,10 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // UI sound methods
-    public void NavigationBlip()
+    // UI sounds
+    public void KittenPurr()
     {
-        audioSource.PlayOneShot(navigationBlip, 0.5f);
-        return;
-    }
-    public void QuitBlip()
-    {
-        audioSource.PlayOneShot(quit, 0.5f);
+        audioSource.PlayOneShot(purr, 1.0f);
         return;
     }
 
@@ -100,7 +94,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayerFireLaserLv1()
     {
-        audioSource.PlayOneShot(shootLaserLv1, 1.5f);
+        audioSource.PlayOneShot(shootLaserLv1, 1.0f);
         return;
     }
     public void PlayerInputConfirmed()
