@@ -64,6 +64,12 @@ public class PlayerController : MonoBehaviour
             // Set rotation over x axis
             transform.rotation = Quaternion.Euler(Input.GetAxis("Vertical") * tilt, 0, 0);
         }
+
+        // Check to never let player have more than allowed speed points 
+        if (playerSpeed > playerSpeedCap)
+        {
+            playerSpeed = playerSpeedCap;
+        }
     }
 
     // Update player speed method

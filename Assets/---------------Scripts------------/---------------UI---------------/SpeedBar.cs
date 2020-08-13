@@ -13,7 +13,7 @@ public class SpeedBar : MonoBehaviour
     private int speedLv2 = 2; // >> 20 speed
     private int speedLv3 = 3; // >> 25 speed
     public int numberOfSpeeds = 4; // Total number of speed levels
-    private PlayerController speedBarLevel;
+    private PlayerController playerController;
     public int speedLv; // Variable that displays current speed level - to be accessed by player controller script
     /* Base speed is 10, can be upgraded to 25
      * in 5 point increments. Tutorial starts at 15 with base speed as fall back.
@@ -22,7 +22,7 @@ public class SpeedBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedBarLevel = GetComponent<PlayerController>();
+        playerController = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -58,21 +58,21 @@ public class SpeedBar : MonoBehaviour
     }
 
     // Method to update the speed bar UI
-    private void updateSpeedBar()
+    public void updateSpeedBar()
     {
-        if (speedBarLevel.playerSpeed == 10)
+        if (playerController.playerSpeed == 10)
         {
             speedLv = speedLv0;
         }
-        if (speedBarLevel.playerSpeed == 15)
+        if (playerController.playerSpeed == 15)
         {
             speedLv = speedLv1;
         }
-        if (speedBarLevel.playerSpeed == 20)
+        if (playerController.playerSpeed == 20)
         {
             speedLv = speedLv2;
         }
-        if (speedBarLevel.playerSpeed == 25)
+        if (playerController.playerSpeed == 25)
         {
             speedLv = speedLv3;
         }

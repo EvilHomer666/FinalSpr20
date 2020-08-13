@@ -8,9 +8,10 @@ public class SpeedPowerUp : MonoBehaviour
     [SerializeField] float powerUpLocalSpeed;
     [SerializeField] int scoreValue;
     private int speedDemonBonus = 5;
+    private SpeedBar speedBar;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
-    private PlayerController playerControllerSpeedBoost;
+    private PlayerController playerController;
     private DetectPlayerCollisions playerCollisions;
 
     // Start is called before the first frame update
@@ -24,7 +25,9 @@ public class SpeedPowerUp : MonoBehaviour
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
 
-        playerControllerSpeedBoost = FindObjectOfType<PlayerController>();
+        speedBar = FindObjectOfType<SpeedBar>();
+
+        playerController = FindObjectOfType<PlayerController>();
 
         playerCollisions = FindObjectOfType<DetectPlayerCollisions>();
     }
@@ -40,16 +43,17 @@ public class SpeedPowerUp : MonoBehaviour
     // NOTE TO SELF: None of this will work without colliders set to trigger and rigid bodies attached - must revise, it's buggy.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && playerControllerSpeedBoost.playerSpeed < playerControllerSpeedBoost.playerSpeedCap)
+        if (other.gameObject.tag == "Player" && playerController.playerSpeed < playerController.playerSpeedCap)
         {
-            playerControllerSpeedBoost.UpdatePlayerSpeed(speedBoostValue);
+            playerController.UpdatePlayerSpeed(speedBoostValue);
+            speedBar.updateSpeedBar();
             soundManager.PlayerSpeedBoost();
             scoreManager.IncrementScore(scoreValue);
             Destroy(gameObject);
             Debug.Log("Speed Up!");
         }
 
-        else if (other.gameObject.tag == "Player" && playerControllerSpeedBoost.playerSpeed == playerControllerSpeedBoost.playerSpeedCap)
+        if (other.gameObject.tag == "Player" && playerController.playerSpeed == playerController.playerSpeedCap)
         {
             soundManager.PlayerCollectedPowerUp();
             scoreManager.IncrementScore(scoreValue * speedDemonBonus);
