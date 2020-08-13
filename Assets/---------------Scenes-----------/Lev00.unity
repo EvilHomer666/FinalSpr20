@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2234428, g: 0.0045316825, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.22191152, g: 0.0044628703, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1286,6 +1286,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 145510484, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434050469, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
+      propertyPath: shieldOpacityRenderer
+      value: 
+      objectReference: {fileID: 1272782343}
     - target: {fileID: 1208473821, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
       propertyPath: speeds.Array.data[0]
       value: 
@@ -1298,6 +1306,16 @@ PrefabInstance:
       propertyPath: speeds.Array.data[2]
       value: 
       objectReference: {fileID: 1159352471}
+    - target: {fileID: 951545363377569590, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 951545363377569590, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3154206371285850582, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
       propertyPath: playerMaxHitPoints
@@ -1306,6 +1324,11 @@ PrefabInstance:
     - target: {fileID: 3154206371285850582, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
       propertyPath: playerCurrentHitPoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137229293028956158, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6405263183748241372, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
@@ -1367,6 +1390,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313493014729571844, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313493014729571845, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313493014729571847, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8313493014729571847, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+        type: 3}
+      propertyPath: m_Name
+      value: UIPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 8313493015987481537, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
@@ -2238,6 +2281,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullText: Black mater boosts both your speed and fire power.
   delay: 0.035
+--- !u!23 &1272782343 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 662593827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350442458
 GameObject:
   m_ObjectHideFlags: 0
