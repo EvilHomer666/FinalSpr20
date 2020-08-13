@@ -13,8 +13,8 @@ public class PlayerShieldCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerCanvasAlpha.alpha = 0;
-        meshRenderer.SetActive(false);
+        playerCanvasAlpha.alpha = 1;
+        meshRenderer.SetActive(true);
     }
 
     public void shieldUpdate()

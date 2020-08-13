@@ -92,51 +92,7 @@ public class DetectCollisions : MonoBehaviour
                 Destroy(gameObject);
                 Debug.Log("Target Destroyed!");
             }
-        }
-        
-
-
-        // Enemy friendly fire
-        if (other.gameObject.tag == "EnemyProjectile")
-        {
-            Debug.Log("Collateral damage!");
-            Destroy(other.gameObject);
-            if (damageMultiplier != null)
-            {
-                enemyHitPoints -= damageMultiplier.damageValueMultiplier;
-            }
-            else
-            {
-                enemyHitPoints -= minimumDamage;
-            }
-
-            if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "EnemyShip")
-            {
-                soundManager.EnemyShipEngaged();
-            }
-            if (enemyHitPoints <= 0)
-            {
-                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                soundManager.EnemyShipDestroyed();
-                Destroy(gameObject);
-                Debug.Log("Enemy Destroyed!");
-            }
-
-            if (other.gameObject.tag == "EnemyProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
-            {
-                soundManager.LargeAsteroidHit();
-            }
-            if (enemyHitPoints <= 0)
-            {
-                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                soundManager.LargeAsteroidDestroyed();
-                scoreManager.IncrementScore(scoreValue);
-                Destroy(gameObject);
-                Debug.Log("Enemy Destroyed!");
-            }
-        }
+        }       
     }
     // Tutorial scene check
     private void TutorialModeCheck()
