@@ -8,12 +8,12 @@ public class SpeedBar : MonoBehaviour
     [SerializeField] Image[] speeds;
     [SerializeField] Sprite fullSpeedLevel;
     [SerializeField] Sprite emptySpeedLevel;
-    private PlayerController speedValue;
     private int speedLv0 = 0; // >> 10 speed
     private int speedLv1 = 1; // >> 15 speed
     private int speedLv2 = 2; // >> 20 speed
     private int speedLv3 = 3; // >> 25 speed
     public int numberOfSpeeds = 4; // Total number of speed levels
+    private PlayerController speedBarLevel;
     public int speedLv; // Variable that displays current speed level - to be accessed by player controller script
     /* Base speed is 10, can be upgraded to 25
      * in 5 point increments. Tutorial starts at 15 with base speed as fall back.
@@ -22,7 +22,7 @@ public class SpeedBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedValue = GetComponent<PlayerController>();
+        speedBarLevel = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -57,40 +57,24 @@ public class SpeedBar : MonoBehaviour
         }
     }
 
-    // Method to update the speed bar UI and player object particle FX  
+    // Method to update the speed bar UI
     private void updateSpeedBar()
     {
-        if (speedValue.playerSpeed <= 10 && speedValue.playerSpeed >= 0) // << Red Sparks
+        if (speedBarLevel.playerSpeed == 10)
         {
-            speedLv = speedLv0; // << Changes the speed level sprite UI
-            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Play();
+            speedLv = speedLv0;
         }
-        if (speedValue.playerSpeed <= 15 && speedValue.playerSpeed >= 11)  // << Red flame
+        if (speedBarLevel.playerSpeed == 15)
         {
-            speedLv = speedLv1; // << Changes the speed level sprite UI
-            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Play();
-            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
+            speedLv = speedLv1;
         }
-        if (speedValue.playerSpeed <= 20 && speedValue.playerSpeed >= 16)  // << Green flame
+        if (speedBarLevel.playerSpeed == 20)
         {
-            speedLv = speedLv2; // << Changes the speed level sprite UI
-            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Play();
-            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
+            speedLv = speedLv2;
         }
-        if (speedValue.playerSpeed <= 25 && speedValue.playerSpeed >= 21) // << Blur flame
+        if (speedBarLevel.playerSpeed == 25)
         {
-            speedLv = speedLv3; // << Changes the speed level sprite UI
-            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Play();
-            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
-            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
+            speedLv = speedLv3;
         }
     }
 }

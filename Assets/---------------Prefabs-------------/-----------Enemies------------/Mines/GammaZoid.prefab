@@ -43,8 +43,8 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10
-  m_Range: 25
+  m_Intensity: 75
+  m_Range: 20
   m_SpotAngle: 179
   m_InnerSpotAngle: 2
   m_CookieSize: 10
@@ -132,11 +132,11 @@ Light:
   m_GameObject: {fileID: 1827948952}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10
-  m_Range: 25
+  m_Intensity: 75
+  m_Range: 20
   m_SpotAngle: 179
   m_InnerSpotAngle: 2
   m_CookieSize: 10
@@ -184,6 +184,36 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &4892557799219501752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535317608175851565}
+  m_Layer: 0
+  m_Name: powerUpSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535317608175851565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892557799219501752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7147416764109952037}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7149995170801971665
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,15 +245,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7149995170801971665}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 431881480}
   - {fileID: 1827948953}
+  - {fileID: 535317608175851565}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7154446714854912475
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -332,13 +363,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 250
   enemyHitPoints: 1
-  holdsPowerUp: 0
-  powerUpSpawn: {fileID: 0}
+  holdsPowerUp: 1
+  powerUpSpawn: {fileID: 535317608175851565}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
   impactExplosion: {fileID: 4842643632494790688, guid: 053b465a4c90f0741aebd63cb5dbad8a,
     type: 3}
-  damageValue: 10
   powerUpPrefabs:
   - {fileID: 911274349570765602, guid: f040767946d665545901e9d51c64f8e3, type: 3}
 --- !u!135 &1273170327889466658
@@ -352,8 +382,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 12.984033
-  m_Center: {x: 0, y: 0.27127266, z: 0.58188677}
+  m_Radius: 11.651793
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &8095063899980381827
 BoxCollider:
   m_ObjectHideFlags: 0

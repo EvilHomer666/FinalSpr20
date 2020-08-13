@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timers : MonoBehaviour
 {
     [SerializeField] Text timerText;
-    [SerializeField] float time;
+    [SerializeField] float time = 66.6f;
     private TutorialManager levelCheck;
     private string sceneName;
     private Scene activeScene;
