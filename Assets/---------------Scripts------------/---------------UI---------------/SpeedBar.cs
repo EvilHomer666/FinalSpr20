@@ -63,18 +63,34 @@ public class SpeedBar : MonoBehaviour
         if (playerController.playerSpeed == 10)
         {
             speedLv = speedLv0;
+            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Play();
         }
         if (playerController.playerSpeed == 15)
         {
             speedLv = speedLv1;
+            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Play();
+            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
         }
         if (playerController.playerSpeed == 20)
         {
             speedLv = speedLv2;
+            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Play();
+            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
         }
         if (playerController.playerSpeed == 25)
         {
             speedLv = speedLv3;
+            GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Play();
+            GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
         }
     }
 }

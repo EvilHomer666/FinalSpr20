@@ -57,34 +57,8 @@ public class DetectPlayerCollisions : MonoBehaviour
         // Particle system/engine health & speed mechanic
         while(gameManager.gameOver != true)
         {
-            if (playerCurrentHitPoints == enginesLv4)
+            if (playerCurrentHitPoints == 10)
             {
-                GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Play();
-                GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
-                // polarityModifierSwitch.polarityModifier = true; // << TO DO to be implemented with player's ability to use enemy fire against them
-            }
-            if (playerCurrentHitPoints == enginesLv3)
-            {
-                GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Play();
-                GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
-            }
-            if (playerCurrentHitPoints == enginesLv2)
-            {
-                GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Play();
-                GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Stop();
-            }
-            if (playerCurrentHitPoints == enginesLv1)
-            {
-                GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
-                GameObject.Find("enginesLv1").GetComponent<ParticleSystem>().Play();
                 playerControllerSpeedReset.playerSpeed = playerControllerSpeedReset.speedReset;
             }
 
