@@ -8,21 +8,21 @@ public class SpeedBar : MonoBehaviour
     [SerializeField] Image[] speeds;
     [SerializeField] Sprite fullSpeedLevel;
     [SerializeField] Sprite emptySpeedLevel;
+    private PlayerController playerController;
+    private DetectPlayerCollisions playerCollisions;
     private int speedLv0 = 0; // >> 10 speed
     private int speedLv1 = 1; // >> 15 speed
     private int speedLv2 = 2; // >> 20 speed
     private int speedLv3 = 3; // >> 25 speed
-    public int numberOfSpeeds = 4; // Total number of speed levels
-    private PlayerController playerController;
     public int speedLv; // Variable that displays current speed level - to be accessed by player controller script
-    /* Base speed is 10, can be upgraded to 25
-     * in 5 point increments. Tutorial starts at 15 with base speed as fall back.
-     */
+                        /* Base speed is 10, can be upgraded to 25*/
+    public int numberOfSpeeds = 4; // Total number of speed levels
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerCollisions = GetComponent<DetectPlayerCollisions>();
     }
 
     // Update is called once per frame
@@ -57,7 +57,7 @@ public class SpeedBar : MonoBehaviour
         }
     }
 
-    // Method to update the speed bar UI
+    // Method to update the speed bar UI, NOT the player's actual speed
     public void updateSpeedBar()
     {
         if (playerController.playerSpeed == 10)

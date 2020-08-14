@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22191152, g: 0.0044628703, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.22346279, g: 0.0045641423, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -163,8 +163,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.84407455, y: 0.6642278, z: 2.1968794}
-  m_Center: {x: -0.15136112, y: -0.013651031, z: -0.014252266}
+  m_Size: {x: 0.87249917, y: 0.6642278, z: 2.1968794}
+  m_Center: {x: -0.13714893, y: -0.013651031, z: -0.014252266}
 --- !u!33 &48171574
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: We're out of time....
+  fullText: There's no time....
   delay: 0.05
 --- !u!114 &187499863
 MonoBehaviour:
@@ -584,7 +584,7 @@ PrefabInstance:
     - target: {fileID: 2355640067312458466, guid: 927880ec605a39642845b1b6e1c08eff,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2355640067326552605, guid: 927880ec605a39642845b1b6e1c08eff,
         type: 3}
@@ -1286,14 +1286,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 145510484, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 434050469, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: shieldOpacityRenderer
-      value: 
-      objectReference: {fileID: 1272782343}
     - target: {fileID: 1208473821, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
       propertyPath: speeds.Array.data[0]
       value: 
@@ -1306,31 +1298,6 @@ PrefabInstance:
       propertyPath: speeds.Array.data[2]
       value: 
       objectReference: {fileID: 1159352471}
-    - target: {fileID: 951545363377569590, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 951545363377569590, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_Alpha
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850582, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: playerMaxHitPoints
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850582, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: playerCurrentHitPoints
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6137229293028956158, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6405263183748241372, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
       propertyPath: m_Name
@@ -1391,26 +1358,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8313493014729571844, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313493014729571845, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313493014729571847, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313493014729571847, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_Name
-      value: UIPlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 8313493015987481537, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1420,11 +1367,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313493016236070306, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_Name
-      value: LifeBarPercentage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
@@ -2281,12 +2223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullText: Black mater boosts both your speed and fire power.
   delay: 0.035
---- !u!23 &1272782343 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 662593827}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350442458
 GameObject:
   m_ObjectHideFlags: 0
@@ -7751,7 +7687,7 @@ PrefabInstance:
     - target: {fileID: 7545472615890706689, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
       propertyPath: spawnInterval
-      value: 1.25
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7545472615890706689, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
@@ -7773,7 +7709,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 7149995170801971665, guid: 28b4731863d8d82409414006d6add0fe,
+      objectReference: {fileID: 911274349570765602, guid: 66ef6f33ddf5fb24fa2e22c953b352af,
         type: 3}
     - target: {fileID: 7545472615890706689, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
@@ -7799,6 +7735,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3833415236824954180, guid: 50c6582f78d863b4bac89a5fe97aa3f8,
         type: 3}
+    - target: {fileID: 7545472615890706690, guid: d5a26990b33972944b68a70ea09be531,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.63
+      objectReference: {fileID: 0}
     - target: {fileID: 7545472615890706691, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
       propertyPath: m_IsActive

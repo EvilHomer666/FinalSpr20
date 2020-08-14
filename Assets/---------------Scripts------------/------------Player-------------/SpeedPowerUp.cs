@@ -53,7 +53,7 @@ public class SpeedPowerUp : MonoBehaviour
             Debug.Log("Speed Up!");
         }
 
-        if (other.gameObject.tag == "Player" && playerController.playerSpeed == playerController.playerSpeedCap)
+        else if (other.gameObject.tag == "Player" && playerController.playerSpeed == playerController.playerSpeedCap)
         {
             soundManager.PlayerCollectedPowerUp();
             scoreManager.IncrementScore(scoreValue * speedDemonBonus);
