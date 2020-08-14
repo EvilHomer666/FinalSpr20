@@ -15,7 +15,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     private SoundManager soundManager;
     private PlayerController playerController;
     private PlayerShieldCanvas shieldCanvas;
-    private ShieldActivity shieldDamage;
+    private ShieldActivity shield;
     private SpeedBar speedBar;
     private Scene activeScene;
     private string sceneName;
@@ -40,7 +40,8 @@ public class DetectPlayerCollisions : MonoBehaviour
         speedBar = FindObjectOfType<SpeedBar>();
         activeScene = SceneManager.GetActiveScene();
         shieldCanvas = FindObjectOfType<PlayerShieldCanvas>();
-        shieldDamage = FindObjectOfType<ShieldActivity>();
+        shield = FindObjectOfType<ShieldActivity>();
+
         // Initialize Life-Hit points and check for tutorial mode
         playerCurrentHitPoints = playerMaxHitPoints;
         lifeBar.SetMaxLife(playerCurrentHitPoints);
@@ -56,18 +57,18 @@ public class DetectPlayerCollisions : MonoBehaviour
         // Speed reset at 90% damage
         if (playerCurrentHitPoints <= 2)
         {
-                playerController.playerSpeed = playerController.speedReset;
+            playerController.playerSpeed = playerController.speedReset;
         }
 
         // Player Game Over check
         if (playerCurrentHitPoints <= -1)
-            {
-                // Instantiate VFX on player death - second line plays sub-particle element in parent
-                Instantiate(playerExplosion, transform.position, transform.rotation);
-                GameObject.Find("ParticleBurst").GetComponent<ParticleSystem>().Play();
-                Destroy(gameObject);
-                gameManager.GameOver();
-            }    
+        {
+            // Instantiate VFX on player death - second line plays sub-particle element in parent
+            Instantiate(playerExplosion, transform.position, transform.rotation);
+            GameObject.Find("ParticleBurst").GetComponent<ParticleSystem>().Play();
+            Destroy(gameObject);
+            gameManager.GameOver();
+        }    
     }
 
     // On trigger enter function to detect collisions with enemy/hazard and take damage
@@ -78,7 +79,7 @@ public class DetectPlayerCollisions : MonoBehaviour
             other.gameObject.tag == "Hazard" || other.gameObject.tag == "HazardSP" || other.gameObject.tag == "HazardHP")
         {
             Debug.Log("Collision!");
-            shieldDamage.shieldIsActive = true;
+            shield.shieldHit = true;
             playerCurrentHitPoints -= damageValue;
             lifeBar.SetLife(playerCurrentHitPoints);
             shieldCanvas.shieldUpdate();
@@ -103,7 +104,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     {
         while (true)
         {
-            if (playerCurrentHitPoints < 10 || playerCurrentHitPoints == -1)
+            if (playerCurrentHitPoints < playerMaxHitPoints || gameManager.gameOver != true)
             {
                 playerCurrentHitPoints += 0.10f;
                 lifeBar.SetLife(playerCurrentHitPoints);

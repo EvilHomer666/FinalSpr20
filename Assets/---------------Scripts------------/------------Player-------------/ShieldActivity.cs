@@ -4,42 +4,63 @@ using UnityEngine;
 
 public class ShieldActivity : MonoBehaviour
 {
-    [SerializeField] Renderer shieldRenderer, shieldOpacityRenderer;
-    [SerializeField] GameObject shieldMeshRenderer;
+    [SerializeField] Renderer shieldFXRenderer; // FX renderer
+    private DetectPlayerCollisions playerCollisions;
+    private float hitCoolDownTime = 0.15f;
+
+    // Rendering values on hit/active
     private float shieldOnHit = 200.0f;
-    private float shieldOpacityOnHit = 0.0f;
-    private float shieldOpacityStable = 4.0f;
-    private float cooldownTime = 0.25f;
+    private float shieldOpacityOnHit = 2.0f;
+
+    // Values subtracted on cool down
     private float shieldStable = 0.1f;
-    public bool shieldIsActive;
-    public bool shieldDown;
+    private float shieldOpacityStable = 0.001f;
+
+    public bool shieldHit;
 
     // Start is called before the first frame update
     void Start()
     {
-        shieldRenderer = GetComponent<Renderer>();        
-        shieldIsActive = false;
-        //shieldMeshRenderer.SetActive(false);
+        shieldFXRenderer = GetComponent<Renderer>();
+        playerCollisions = GetComponent<DetectPlayerCollisions>();
+        shieldHit = false;      
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (shieldIsActive == true && shieldMeshRenderer.activeInHierarchy)
+        if (shieldHit == true)
         {            
-            StartCoroutine(ShieldIsActive());
-        }               
+            StartCoroutine(ShieldHit());
+        }
     }
-
+ 
     // Shield activity indicator
-    private IEnumerator ShieldIsActive()
+    private IEnumerator ShieldHit()
     {
         Debug.Log("Shield is Active!");
-        shieldOpacityRenderer.material.SetFloat("_FresnelWidth", shieldOpacityOnHit);
-        shieldRenderer.material.SetFloat("_Fresnel", shieldOnHit);
-        yield return new WaitForSeconds(cooldownTime);
-        shieldIsActive = false;
-        shieldOpacityRenderer.material.SetFloat("_FresnelWidth", shieldOpacityStable); //  TO DO subtract incremental to simulate fadeout
-        shieldRenderer.material.SetFloat("_Fresnel", shieldStable); //  TO DO subtract incremental to simulate fadeout
+        shieldFXRenderer.material.SetFloat("_Fresnel", shieldOnHit);
+        shieldFXRenderer.material.SetFloat("_FresnelWidth", shieldOpacityOnHit);        
+        yield return new WaitForSeconds(hitCoolDownTime);
+        StartCoroutine(FadeShield());
+        shieldHit = false;
+    }
+
+    //Health regeneration over time
+    IEnumerator FadeShield()
+    {
+        while (true)
+        {
+            if (shieldOnHit < 250 && shieldOpacityOnHit < 2.0f)
+            {
+                shieldFXRenderer.material.SetFloat("_Fresnel", shieldOnHit -= shieldStable); //  TO DO subtract decremental to simulate fadeout
+                shieldFXRenderer.material.SetFloat("_FresnelWidth", shieldOpacityOnHit -= shieldOpacityStable); //  TO DO subtract decremental to simulate fadeout
+                yield return new WaitForSeconds(0.025f);
+            }
+            else
+            {
+                yield return null;
+            }
+        }
     }
 }

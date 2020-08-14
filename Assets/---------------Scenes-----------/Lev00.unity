@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22346279, g: 0.0045641423, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.22531417, g: 0.0046096705, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: There's no time....
+  fullText: There's no time!.
   delay: 0.05
 --- !u!114 &187499863
 MonoBehaviour:
@@ -584,7 +584,7 @@ PrefabInstance:
     - target: {fileID: 2355640067312458466, guid: 927880ec605a39642845b1b6e1c08eff,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2355640067326552605, guid: 927880ec605a39642845b1b6e1c08eff,
         type: 3}
@@ -1286,6 +1286,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1208473821, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
       propertyPath: speeds.Array.data[0]
       value: 

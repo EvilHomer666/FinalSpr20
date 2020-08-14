@@ -52,7 +52,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -107,11 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfe6bd66224c1d4fa2ae6917f5850a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldRenderer: {fileID: 184979499}
-  shieldOpacityRenderer: {fileID: 184979499}
-  shieldMeshRenderer: {fileID: 184979497}
-  shieldIsActive: 0
-  shieldDown: 0
+  shieldFXRenderer: {fileID: 184979499}
+  shieldHit: 0
 --- !u!1 &3154206370812362937
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +726,7 @@ PrefabInstance:
     - target: {fileID: 9115411992425087920, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.12
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 9115411992425087923, guid: 9da2063da6e41c84ebf9a0087f6127e1,
         type: 3}
