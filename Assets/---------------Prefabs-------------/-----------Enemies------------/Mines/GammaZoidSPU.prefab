@@ -181,12 +181,12 @@ MonoBehaviour:
   enemyHitPoints: 1
   holdsPowerUp: 1
   powerUpSpawn: {fileID: 5865710804136418488}
+  powerUpDrop: {fileID: 911274349570765602, guid: 66ef6f33ddf5fb24fa2e22c953b352af,
+    type: 3}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
   impactExplosion: {fileID: 4842643632494790688, guid: 053b465a4c90f0741aebd63cb5dbad8a,
     type: 3}
-  powerUpPrefabs:
-  - {fileID: 911274349570765602, guid: 66ef6f33ddf5fb24fa2e22c953b352af, type: 3}
 --- !u!135 &5161637320612827575
 SphereCollider:
   m_ObjectHideFlags: 0

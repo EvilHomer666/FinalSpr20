@@ -6,15 +6,15 @@ public class ShieldActivity : MonoBehaviour
 {
     [SerializeField] Renderer shieldFXRenderer; // FX renderer
     private DetectPlayerCollisions playerCollisions;
-    private float hitCoolDownTime = 0.15f;
+    private float hitCoolDownTime = 0.25f;
 
     // Rendering values on hit/active
     private float shieldOnHit = 200.0f;
     private float shieldOpacityOnHit = 2.0f;
 
     // Values subtracted on cool down
-    private float shieldStable = 0.1f;
-    private float shieldOpacityStable = 0.001f;
+    private float shieldStableCoolDown = 0.1f;
+    private float shieldOpacityStableCoolDown = 0.001f;
 
     public bool shieldHit;
 
@@ -51,10 +51,10 @@ public class ShieldActivity : MonoBehaviour
     {
         while (true)
         {
-            if (shieldOnHit < 250 && shieldOpacityOnHit < 2.0f)
+            if (shieldOnHit <= 200 && shieldOpacityOnHit <= 2.0f)
             {
-                shieldFXRenderer.material.SetFloat("_Fresnel", shieldOnHit -= shieldStable); //  TO DO subtract decremental to simulate fadeout
-                shieldFXRenderer.material.SetFloat("_FresnelWidth", shieldOpacityOnHit -= shieldOpacityStable); //  TO DO subtract decremental to simulate fadeout
+                shieldFXRenderer.material.SetFloat("_Fresnel", shieldOnHit -= shieldStableCoolDown); //  TO DO subtract decremental to simulate fadeout
+                shieldFXRenderer.material.SetFloat("_FresnelWidth", shieldOpacityOnHit -= shieldOpacityStableCoolDown); //  TO DO subtract decremental to simulate fadeout
                 yield return new WaitForSeconds(0.025f);
             }
             else
