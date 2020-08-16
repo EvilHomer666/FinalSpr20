@@ -53,10 +53,10 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -109,7 +109,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1c25d0d9e8e116447a76c4732d4ec882, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c24668fc8340145ae22b0b3a18b4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldMeshRenderer: {fileID: 0}
+  shieldHit: 0
 --- !u!1 &3154206370812362937
 GameObject:
   m_ObjectHideFlags: 0

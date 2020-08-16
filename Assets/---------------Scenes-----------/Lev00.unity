@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22507367, g: 0.004595434, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.22390643, g: 0.0045019127, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1238,50 +1238,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 184979497, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 184979497, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_LightProbeUsage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_ReflectionProbeUsage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 434050466, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 434050466, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 434050466, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1208473821, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
       propertyPath: speeds.Array.data[0]
       value: 
@@ -1294,10 +1250,10 @@ PrefabInstance:
       propertyPath: speeds.Array.data[2]
       value: 
       objectReference: {fileID: 1159352471}
-    - target: {fileID: 1272782345, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1272782341, guid: 27aec61ec7c2aed4e9581db1996cdb3d, type: 3}
+      propertyPath: shieldMeshRenderer
+      value: 
+      objectReference: {fileID: 1346221848}
     - target: {fileID: 6405263183748241372, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
       propertyPath: m_Name
@@ -2223,6 +2179,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullText: Black mater boosts both your speed and fire power.
   delay: 0.035
+--- !u!23 &1346221848 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 184979499, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 662593827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350442458
 GameObject:
   m_ObjectHideFlags: 0

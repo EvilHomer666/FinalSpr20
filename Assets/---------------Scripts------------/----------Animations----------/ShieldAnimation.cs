@@ -5,20 +5,21 @@ using UnityEngine;
 public class ShieldAnimation : MonoBehaviour
 {
     private Animator shieldAnimation;
+    public MeshRenderer shieldMeshRenderer;
     public bool shieldHit;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Reference the Animator
-        shieldAnimation = GetComponent<Animator>();
+        shieldMeshRenderer.enabled = false;
         shieldHit = false;
     }
 
     public void PlayShieldAnimation()
     {
-        if()
+        if (shieldHit == true)
         {
+            shieldMeshRenderer.enabled = true;
             shieldAnimation.SetTrigger("ShieldActivated");
         }
     }
