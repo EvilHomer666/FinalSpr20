@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 184979500}
   - component: {fileID: 184979499}
   - component: {fileID: 434050466}
-  - component: {fileID: 434050469}
-  m_Layer: 13
+  - component: {fileID: 1272782345}
+  - component: {fileID: 1272782341}
+  m_Layer: 15
   m_Name: Shield
   m_TagString: PlayerShield
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 184979497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.599991, y: 71, z: -17.500002}
-  m_LocalScale: {x: 514.15045, y: 392.27484, z: 520.42065}
+  m_LocalScale: {x: 567.0419, y: 396.0406, z: 519.7459}
   m_Children: []
   m_Father: {fileID: 7980177557639488975}
   m_RootOrder: 4
@@ -95,7 +96,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &434050469
+--- !u!95 &1272782345
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184979497}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c25d0d9e8e116447a76c4732d4ec882, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1272782341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,11 +124,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 184979497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcfe6bd66224c1d4fa2ae6917f5850a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 36c24668fc8340145ae22b0b3a18b4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldFXRenderer: {fileID: 184979499}
-  shieldHit: 0
 --- !u!1 &3154206370812362937
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +369,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 139982ee37a243d40aab3b2b96b2c253, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1

@@ -58,6 +58,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _CullOff: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _Distort: 0
@@ -67,12 +68,12 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 1
     - _GlossyReflections: 0
-    - _IntersectionThreshold: 0.05
+    - _IntersectionThreshold: 0.034
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ScrollSpeedU: 2
+    - _ScrollSpeedU: 10
     - _ScrollSpeedV: 0
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 0

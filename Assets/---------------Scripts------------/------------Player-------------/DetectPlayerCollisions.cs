@@ -14,8 +14,8 @@ public class DetectPlayerCollisions : MonoBehaviour
     private GameManager gameManager;
     private SoundManager soundManager;
     private PlayerController playerController;
+    private ShieldAnimation shieldAnimation;
     private PlayerShieldCanvas shieldCanvas;
-    private ShieldActivity shield;
     private SpeedBar speedBar;
     private Scene activeScene;
     private string sceneName;
@@ -40,13 +40,13 @@ public class DetectPlayerCollisions : MonoBehaviour
         speedBar = FindObjectOfType<SpeedBar>();
         activeScene = SceneManager.GetActiveScene();
         shieldCanvas = FindObjectOfType<PlayerShieldCanvas>();
-        shield = FindObjectOfType<ShieldActivity>();
-
+        shieldAnimation = FindObjectOfType<ShieldAnimation>();
         // Initialize Life-Hit points and check for tutorial mode
         playerCurrentHitPoints = playerMaxHitPoints;
         lifeBar.SetMaxLife(playerCurrentHitPoints);
         //TutorialModeCheck();
         StartCoroutine(RegenerateHP());
+
         // polarityModifierSwitch = FindObjectOfType<PlayerController>(); // << TO DO to be implemented with player's ability to use return enemy fire
     }
 
@@ -79,8 +79,9 @@ public class DetectPlayerCollisions : MonoBehaviour
             other.gameObject.tag == "Hazard" || other.gameObject.tag == "HazardSP" || other.gameObject.tag == "HazardHP")
         {
             Debug.Log("Collision!");
-            shield.shieldHit = true;
+            shieldAnimation.shieldHit = true;
             playerCurrentHitPoints -= damageValue;
+            shieldAnimation.PlayShieldAnimation();
             lifeBar.SetLife(playerCurrentHitPoints);
             shieldCanvas.shieldUpdate();
             Destroy(other.gameObject);

@@ -81,10 +81,6 @@ public class DetectCollisions : MonoBehaviour
                 {
                     TutorialModeCheck();
                     Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
-
-                    //int powerUpIndex = Random.Range(0, powerUpPrefabs.Length);
-                    //Instantiate(powerUpPrefabs[powerUpIndex], powerUpSpawn.position, powerUpPrefabs[powerUpIndex].transform.rotation);
-
                 }
                 scoreManager.IncrementScore(scoreValue);
                 Destroy(gameObject);

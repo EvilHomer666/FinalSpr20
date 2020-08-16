@@ -16,7 +16,7 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine("PlayFlyInAnimation");
+        StartCoroutine(PlayFlyInAnimation());
     }
 
     IEnumerator PlayFlyInAnimation()
