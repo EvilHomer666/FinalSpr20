@@ -86,6 +86,7 @@ public class DetectPlayerCollisions : MonoBehaviour
             shieldCanvas.shieldUpdate();
             Destroy(other.gameObject);
             soundManager.PlayerShieldDamage();
+            shieldAnimation.shieldHit = false;
 
             if (playerCurrentHitPoints <= damageValue)
             {

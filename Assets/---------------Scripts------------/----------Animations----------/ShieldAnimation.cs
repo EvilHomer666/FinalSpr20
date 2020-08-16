@@ -17,7 +17,7 @@ public class ShieldAnimation : MonoBehaviour
 
     public void PlayShieldAnimation()
     {
-        if()
+        if(shieldHit == true)
         {
             shieldAnimation.SetTrigger("ShieldActivated");
         }
