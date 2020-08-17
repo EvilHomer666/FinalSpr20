@@ -106,7 +106,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     {
         while (true)
         {
-            if (playerCurrentHitPoints < playerMaxHitPoints || gameManager.gameOver != true)
+            if (playerCurrentHitPoints < playerMaxHitPoints && gameManager.gameOver != true)
             {
                 playerCurrentHitPoints += 0.10f;
                 lifeBar.SetLife(playerCurrentHitPoints);
