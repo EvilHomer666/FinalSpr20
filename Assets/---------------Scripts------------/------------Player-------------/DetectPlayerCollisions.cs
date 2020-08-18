@@ -10,7 +10,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     private int enginesLv2 = 2;
     private int enginesLv3 = 3;
     private int enginesLv4 = 4;
-    private int damageValue = 1;
+    private int damageValue = 3;
     private GameManager gameManager;
     private SoundManager soundManager;
     private PlayerController playerController;
@@ -20,6 +20,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     private Scene activeScene;
     private string sceneName;
     //private int tutorialHealthHandiCap = 9;
+    private float lowShieldThreshold = 1.5f;
     public int enginesLv1 = 1;
     public int playerMaxHitPoints;
     public float playerCurrentHitPoints;
@@ -82,13 +83,11 @@ public class DetectPlayerCollisions : MonoBehaviour
             shieldAnimation.shieldHit = true;
             playerCurrentHitPoints -= damageValue;
             shieldAnimation.PlayShieldAnimation();
-            lifeBar.SetLife(playerCurrentHitPoints);
-            shieldCanvas.shieldUpdate();
+            lifeBar.SetLife(playerCurrentHitPoints);            
             Destroy(other.gameObject);
             soundManager.PlayerShieldDamage();
-            shieldAnimation.shieldHit = false;
 
-            if (playerCurrentHitPoints <= damageValue)
+            if (playerCurrentHitPoints <= lowShieldThreshold)
             {
                 soundManager.PlayerDangerWarning();
             }
@@ -108,12 +107,14 @@ public class DetectPlayerCollisions : MonoBehaviour
         {
             if (playerCurrentHitPoints < playerMaxHitPoints && gameManager.gameOver != true)
             {
+                shieldCanvas.displayUI = true;
                 playerCurrentHitPoints += 0.10f;
                 lifeBar.SetLife(playerCurrentHitPoints);
                 yield return new WaitForSeconds(0.25f);
             }
             else
             {
+                shieldCanvas.displayUI = false;
                 yield return null;
             }
         }

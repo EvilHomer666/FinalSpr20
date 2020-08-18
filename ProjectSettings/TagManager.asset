@@ -35,10 +35,11 @@ TagManager:
   - ImpactExplosion
   - ProximityWarning
   - PlayerShield
-  - lineRenderer
   - Credits
   - EventSystem
   - WeaponUpgrade
+  - PointerGameObject
+  - lineRenderer
   layers:
   - Default
   - TransparentFX

@@ -1,34 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerShieldCanvas : MonoBehaviour
 {
-    [SerializeField] CanvasGroup playerCanvasAlpha;
-    [SerializeField] GameObject meshRenderer;
-    //private float displayTime = 4.0f;
-
+    [SerializeField] CanvasGroup canvasGroupAlpha;
+    [SerializeField] GameObject pointerGameObject;
+    public bool displayUI;
+    private bool hideUIBrake;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerCanvasAlpha.alpha = 1;
-        meshRenderer.SetActive(true);
+        displayUI = false;
+        hideUIBrake = false;
     }
 
-    public void shieldUpdate()
+    void Update()
     {
-        //StartCoroutine(DisplayPercentageInormation());
+        if (displayUI == true)
+        {
+            DisplayFloatingUI();
+            hideUIBrake = false;
+        }
+        else if (hideUIBrake == false) // << Add condition to not let coroutine run more than once per call
+        {
+            StartCoroutine(HideFloatingUI());
+            hideUIBrake = true;
+        }
     }
 
-    // Percentage UI indicator
-    //IEnumerator DisplayPercentageInormation()
-    //{
-    //    playerCanvasAlpha.alpha = 1;
-    //    meshRenderer.SetActive(true);
-    //    yield return new WaitForSeconds(displayTime);
-    //    playerCanvasAlpha.alpha = 0;
-    //    meshRenderer.SetActive(false);
-    //}
+    private void DisplayFloatingUI()
+    {
+        canvasGroupAlpha.alpha = 1;
+        pointerGameObject.SetActive(true);
+    }
+
+    IEnumerator HideFloatingUI()
+    {
+        yield return new WaitForSeconds(3.0f);
+        canvasGroupAlpha.alpha = 0;
+        pointerGameObject.SetActive(false);
+    }
 }
