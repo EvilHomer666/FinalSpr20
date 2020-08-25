@@ -9514,7 +9514,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f8ff102c31e80240a23de77ebc49419, type: 2}
+  - {fileID: 2100000, guid: ec35d4d9e9d0959469f8ea131ea10c5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9575,11 +9575,11 @@ GameObject:
   - component: {fileID: 3645186161555107877}
   - component: {fileID: 3645186161555107876}
   - component: {fileID: 3645186161555107899}
-  - component: {fileID: 3645186161555107879}
+  - component: {fileID: 6264388564755680671}
   - component: {fileID: 2009519330724216950}
   m_Layer: 0
   m_Name: BlackMatterWPU
-  m_TagString: WeaponUpgrade
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9664,7 +9664,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3645186161555107879
+--- !u!114 &6264388564755680671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9673,10 +9673,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3645186161555107898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a9dc3aaa855a34a82cafea7ffadd86, type: 3}
+  m_Script: {fileID: 11500000, guid: 692f0449f25afda47b23f65c0ce7ab27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthValue: 1
+  fireRateValue: 0.025
   powerUpLocalSpeed: 2
   scoreValue: 450
 --- !u!54 &2009519330724216950
@@ -9755,7 +9755,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f8ff102c31e80240a23de77ebc49419, type: 2}
+  - {fileID: 2100000, guid: ec35d4d9e9d0959469f8ea131ea10c5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9864,7 +9864,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f8ff102c31e80240a23de77ebc49419, type: 2}
+  - {fileID: 2100000, guid: ec35d4d9e9d0959469f8ea131ea10c5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

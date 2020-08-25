@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 7267169677805760031}
   m_Layer: 0
   m_Name: meteorFullRound
-  m_TagString: Hazard
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,6 +90,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engine: {fileID: 0}
   extraFx: {fileID: 0}
+  isMine: 0
   enemySpeed: 15
 --- !u!65 &7602078617052042971
 BoxCollider:
@@ -157,10 +159,11 @@ MonoBehaviour:
   scoreValue: 0
   enemyHitPoints: 1
   holdsPowerUp: 0
-  powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
+  powerUpDrop: {fileID: 0}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
+  impactExplosion: {fileID: 0}
 --- !u!54 &802150544448439465
 Rigidbody:
   m_ObjectHideFlags: 0

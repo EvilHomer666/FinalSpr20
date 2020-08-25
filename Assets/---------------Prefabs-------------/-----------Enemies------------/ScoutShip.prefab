@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 725604080792341574}
   m_Layer: 0
   m_Name: ScoutShip
-  m_TagString: EnemyShip
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -163,8 +164,8 @@ MonoBehaviour:
   scoreValue: 800
   enemyHitPoints: 3
   holdsPowerUp: 0
-  powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
+  powerUpDrop: {fileID: 0}
   onDestroyExplosion: {fileID: 1541247884698248380, guid: 03525f8b046e20041be1ca55488f4863,
     type: 3}
   impactExplosion: {fileID: 0}
@@ -182,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engine: {fileID: 8452985096234672303, guid: c5a4e694fc57a6542bdae0eb4167c686, type: 3}
   extraFx: {fileID: 0}
+  isMine: 0
   enemySpeed: 10
 --- !u!114 &3590772968789362460
 MonoBehaviour:

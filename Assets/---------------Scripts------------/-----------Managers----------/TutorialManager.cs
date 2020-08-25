@@ -9,7 +9,6 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] GameObject tutorialSpawnManager;
     [SerializeField] GameObject onScreenProximityWarning;
     [SerializeField] GameObject displayPanel;
-    private AudioSource kittenPurr;
     private PlayerWeaponsController playerWeapons;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
@@ -30,7 +29,7 @@ public class TutorialManager : MonoBehaviour
     private int RecoverHealth = 5;
     private int Exit = 6;
     // Tutorial tips variables end
-    private int minScoretoContinue = 500; // TO DO set new condition when power up is discovered in addition of min score
+    private int minScoretoContinue = 250; // TO DO set new condition when power up is discovered in addition of min score
     public bool wasEnemyEngaged;
 
     // Start is called before the first frame update
@@ -38,7 +37,6 @@ public class TutorialManager : MonoBehaviour
     {        // Set tutorial references and variables on start
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
-        kittenPurr = GetComponent<AudioSource>();
         playerController = FindObjectOfType<PlayerController>();
         gameOver = FindObjectOfType<GameManager>();
         playerHitPoints = FindObjectOfType<DetectPlayerCollisions>();
@@ -57,14 +55,7 @@ public class TutorialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameOver.gameOver == false)
-        {
-            kittenPurr.Play();
-        }
-        else
-            kittenPurr.Stop();
-
-        if (isPaused == true) // << Coroutine condition
+        if (isPaused == true) // << Coroutine pause condition
         {
             return;
         }
@@ -192,7 +183,7 @@ public class TutorialManager : MonoBehaviour
     {
         displayPanel.gameObject.SetActive(true);
         isPaused = true;
-        yield return new WaitForSeconds(2.75f);
+        yield return new WaitForSeconds(2.25f);
         isPaused = false;
         tutorialTipsIndex++;
     }

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1192533620894248107}
   m_Layer: 0
   m_Name: meteorFullHP
-  m_TagString: HazardHP
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,11 +82,12 @@ MonoBehaviour:
   scoreValue: 250
   enemyHitPoints: 5
   holdsPowerUp: 1
+  powerUpSpawn: {fileID: 7310253001265594443}
   powerUpDrop: {fileID: 4760844904095616668, guid: 3976d62b4004b75469f79ee38cca4452,
     type: 3}
-  powerUpSpawn: {fileID: 7310253001265594443}
   onDestroyExplosion: {fileID: 3316011983485124095, guid: 4ce971c426b9e774f9492d39a8ac8f02,
     type: 3}
+  impactExplosion: {fileID: 0}
 --- !u!114 &1580235010740765152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,8 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ed5b275b73c345962a5490ffdefb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 3
   engine: {fileID: 0}
+  extraFx: {fileID: 0}
+  isMine: 0
+  enemySpeed: 3
 --- !u!114 &7033453685067024663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +131,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -206,6 +210,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

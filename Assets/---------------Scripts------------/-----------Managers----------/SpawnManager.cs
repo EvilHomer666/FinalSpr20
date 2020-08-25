@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     private ScoreManager scoreManager;
-    private float spawnPosX = 18f;
+    private float spawnPosX = 20f;
     private float spawnRangeY = 9.8f;
     private float spawnPosZ = 0.0f;
     private int scoreHighWaterMarkA = 4000;

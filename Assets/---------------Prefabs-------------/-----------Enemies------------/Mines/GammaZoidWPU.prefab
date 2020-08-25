@@ -201,9 +201,10 @@ GameObject:
   - component: {fileID: 4112550616662748060}
   - component: {fileID: 2533342298542637071}
   - component: {fileID: 4815607446512561070}
+  - component: {fileID: -2860523575991259450}
   m_Layer: 14
   m_Name: GammaZoidWPU
-  m_TagString: HazardHP
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,11 +285,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &3639762610081498248
 MonoBehaviour:
@@ -318,7 +319,7 @@ MonoBehaviour:
   engine: {fileID: 0}
   extraFx: {fileID: 0}
   isMine: 1
-  enemySpeed: 1
+  enemySpeed: 3
 --- !u!114 &4112550616662748060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,12 +336,12 @@ MonoBehaviour:
   enemyHitPoints: 1
   holdsPowerUp: 1
   powerUpSpawn: {fileID: 3886285731842559232}
+  powerUpDrop: {fileID: 3645186161555107898, guid: 31b26bd9d37ffa5438f1d971f50a977f,
+    type: 3}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
   impactExplosion: {fileID: 4842643632494790688, guid: 053b465a4c90f0741aebd63cb5dbad8a,
     type: 3}
-  powerUpPrefabs:
-  - {fileID: 3645186161555107898, guid: 31b26bd9d37ffa5438f1d971f50a977f, type: 3}
 --- !u!135 &2533342298542637071
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -367,6 +368,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 36.03164, y: 1.2313557, z: 13.99117}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2860523575991259450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889277258054018300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115db1c607fdefb42beef9c646ebcfbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAcceleration: 18
+  distance: 6
 --- !u!1 &8171451303608438677
 GameObject:
   m_ObjectHideFlags: 0

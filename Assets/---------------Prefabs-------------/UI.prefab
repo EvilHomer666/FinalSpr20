@@ -140,7 +140,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20dcd2c75e06a184988685c38f1e2f44, type: 3}
-    m_FontSize: 12
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
@@ -264,7 +264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 134.2, y: -19.600082}
+  m_AnchoredPosition: {x: 131, y: -19}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &620679891
@@ -301,8 +301,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -191.1, y: 705}
-  m_SizeDelta: {x: 230.80005, y: 444.24796}
+  m_AnchoredPosition: {x: -189.2, y: -8.3}
+  m_SizeDelta: {x: 64.04999, y: 16.36863}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &620679894
 CanvasRenderer:
@@ -333,7 +333,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20dcd2c75e06a184988685c38f1e2f44, type: 3}
-    m_FontSize: 12
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
@@ -453,8 +453,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.74519, y: 14.895233}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -52.9, y: 13.7}
+  m_SizeDelta: {x: 100, y: 78.22183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1071591426
 CanvasRenderer:
@@ -527,8 +527,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.6927004, y: 14.895233}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -24.847515, y: 13.700074}
+  m_SizeDelta: {x: 100, y: 78.22183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1159352472
 CanvasRenderer:
@@ -865,8 +865,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92.53, y: 14.76}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -111.684814, y: 13.590075}
+  m_SizeDelta: {x: 100, y: 78.22183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2114540828
 CanvasRenderer:
@@ -939,8 +939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63, y: 14.895233}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -82.154816, y: 13.700074}
+  m_SizeDelta: {x: 100, y: 78.22183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2120791292
 CanvasRenderer:
@@ -1049,8 +1049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92.22, y: 14.895233}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -111.37482, y: 13.700074}
+  m_SizeDelta: {x: 100, y: 78.22183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4536777158068074875
 CanvasRenderer:
@@ -1184,7 +1184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2355640067312458493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1313,7 +1313,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20dcd2c75e06a184988685c38f1e2f44, type: 3}
-    m_FontSize: 12
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
@@ -1359,8 +1359,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 160, y: -1}
-  m_SizeDelta: {x: 300, y: 40}
+  m_AnchoredPosition: {x: 150.82, y: 9.5}
+  m_SizeDelta: {x: 281.63965, y: 18.999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2355640067749934271
 CanvasRenderer:
@@ -1391,7 +1391,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 20dcd2c75e06a184988685c38f1e2f44, type: 3}
-    m_FontSize: 12
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1

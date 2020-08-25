@@ -10,7 +10,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     private int enginesLv2 = 2;
     private int enginesLv3 = 3;
     private int enginesLv4 = 4;
-    private int damageValue = 3;
+    private int damageValue = 10;
     private GameManager gameManager;
     private SoundManager soundManager;
     private PlayerController playerController;
@@ -55,7 +55,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     void Update()
     {
 
-        // Speed reset at 90% damage
+        // Speed reset at 80% damage
         if (playerCurrentHitPoints <= 2)
         {
             playerController.playerSpeed = playerController.speedReset;
@@ -76,8 +76,7 @@ public class DetectPlayerCollisions : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Enemies and hazard damage check
-        if (other.gameObject.tag == "EnemyShip" || other.gameObject.tag == "EnemyProjectile" || 
-            other.gameObject.tag == "Hazard" || other.gameObject.tag == "HazardSP" || other.gameObject.tag == "HazardHP")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Hazard")
         {
             Debug.Log("Collision!");
             shieldAnimation.shieldHit = true;

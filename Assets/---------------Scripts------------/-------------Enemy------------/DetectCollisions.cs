@@ -18,8 +18,8 @@ public class DetectCollisions : MonoBehaviour
     private TutorialManager tutorialCheck;
     private Scene activeScene;
     private float minimumDamage = 1f;
-    private float collateralDamage = 0.5f;
     private string sceneName;
+    private bool thereCanBeOnlyOne;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +35,8 @@ public class DetectCollisions : MonoBehaviour
 
         damageMultiplier = FindObjectOfType<ProjectileImpact>();
         activeScene = SceneManager.GetActiveScene();
+
+        thereCanBeOnlyOne = true;
 
     }
 
@@ -55,33 +57,33 @@ public class DetectCollisions : MonoBehaviour
                 enemyHitPoints -= minimumDamage;
             }
 
-            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "EnemyShip")
+            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Enemy")
             {
                 soundManager.EnemyShipEngaged();
             }
 
-            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
-            {
-                soundManager.LargeAsteroidHit();                    
-            }
+            //if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard") // TO DO update for asteroid field
+            //{
+            //    soundManager.MineHit();                    
+            //}
 
             if (enemyHitPoints <= 0)
             {
-                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-                if (gameObject.tag == "EnemyShip")
+                if (holdsPowerUp == true && thereCanBeOnlyOne == true)
+                {
+                    Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
+                    thereCanBeOnlyOne = false;
+                }
+                if (gameObject.tag == "Enemy")
                 {
                     soundManager.EnemyShipDestroyed();
                 }
-                if (gameObject.tag == "Hazard" || gameObject.tag == "HazardHP" || gameObject.tag == "HazardSP")
+                if (gameObject.tag == "Hazard")
                 {
-                    soundManager.LargeAsteroidDestroyed();
+                    soundManager.MineDestroyed();
                 }
-                if (holdsPowerUp == true)
-                {
-                    TutorialModeCheck();
-                    Instantiate(powerUpDrop, powerUpSpawn.position, powerUpSpawn.localRotation);
-                }
+                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
                 scoreManager.IncrementScore(scoreValue);
                 Destroy(gameObject);
                 Debug.Log("Target Destroyed!");

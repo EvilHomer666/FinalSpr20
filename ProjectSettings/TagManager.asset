@@ -28,8 +28,6 @@ TagManager:
   - EnemyAttackManager
   - SceneLoadManager
   - SoundManager
-  - HazardHP
-  - HazardSP
   - SpawnManager
   - ImpactSpawn
   - ImpactExplosion
@@ -40,6 +38,9 @@ TagManager:
   - WeaponUpgrade
   - PointerGameObject
   - lineRenderer
+  - Enemy
+  - PowerUp
+  - MineSensor
   layers:
   - Default
   - TransparentFX

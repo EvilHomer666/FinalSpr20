@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 7249371538421419211, guid: c645a283b71a8814fbc23fd5b06a468d,
         type: 3}
       propertyPath: m_Name
-      value: ScoutShip Variant
+      value: ScoutShipVariantSP
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c645a283b71a8814fbc23fd5b06a468d, type: 3}

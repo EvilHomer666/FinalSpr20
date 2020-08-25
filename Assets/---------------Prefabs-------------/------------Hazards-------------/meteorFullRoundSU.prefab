@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3697850965136124889}
   m_Layer: 0
   m_Name: meteorFullRoundSU
-  m_TagString: HazardSP
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,6 +90,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -126,8 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26ed5b275b73c345962a5490ffdefb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 12
   engine: {fileID: 0}
+  extraFx: {fileID: 0}
+  isMine: 0
+  enemySpeed: 12
 --- !u!65 &4470748094596043549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -156,11 +159,12 @@ MonoBehaviour:
   scoreValue: 200
   enemyHitPoints: 3
   holdsPowerUp: 1
+  powerUpSpawn: {fileID: 1846637706706144019}
   powerUpDrop: {fileID: 6590288448442052280, guid: e37b88038c975584ea5069e675d30efb,
     type: 3}
-  powerUpSpawn: {fileID: 1846637706706144019}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
+  impactExplosion: {fileID: 0}
 --- !u!54 &6677294698075275631
 Rigidbody:
   m_ObjectHideFlags: 0

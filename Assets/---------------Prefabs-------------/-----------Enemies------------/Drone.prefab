@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -1752320116570444841}
   m_Layer: 0
   m_Name: Drone
-  m_TagString: EnemyShip
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,8 +83,8 @@ MonoBehaviour:
   scoreValue: 600
   enemyHitPoints: 2
   holdsPowerUp: 0
-  powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
+  powerUpDrop: {fileID: 0}
   onDestroyExplosion: {fileID: 1541247884698248380, guid: 03525f8b046e20041be1ca55488f4863,
     type: 3}
   impactExplosion: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engine: {fileID: 8929434879494944238, guid: 649a5bb8acedccb469d001fbaee35bb9, type: 3}
   extraFx: {fileID: 0}
+  isMine: 0
   enemySpeed: 6
 --- !u!114 &-3235544059330763131
 MonoBehaviour:
@@ -134,6 +135,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -212,6 +214,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

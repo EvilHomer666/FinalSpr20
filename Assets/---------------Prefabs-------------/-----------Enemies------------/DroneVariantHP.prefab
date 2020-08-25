@@ -56,12 +56,12 @@ PrefabInstance:
     - target: {fileID: 1800588449861238266, guid: 1bb96edf64e06d544b4bbc53bdf03814,
         type: 3}
       propertyPath: m_Name
-      value: Drone Variant
+      value: DroneVariantHP
       objectReference: {fileID: 0}
     - target: {fileID: 1800588449861238266, guid: 1bb96edf64e06d544b4bbc53bdf03814,
         type: 3}
       propertyPath: m_TagString
-      value: HazardHP
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3361832115572346857, guid: 1bb96edf64e06d544b4bbc53bdf03814,
         type: 3}

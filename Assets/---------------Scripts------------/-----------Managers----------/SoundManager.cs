@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class SoundManager : MonoBehaviour
 {
     // UI Sounds
@@ -29,10 +31,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip enemyShipDestroyed;
     [SerializeField] AudioClip enemyHomingProjectile;
     // Hazards SFX clips
-    [SerializeField] AudioClip largeAsteroidHit;
-    [SerializeField] AudioClip smallAsteroidHit;
-    [SerializeField] AudioClip largeAsteroidDestroyed;
-    [SerializeField] AudioClip smallAsteroidDestroyed;
+    [SerializeField] AudioClip asteroidHit;
+    [SerializeField] AudioClip mineHit;
+    [SerializeField] AudioClip asteroidDestroyed;
+    [SerializeField] AudioClip mineDestroyed;
 
     private AudioSource audioSource;
 
@@ -133,24 +135,24 @@ public class SoundManager : MonoBehaviour
     }
 
     // Hazards SFX
-    public void LargeAsteroidHit()
+    public void AsteroidHit()
     {
-        audioSource.PlayOneShot(largeAsteroidHit, 1.0f);
+        audioSource.PlayOneShot(asteroidHit, 1.0f);
         return;
     }
-    public void SmallAsteroidHit()
+    public void MineHit()
     {
-        audioSource.PlayOneShot(smallAsteroidHit, 1.5f);
+        audioSource.PlayOneShot(mineHit, 1.0f);
         return;
     }
-    public void LargeAsteroidDestroyed()
+    public void AsteroidDestroyed()
     {
-        audioSource.PlayOneShot(largeAsteroidDestroyed, 2.0f);
+        audioSource.PlayOneShot(asteroidDestroyed, 1.0f);
         return;
     }
-    public void SmallAsteroidDestroyed()
+    public void MineDestroyed()
     {
-        audioSource.PlayOneShot(smallAsteroidDestroyed, 1.5f);
+        audioSource.PlayOneShot(mineDestroyed, 1.0f);
         return;
     }
 }

@@ -5,15 +5,15 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     // The worst most fake Ai maneuver - using Vector2 to simplify
-    [SerializeField] Vector3 evadeWait;
-    [SerializeField] Vector2 evadeWindow;
-    [SerializeField] Vector2 evadeDelay;
+    [SerializeField] Vector3 evadeWait; 
+    [SerializeField] Vector2 evadeWindow; 
+    [SerializeField] Vector2 evadeDelay; 
     [SerializeField] float xboundary, yboundary;
-    [SerializeField] float anticipation;
-    [SerializeField] float evade;
+    [SerializeField] float anticipation; // Wait time before enemy action
+    [SerializeField] float evade; // Window of time in which enemy performs maneuver
     private Rigidbody enemyRigidBody;
     private float currentSpeed;
-    private float newTarget;
+    private float newPlayerTarget;
     private float targetReset = 0;
 
 
@@ -34,9 +34,9 @@ public class EnemyAi : MonoBehaviour
 
         while (true)
         {
-            newTarget = Random.Range(1, evade) * -Mathf.Sign(transform.position.y);
+            newPlayerTarget = Random.Range(1, evade) * -Mathf.Sign(transform.position.y);
             yield return new WaitForSeconds(Random.Range(evadeWindow.x, evadeWindow.y));
-            newTarget = targetReset;
+            newPlayerTarget = targetReset;
             yield return new WaitForSeconds(Random.Range(evadeDelay.x, evadeDelay.y));
         }
     }
@@ -44,7 +44,7 @@ public class EnemyAi : MonoBehaviour
     // Maneuver physics logic
     void FixedUpdate()
     {
-        float newManeuver = Mathf.MoveTowards(enemyRigidBody.velocity.y, newTarget, Time.deltaTime * anticipation);
+        float newManeuver = Mathf.MoveTowards(enemyRigidBody.velocity.y, newPlayerTarget, Time.deltaTime * anticipation);
         enemyRigidBody.velocity = new Vector3(0.0f, newManeuver, currentSpeed);
         enemyRigidBody.position = new Vector3(0.0f, Mathf.Clamp(enemyRigidBody.position.y, -yboundary, yboundary), Mathf.Clamp(enemyRigidBody.position.x, -xboundary, xboundary));
     }

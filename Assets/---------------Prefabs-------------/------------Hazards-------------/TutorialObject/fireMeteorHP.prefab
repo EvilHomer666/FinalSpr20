@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889573803151212021}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.5, z: -0.60000014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 469180731831851236}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3519990523129326327
 GameObject:
   m_ObjectHideFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4469336419624593549}
   m_Layer: 0
   m_Name: fireMeteorHP
-  m_TagString: HazardHP
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engine: {fileID: 1331376030032750796, guid: 99a7ea5da2e084f41acb22a02e096695, type: 3}
   extraFx: {fileID: 8370835218508762163, guid: 10626fa21de00f24b8e9635136856614, type: 3}
+  isMine: 0
   enemySpeed: 30
 --- !u!65 &3700951343403389001
 BoxCollider:
@@ -161,12 +162,12 @@ MonoBehaviour:
   enemyHitPoints: 1
   holdsPowerUp: 1
   powerUpSpawn: {fileID: 4564138543477295449}
+  powerUpDrop: {fileID: 911274349570765602, guid: 66ef6f33ddf5fb24fa2e22c953b352af,
+    type: 3}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
   impactExplosion: {fileID: 5879626478361469977, guid: fa8e411afb828874695ac9d873ac9444,
     type: 3}
-  powerUpPrefabs:
-  - {fileID: 911274349570765602, guid: f040767946d665545901e9d51c64f8e3, type: 3}
 --- !u!54 &5908061017632850491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4469336419624593549
 MonoBehaviour:

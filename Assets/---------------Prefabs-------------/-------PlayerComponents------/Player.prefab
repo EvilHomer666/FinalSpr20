@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &28637329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28637330}
+  m_Layer: 13
+  m_Name: CannonRAtl_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &28637330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28637329}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 162, z: -162}
+  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_Children: []
+  m_Father: {fileID: 7980177557639488975}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &184979497
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,7 +63,7 @@ Transform:
   m_LocalScale: {x: 567.0419, y: 396.0406, z: 519.7459}
   m_Children: []
   m_Father: {fileID: 7980177557639488975}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &184979500
 MeshFilter:
@@ -128,6 +158,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldHit: 0
+--- !u!1 &1389420225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389420226}
+  m_Layer: 13
+  m_Name: CannonLAtl_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1389420226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389420225}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 162, z: 124}
+  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_Children: []
+  m_Father: {fileID: 7980177557639488975}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3154206370812362937
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +216,7 @@ Transform:
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 7980177557639488975}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3154206371254455802
 GameObject:
@@ -220,7 +280,7 @@ Transform:
   - {fileID: 3080243307860402421}
   - {fileID: 3080243307324005755}
   m_Father: {fileID: 7980177557639488975}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3863697164882009474
 GameObject:
@@ -574,6 +634,8 @@ Transform:
   m_Children:
   - {fileID: 2694911265339964771}
   - {fileID: 3154206371254455805}
+  - {fileID: 28637330}
+  - {fileID: 1389420226}
   - {fileID: 3154206370812362936}
   - {fileID: 3154206371859322560}
   - {fileID: 184979501}
@@ -727,9 +789,9 @@ MonoBehaviour:
   playerProjectileLv2: {fileID: 4502333437135280059, guid: 107a0b02bd9638846bcb0c2162c16ea4,
     type: 3}
   cooldownTime: 0.075
-  cannons:
-  - {fileID: 3154206371254455805}
-  - {fileID: 3154206370812362936}
+  cannonsLv1: []
+  cannonsLv2: []
+  cannonsLv3: []
 --- !u!114 &3154206371285850582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,17 +888,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8313493014729571847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -77.5}
   m_LocalScale: {x: 10, y: 10, z: 399.25}
   m_Children:
   - {fileID: 8313493016236070305}
   - {fileID: 6048228680811944274}
   m_Father: {fileID: 7980177557639488975}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -221, y: -179}
+  m_AnchoredPosition: {x: -211.2, y: -223.7}
   m_SizeDelta: {x: 109.401245, y: 39.936497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8313493014729571844
@@ -925,7 +987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroupAlpha: {fileID: 951545363377569590}
   pointerGameObject: {fileID: 5690221001543393446}
-  floatingUI: 0
+  displayUI: 0
 --- !u!1 &8313493016236070306
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -98,7 +99,7 @@ GameObject:
   - component: {fileID: -3165418009800772910}
   m_Layer: 0
   m_Name: Destroyer
-  m_TagString: EnemyShip
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,8 +165,8 @@ MonoBehaviour:
   scoreValue: 1800
   enemyHitPoints: 12
   holdsPowerUp: 0
-  powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
+  powerUpDrop: {fileID: 0}
   onDestroyExplosion: {fileID: 504431175277295389, guid: 9efffbabb8a0c5a46bbb2cf07a0f7e60,
     type: 3}
   impactExplosion: {fileID: 0}
@@ -183,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engine: {fileID: 4330082557442575523}
   extraFx: {fileID: 0}
+  isMine: 0
   enemySpeed: 1.5
 --- !u!114 &1955507539525477643
 MonoBehaviour:
@@ -215,6 +217,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

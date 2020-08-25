@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 8434087040586940406}
   m_Layer: 0
   m_Name: fireMeteorMedium2
-  m_TagString: Hazard
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engine: {fileID: 1331376030032750796, guid: 99a7ea5da2e084f41acb22a02e096695, type: 3}
   extraFx: {fileID: 8370835218508762163, guid: 10626fa21de00f24b8e9635136856614, type: 3}
+  isMine: 0
   enemySpeed: 26
 --- !u!65 &8669934037596899122
 BoxCollider:
@@ -159,8 +161,8 @@ MonoBehaviour:
   scoreValue: 5
   enemyHitPoints: 1
   holdsPowerUp: 0
-  powerUpDrop: {fileID: 0}
   powerUpSpawn: {fileID: 0}
+  powerUpDrop: {fileID: 0}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
   impactExplosion: {fileID: 5879626478361469977, guid: fa8e411afb828874695ac9d873ac9444,
