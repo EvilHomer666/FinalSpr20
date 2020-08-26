@@ -62,10 +62,10 @@ public class DetectCollisions : MonoBehaviour
                 soundManager.EnemyShipEngaged();
             }
 
-            //if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard") // TO DO update for asteroid field
-            //{
-            //    soundManager.MineHit();                    
-            //}
+            if (other.gameObject.tag == "PlayerProjectile" && gameObject.tag == "Hazard")
+            {
+                soundManager.MineHit();
+            }
 
             if (enemyHitPoints <= 0)
             {
