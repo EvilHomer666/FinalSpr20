@@ -10,6 +10,7 @@ public class SpeedBar : MonoBehaviour
     [SerializeField] Sprite emptySpeedLevel;
     private PlayerController playerController;
     private DetectPlayerCollisions playerCollisions;
+    private SoundManager soundManager;
     private int speedLv0 = 0; // >> 10 speed
     private int speedLv1 = 1; // >> 15 speed
     private int speedLv2 = 2; // >> 20 speed
@@ -22,6 +23,7 @@ public class SpeedBar : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        soundManager = GetComponent<SoundManager>();
         playerCollisions = GetComponent<DetectPlayerCollisions>();
     }
 
@@ -62,7 +64,7 @@ public class SpeedBar : MonoBehaviour
     {
         if (playerController.playerSpeed == 10)
         {
-            speedLv = speedLv0;
+            speedLv = speedLv0;            
             GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
             GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
             GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
@@ -71,6 +73,7 @@ public class SpeedBar : MonoBehaviour
         if (playerController.playerSpeed == 15)
         {
             speedLv = speedLv1;
+            soundManager.EnginesLv1();
             GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
             GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
             GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Play();
@@ -79,6 +82,7 @@ public class SpeedBar : MonoBehaviour
         if (playerController.playerSpeed == 20)
         {
             speedLv = speedLv2;
+            soundManager.EnginesLv2();
             GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Stop();
             GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Play();
             GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();
@@ -87,6 +91,7 @@ public class SpeedBar : MonoBehaviour
         if (playerController.playerSpeed == 25)
         {
             speedLv = speedLv3;
+            soundManager.EnginesLv3();
             GameObject.Find("enginesLv4").GetComponent<ParticleSystem>().Play();
             GameObject.Find("enginesLv3").GetComponent<ParticleSystem>().Stop();
             GameObject.Find("enginesLv2").GetComponent<ParticleSystem>().Stop();

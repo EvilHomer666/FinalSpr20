@@ -788,6 +788,7 @@ MonoBehaviour:
     type: 3}
   playerProjectileLv2: {fileID: 4502333437135280059, guid: 107a0b02bd9638846bcb0c2162c16ea4,
     type: 3}
+  playerFireRateCap: 0.005
   cooldownTime: 0.075
   cannonsLv1: []
   cannonsLv2: []
@@ -1436,7 +1437,7 @@ PrefabInstance:
     - target: {fileID: 6972188768569117024, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.09
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 6972188768569117030, guid: af3c2fdd3b8c64f449b110ec427a2521,
         type: 3}
@@ -1831,12 +1832,22 @@ PrefabInstance:
     - target: {fileID: 106614197396743792, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 3.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 106614197396743792, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 106614197396743792, guid: d4ff621dd26c22b4990b252ba8a721c3,
+        type: 3}
+      propertyPath: ShapeModule.arc.spread
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 106614197396743792, guid: d4ff621dd26c22b4990b252ba8a721c3,
+        type: 3}
+      propertyPath: TrailModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 106614197396774864, guid: d4ff621dd26c22b4990b252ba8a721c3,
         type: 3}

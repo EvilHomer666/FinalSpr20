@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     private ScoreManager scoreManager;
     private float spawnPosX = 20f;
-    private float spawnRangeY = 9.8f;
+    private float spawnRangeY = 8.8f;
     private float spawnPosZ = 0.0f;
     private int scoreHighWaterMarkA = 4000;
     private int scoreHighWaterMarkB = 6000;

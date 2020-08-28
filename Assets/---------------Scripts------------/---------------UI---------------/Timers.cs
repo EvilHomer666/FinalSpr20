@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timers : MonoBehaviour
 {
     [SerializeField] Text timerText;
-    [SerializeField] float time = 66.6f;
+    [SerializeField] float time;
     private TutorialManager levelCheck;
     private string sceneName;
     private Scene activeScene;
@@ -43,7 +43,7 @@ public class Timers : MonoBehaviour
     {
         // Hyper Jump Countdown
         time -= Time.deltaTime;
-        timerText.text = $"Time to Hyper Jump: {time.ToString("n2")}";
+        timerText.text = $"Time to Hyper Jump: {time.ToString("n3")}";
         if (time <= 1)
         {
             levelTransition.FadeToNextLevel();
@@ -54,6 +54,6 @@ public class Timers : MonoBehaviour
     {
         // Level Timer
         time += Time.deltaTime;
-        timerText.text = $"Time: {time.ToString("n2")}";
+        timerText.text = $"Time: {time.ToString("n3")}";
     }
 }

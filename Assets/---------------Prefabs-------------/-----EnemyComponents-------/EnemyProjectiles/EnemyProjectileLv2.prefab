@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 2159074678048549853}
   - component: {fileID: 8182589674586742808}
   - component: {fileID: 991593462083820208}
-  - component: {fileID: 8129799123872444593}
   m_Layer: 0
   m_Name: EnemyProjectileLv2
   m_TagString: EnemyProjectile
@@ -89,6 +88,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -156,18 +156,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedLv01: 40
   homingProjectile: 0
---- !u!114 &8129799123872444593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2159074678048549855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ff1a9039be46a42b4aaf07113f803a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   impactExplosion: {fileID: 4842643632494790688, guid: 053b465a4c90f0741aebd63cb5dbad8a,
     type: 3}
-  damageValueMultiplier: 0.75

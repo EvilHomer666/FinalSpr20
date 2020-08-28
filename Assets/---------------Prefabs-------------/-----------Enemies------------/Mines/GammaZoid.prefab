@@ -363,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 250
+  damageValue: 10
   enemyHitPoints: 1
   holdsPowerUp: 0
   powerUpSpawn: {fileID: 0}
@@ -410,4 +411,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAcceleration: 18
-  distance: 10

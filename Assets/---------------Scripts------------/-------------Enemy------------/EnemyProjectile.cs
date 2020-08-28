@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    // Projectile variables
+    // Enemy Projectile properties and VFX
     [SerializeField] float speedLv01;
     [SerializeField] bool homingProjectile;
+    [SerializeField] GameObject impactExplosion;
     private Vector3 target;
-    private Rigidbody enemyProjectileRb;
+    private Rigidbody enemyProjectileRigidBody;
     private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         // Fetch the game objects rigid bodies to apply movement
-        enemyProjectileRb = GetComponent<Rigidbody>();
+        enemyProjectileRigidBody = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
     }
     // Update is called once per frame
@@ -25,12 +26,25 @@ public class EnemyProjectile : MonoBehaviour
         {
             // Homing projectile
             Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            enemyProjectileRb.AddForce(lookDirection * speedLv01);
+            enemyProjectileRigidBody.AddForce(lookDirection * speedLv01);
         }
         if (homingProjectile == false && player != null)
         {
             // Regular projectile
-            enemyProjectileRb.velocity = -transform.forward * speedLv01;
+            enemyProjectileRigidBody.velocity = -transform.forward * speedLv01;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            ImpactHit();
+        }
+    }
+    private void ImpactHit()
+    {
+        // Instantiate VFX on projectile destruction
+        Instantiate(impactExplosion, transform.position, transform.rotation);
     }
 }

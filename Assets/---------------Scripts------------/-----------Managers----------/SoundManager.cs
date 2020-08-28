@@ -24,6 +24,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip shootLaserLv1;
     [SerializeField] AudioClip confirmed;
     [SerializeField] AudioClip proximityWarning;
+    [SerializeField] AudioClip enginesDown;
+    [SerializeField] AudioClip enginesUpLv1;
+    [SerializeField] AudioClip enginesUpLv2;
+    [SerializeField] AudioClip enginesUpLv3;
 
     // TO DO Optimize how these area accessed in DetectsCollisions script
     // Enemies SFX clips
@@ -102,7 +106,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayerFireLaserLv1()
     {
-        audioSource.PlayOneShot(shootLaserLv1, 1.5f);
+        audioSource.PlayOneShot(shootLaserLv1, 0.75f);
         return;
     }
     public void PlayerInputConfirmed()
@@ -115,6 +119,27 @@ public class SoundManager : MonoBehaviour
         audioSource.PlayOneShot(proximityWarning, 0.5f);
         return;
     }
+    public void EnginesDown()
+    {
+        audioSource.PlayOneShot(enginesDown, 1.0f);
+        return;
+    }
+    public void EnginesLv1()
+    {
+        audioSource.PlayOneShot(enginesUpLv1, 1.0f);
+        return;
+    }
+    public void EnginesLv2()
+    {
+        audioSource.PlayOneShot(enginesUpLv2, 1.0f);
+        return;
+    }
+    public void EnginesLv3()
+    {
+        audioSource.PlayOneShot(enginesUpLv3, 1.0f);
+        return;
+    }
+
 
 
     // Enemy SFX
@@ -142,7 +167,7 @@ public class SoundManager : MonoBehaviour
     }
     public void MineHit()
     {
-        audioSource.PlayOneShot(mineHit, 0.5f);
+        audioSource.PlayOneShot(mineHit, 0.25f);
         return;
     }
     public void AsteroidDestroyed()

@@ -8,7 +8,7 @@ public class PlayerWeaponsController : MonoBehaviour
     [SerializeField] GameObject playerProjectileLv2;
     private SoundManager soundManager;
     private bool canFire;
-    public float playerFireRateCap = 0.005f;
+    public float playerFireRateCap;
     public float cooldownTime; // Controls the rate of fire = the smaller, the faster
 
     // Cannons array

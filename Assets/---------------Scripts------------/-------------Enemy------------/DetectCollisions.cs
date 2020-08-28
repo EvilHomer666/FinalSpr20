@@ -12,7 +12,7 @@ public class DetectCollisions : MonoBehaviour
     [SerializeField] GameObject powerUpDrop;
     [SerializeField] GameObject onDestroyExplosion;
     [SerializeField] GameObject impactExplosion;
-    private ProjectileImpact damageMultiplier;
+    private PlayerProjectile damageMultiplier;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private TutorialManager tutorialCheck;
@@ -33,7 +33,8 @@ public class DetectCollisions : MonoBehaviour
 
         tutorialCheck = FindObjectOfType<TutorialManager>();
 
-        damageMultiplier = FindObjectOfType<ProjectileImpact>();
+        damageMultiplier = FindObjectOfType<PlayerProjectile>();
+
         activeScene = SceneManager.GetActiveScene();
 
         thereCanBeOnlyOne = true;
@@ -43,7 +44,7 @@ public class DetectCollisions : MonoBehaviour
     // On trigger enter function over-ride - Destroy target and projectile on collision
     private void OnTriggerEnter(Collider other)
     {
-        // Player fire check
+        // Player fire check to apply damage to enemy object
         if (other.gameObject.tag == "PlayerProjectile")
         {
             Debug.Log("Target Hit!");
@@ -88,7 +89,47 @@ public class DetectCollisions : MonoBehaviour
                 Destroy(gameObject);
                 Debug.Log("Target Destroyed!");
             }
-        }       
+        }
+
+        //// Player collision check
+        //if (other.gameObject.tag == "Player")
+        //{
+        //    Debug.Log("Collision!");
+        //    if (damageMultiplier != null)
+        //    {
+        //        enemyHitPoints -= damageMultiplier.damageValueMultiplier;
+        //    }
+        //    else
+        //    {
+        //        enemyHitPoints -= minimumDamage;
+        //    }
+
+        //    if (other.gameObject.tag == "Player" && gameObject.tag == "Enemy")
+        //    {
+        //        soundManager.PlayerShieldDamage();
+        //    }
+
+        //    if (other.gameObject.tag == "Player" && gameObject.tag == "Hazard")
+        //    {
+        //        soundManager.PlayerShieldDamage();
+        //    }
+
+        //    if (enemyHitPoints <= 0)
+        //    {
+        //        if (gameObject.tag == "Enemy")
+        //        {
+        //            soundManager.EnemyShipDestroyed();
+        //        }
+        //        if (gameObject.tag == "Hazard")
+        //        {
+        //            soundManager.MineDestroyed();
+        //        }
+        //        Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+        //        GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+        //        Destroy(gameObject);
+        //        Debug.Log("Collision Damage!");
+        //    }
+        //}
     }
     // Tutorial scene check
     private void TutorialModeCheck()

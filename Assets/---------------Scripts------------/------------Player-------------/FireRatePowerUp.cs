@@ -43,7 +43,7 @@ public class FireRatePowerUp : MonoBehaviour
         if (other.gameObject.tag == "Player" && playerWeapons.cooldownTime > playerWeapons.playerFireRateCap)
         {
             playerWeapons.UpdatePlayerRateOfFire(fireRateValue);
-            soundManager.PlayerShieldUp(); // TO DO maybe update to burst engine sound
+            soundManager.PlayerShieldUp(); // TO DO update to burst engine sound (3 levels using if statements and checking speed bar state)
             scoreManager.IncrementScore(scoreValue);
             Destroy(gameObject);
             Debug.Log("Weapon Upgrade!");

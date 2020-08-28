@@ -7,15 +7,16 @@ using UnityEngine.UI;
 public class DetectPlayerCollisions : MonoBehaviour
 {
     [SerializeField] GameObject playerExplosion;
+    [SerializeField] int directCollisionDamageValue = 10;
     private int enginesLv2 = 2;
     private int enginesLv3 = 3;
     private int enginesLv4 = 4;
-    private int damageValue = 10;
     private GameManager gameManager;
     private SoundManager soundManager;
     private PlayerController playerController;
     private ShieldAnimation shieldAnimation;
     private PlayerShieldCanvas shieldCanvas;
+    private DetectCollisions enemyDamage;
     private SpeedBar speedBar;
     private Scene activeScene;
     private string sceneName;
@@ -36,6 +37,7 @@ public class DetectPlayerCollisions : MonoBehaviour
         gameManager = gameManagerObject.GetComponent<GameManager>();
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
+        enemyDamage = GetComponent<DetectCollisions>();
         lifeBar = FindObjectOfType<LifeBar>();
         playerController = FindObjectOfType<PlayerController>();
         speedBar = FindObjectOfType<SpeedBar>();
@@ -75,12 +77,12 @@ public class DetectPlayerCollisions : MonoBehaviour
     // On trigger enter function to detect collisions with enemy/hazard and take damage
     private void OnTriggerEnter(Collider other)
     {
-        // Enemies and hazard damage check
+        // Enemies and hazard check to apply damage to player
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Hazard")
         {
             Debug.Log("Collision!");
             shieldAnimation.shieldHit = true;
-            playerCurrentHitPoints -= damageValue;
+            playerCurrentHitPoints -= directCollisionDamageValue;
             shieldAnimation.PlayShieldAnimation();
             lifeBar.SetLife(playerCurrentHitPoints);            
             Destroy(other.gameObject);
@@ -89,6 +91,7 @@ public class DetectPlayerCollisions : MonoBehaviour
             if (playerCurrentHitPoints <= lowShieldThreshold)
             {
                 soundManager.PlayerDangerWarning();
+                soundManager.EnginesDown();
             }
         }
 

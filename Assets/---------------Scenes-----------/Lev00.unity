@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22158656, g: 0.004453238, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.2253983, g: 0.0046462268, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -387,6 +387,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2355640067312458466, guid: 927880ec605a39642845b1b6e1c08eff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2355640068572456917, guid: 927880ec605a39642845b1b6e1c08eff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -682,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: Goodspeed Catptain
+  fullText: Goodspeed Catptain.
   delay: 0.1
 --- !u!1 &265541196
 GameObject:
@@ -2028,7 +2033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: Black mater boosts both your speed and fire power.
+  fullText: Black mater can boosts your speed and fire rate.
   delay: 0.035
 --- !u!1 &1350442458
 GameObject:
@@ -7234,13 +7239,19 @@ PrefabInstance:
     - target: {fileID: 7545472615890706689, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
       propertyPath: spawnInterval
-      value: 1.75
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7545472615890706689, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
       propertyPath: startDelay
       value: 5.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7545472615890706689, guid: d5a26990b33972944b68a70ea09be531,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 7149995170801971665, guid: 28b4731863d8d82409414006d6add0fe,
+        type: 3}
     - target: {fileID: 7545472616500081407, guid: d5a26990b33972944b68a70ea09be531,
         type: 3}
       propertyPath: mineDestroyed
@@ -7266,6 +7277,26 @@ PrefabInstance:
       propertyPath: mineHit
       value: 
       objectReference: {fileID: 8300000, guid: f9ca2b6e87b45df428096e0209b70a1d, type: 3}
+    - target: {fileID: 7545472616500081407, guid: d5a26990b33972944b68a70ea09be531,
+        type: 3}
+      propertyPath: enginesDown
+      value: 
+      objectReference: {fileID: 8300000, guid: a136833efc1c7ae4e93a9164bde55f54, type: 3}
+    - target: {fileID: 7545472616500081407, guid: d5a26990b33972944b68a70ea09be531,
+        type: 3}
+      propertyPath: enginesUpLv1
+      value: 
+      objectReference: {fileID: 8300000, guid: 95111e721f3061d48aa304a484bf2584, type: 3}
+    - target: {fileID: 7545472616500081407, guid: d5a26990b33972944b68a70ea09be531,
+        type: 3}
+      propertyPath: enginesUpLv2
+      value: 
+      objectReference: {fileID: 8300000, guid: 2dd0a7cfda04f5149b17643edcb76fae, type: 3}
+    - target: {fileID: 7545472616500081407, guid: d5a26990b33972944b68a70ea09be531,
+        type: 3}
+      propertyPath: enginesUpLv3
+      value: 
+      objectReference: {fileID: 8300000, guid: 0fda7569e0603d64ebe5d496da03846f, type: 3}
     m_RemovedComponents:
     - {fileID: 178100335, guid: d5a26990b33972944b68a70ea09be531, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5a26990b33972944b68a70ea09be531, type: 3}
@@ -9296,7 +9327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4b620e94ea588408dcb9084432183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: Fire by holding down the space or left mouse button.
+  fullText: Fire by holding down the space key.
   delay: 0.025
 --- !u!1001 &7266581595385038600
 PrefabInstance:
