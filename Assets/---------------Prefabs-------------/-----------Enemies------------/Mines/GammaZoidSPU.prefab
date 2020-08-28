@@ -227,7 +227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAcceleration: 18
-  distance: 10
 --- !u!1 &6200018942998203661
 GameObject:
   m_ObjectHideFlags: 0

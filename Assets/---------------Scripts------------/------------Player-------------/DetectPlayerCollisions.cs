@@ -91,7 +91,6 @@ public class DetectPlayerCollisions : MonoBehaviour
             if (playerCurrentHitPoints <= lowShieldThreshold)
             {
                 soundManager.PlayerDangerWarning();
-                soundManager.EnginesDown();
             }
         }
 

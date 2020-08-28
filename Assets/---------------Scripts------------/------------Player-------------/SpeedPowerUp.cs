@@ -47,7 +47,22 @@ public class SpeedPowerUp : MonoBehaviour
         {
             playerController.UpdatePlayerSpeed(speedBoostValue);
             speedBar.updateSpeedBar();
-            soundManager.PlayerSpeedBoost();
+            if (speedBar.speedLv == 0)
+            {
+                soundManager.EnginesDown();
+            }
+            if (speedBar.speedLv == 1)
+            {
+                soundManager.EnginesLv1();
+            }
+            if(speedBar.speedLv == 2)
+            {
+                soundManager.EnginesLv2();
+            }
+            if(speedBar.speedLv == 3)
+            {
+                soundManager.EnginesLv3();
+            }
             scoreManager.IncrementScore(scoreValue);
             Destroy(gameObject);
             Debug.Log("Speed Up!");

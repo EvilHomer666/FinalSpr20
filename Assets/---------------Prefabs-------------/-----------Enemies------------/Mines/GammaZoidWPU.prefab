@@ -336,7 +336,7 @@ MonoBehaviour:
   enemyHitPoints: 1
   holdsPowerUp: 1
   powerUpSpawn: {fileID: 3886285731842559232}
-  powerUpDrop: {fileID: 3645186161555107898, guid: 31b26bd9d37ffa5438f1d971f50a977f,
+  powerUpDrop: {fileID: 3200113588895212389, guid: 31b26bd9d37ffa5438f1d971f50a977f,
     type: 3}
   onDestroyExplosion: {fileID: 7475916318762461008, guid: 178589f3cbe39244e8e2899e995e17ea,
     type: 3}
@@ -381,7 +381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAcceleration: 18
-  distance: 6
 --- !u!1 &8171451303608438677
 GameObject:
   m_ObjectHideFlags: 0

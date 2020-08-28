@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2253983, g: 0.0046462268, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.22539872, g: 0.004625762, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1033,64 +1033,18 @@ PrefabInstance:
       objectReference: {fileID: 1159352471}
     - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
-      propertyPath: cannons.Array.size
-      value: 2
+      propertyPath: playerFireRateCap
+      value: 0.075
       objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+    - target: {fileID: 6048228680053880488, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
-      propertyPath: cannonsLv1.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: cannonsLv2.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: cannonsLv3.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: cannons.Array.data[0]
-      value: 
-      objectReference: {fileID: 1236802157}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: cannonsLv1.Array.data[0]
-      value: 
-      objectReference: {fileID: 1236802157}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: cannonsLv2.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: cannonsLv1.Array.data[1]
-      value: 
-      objectReference: {fileID: 1937327545}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: playerProjectileLv2
-      value: 
-      objectReference: {fileID: 2159074678048549855, guid: 9d8156934041f1742a01152dee4b902c,
-        type: 3}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: cooldownTime
+      propertyPath: m_LocalScale.x
       value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850583, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
+    - target: {fileID: 6048228680053880490, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
-      propertyPath: playerFireRateCap
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 3154206371285850585, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
+      propertyPath: m_FontData.m_FontSize
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 6405263183748241372, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
         type: 3}
@@ -1641,7 +1595,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085900624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 1e-45, y: 3e-45, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1936,12 +1890,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullText: Get ready, here they come!.
   delay: 0.025
---- !u!4 &1236802157 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3154206370812362936, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 662593827}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1261234504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7757,7 +7705,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855350029}
-  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
+  m_LocalRotation: {x: -1e-45, y: 3e-45, z: 0, w: 1}
   m_LocalPosition: {x: 16.535196, y: 0.59, z: -68.59875}
   m_LocalScale: {x: 12.023425, y: -3.00098, z: 0}
   m_Children: []
@@ -7920,12 +7868,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1743199342308826719, guid: 68ca66d76cf92074a9c712a810f93fd4,
     type: 3}
   m_PrefabInstance: {fileID: 1619376995}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1937327545 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3154206371254455805, guid: 27aec61ec7c2aed4e9581db1996cdb3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 662593827}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2062094228 stripped
 Transform:

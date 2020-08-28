@@ -9,7 +9,7 @@ public class PlayerWeaponsController : MonoBehaviour
     private SoundManager soundManager;
     private bool canFire;
     public float playerFireRateCap;
-    public float cooldownTime; // Controls the rate of fire = the smaller, the faster
+    public float cooldownTime; // Controls the rate of fire => the smaller, the faster >> Default is 0.25f
 
     // Cannons array
     public Transform[] cannonsLv1;
@@ -24,7 +24,6 @@ public class PlayerWeaponsController : MonoBehaviour
     {
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
-        cooldownTime = 0.15f;
         canFire = true;
 
         //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
