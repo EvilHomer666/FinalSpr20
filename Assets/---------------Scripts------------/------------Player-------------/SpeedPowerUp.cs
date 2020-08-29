@@ -45,8 +45,6 @@ public class SpeedPowerUp : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && playerController.playerSpeed < playerController.playerSpeedCap)
         {
-            playerController.UpdatePlayerSpeed(speedBoostValue);
-            speedBar.updateSpeedBar();
             if (speedBar.speedLv == 0)
             {
                 soundManager.EnginesDown();
@@ -63,7 +61,9 @@ public class SpeedPowerUp : MonoBehaviour
             {
                 soundManager.EnginesLv3();
             }
+            playerController.UpdatePlayerSpeed(speedBoostValue);
             scoreManager.IncrementScore(scoreValue);
+            speedBar.updateSpeedBar();
             Destroy(gameObject);
             Debug.Log("Speed Up!");
         }
