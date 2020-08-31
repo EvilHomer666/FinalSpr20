@@ -22,7 +22,7 @@ public class MineAi : MonoBehaviour
     private void FixedUpdate()
     {
         distance = (transform.position.x - playerPosition.transform.position.x);
-        if (distance < 16.0f)
+        if (distance < 16.0f && rigidBody != null)
         {
             Vector3 lookDirection = (playerPosition.transform.position - transform.position).normalized;
             rigidBody.AddForce(lookDirection * enemyAcceleration);

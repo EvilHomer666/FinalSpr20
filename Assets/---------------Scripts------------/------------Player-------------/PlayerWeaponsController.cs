@@ -15,6 +15,7 @@ public class PlayerWeaponsController : MonoBehaviour
     public Transform[] cannonsLv1;
     public Transform[] cannonsLv2;
     public Transform[] cannonsLv3;
+    public Transform[] cannonsLv4;
 
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire 
 
