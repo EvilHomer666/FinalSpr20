@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class BackButton : MonoBehaviour
 {
-    private EventSystem eventSystem;
+    [SerializeField] EventSystem eventSystem;
     private TitleScreenMenu mainMenu;
 
     // Start is called before the first frame update
@@ -14,7 +14,6 @@ public class BackButton : MonoBehaviour
     {
         mainMenu = FindObjectOfType<TitleScreenMenu>();
         GameObject eventSystemObject = GameObject.FindWithTag("EventSystem");
-        eventSystem = eventSystemObject.GetComponent<EventSystem>();
     }
 
     // Update is called once per frame
