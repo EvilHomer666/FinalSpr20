@@ -13,14 +13,12 @@ public class FireRatePowerUp : MonoBehaviour
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;
     private PlayerWeaponsController playerWeapons;
-    //private LifeBar lifeBar;
+    private FireRateBar weaponLvBar;
     private Renderer lineRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Reference to GameManager script - NOTE TO SELF: REMEMBER HOW TO DO THIS USING GameObject WHEN 
-        // LOOKING IN SCRIPTS BUT NOT IN THE SAME GAME OBJECT!!!!
         GameObject scoreManagerObject = GameObject.FindWithTag("Score Manager");
         scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");

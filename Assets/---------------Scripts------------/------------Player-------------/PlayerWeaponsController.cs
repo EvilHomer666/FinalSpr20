@@ -9,13 +9,13 @@ public class PlayerWeaponsController : MonoBehaviour
     private SoundManager soundManager;
     private bool canFire;
     public float playerFireRateCap;
-    public float cooldownTime; // Controls the rate of fire => the smaller, the faster >> Default is 0.25f
+    public float cooldownTime; // Controls the rate of fire => the smaller, the faster >> Default is 0.2f
 
-    // Cannons array
+    // Cannon arrays - contain game object from where to instantiate the different laser type levels
+    public Transform[] cannonsLv0; 
     public Transform[] cannonsLv1;
     public Transform[] cannonsLv2;
     public Transform[] cannonsLv3;
-    public Transform[] cannonsLv4;
 
     // public bool polarityModifier; // << TO DO Add player ability to use enemy fire 
 
@@ -58,7 +58,7 @@ public class PlayerWeaponsController : MonoBehaviour
 
     private void FireCondition()
     {
-        //Projectile launch condition with for each element to read array - REPEATING FIRE
+        //Projectile launch condition with for each element to read array - Lv 00 - Twin laser default
         if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
             foreach (var projectile in cannonsLv1)

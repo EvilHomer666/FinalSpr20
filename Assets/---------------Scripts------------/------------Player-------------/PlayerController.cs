@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private float tilt = 25.0f;
     public float playerSpeed;
     public float playerSpeedCap = 25;
-    public float speedReset = 10;
+    public float speedReset = 10.0f;
     public bool canEngage;
     public bool canMove;
 
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
-        playerSpeed = 10; // << Base speed
+        playerSpeed = 15; // << Base speed
     }
 
     void Update()
