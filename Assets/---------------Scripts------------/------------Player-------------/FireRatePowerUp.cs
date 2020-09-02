@@ -13,7 +13,7 @@ public class FireRatePowerUp : MonoBehaviour
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;
     private PlayerWeaponsController playerWeapons;
-    private FireRateBar weaponLvBar;
+    private FireRateBar fireRate;
     private Renderer lineRenderer;
 
     // Start is called before the first frame update
@@ -25,7 +25,6 @@ public class FireRatePowerUp : MonoBehaviour
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         playerCollisions = FindObjectOfType<DetectPlayerCollisions>();
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
-        //lifeBar = FindObjectOfType<LifeBar>();
     }
 
     // Update is called once per frame
@@ -41,7 +40,8 @@ public class FireRatePowerUp : MonoBehaviour
         if (other.gameObject.tag == "Player" && playerWeapons.cooldownTime > playerWeapons.playerFireRateCap)
         {
             playerWeapons.UpdatePlayerRateOfFire(fireRateValue);
-            soundManager.PlayerShieldUp(); // TO DO update to burst engine sound (3 levels using if statements and checking speed bar state)
+            fireRate.updateLaserLvBar();
+            soundManager.PlayerShieldUp(); // TO DO update to laser upgrade sound
             scoreManager.IncrementScore(scoreValue);
             Destroy(gameObject);
             Debug.Log("Weapon Upgrade!");

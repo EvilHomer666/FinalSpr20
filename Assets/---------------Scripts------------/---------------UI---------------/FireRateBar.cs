@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 public class FireRateBar : MonoBehaviour
 {
-    //[SerializeField] Image[] lasers;
-    //[SerializeField] Sprite currentLaserLevel;
-    //[SerializeField] Sprite emptyLaserLevel;
-    [SerializeField] Image fireRateLv0;
-    [SerializeField] Image fireRateLv1;
-    [SerializeField] Image fireRateLv2;
-    [SerializeField] Image fireRateLv3;
+    [SerializeField] GameObject fireRateLv0;
+    [SerializeField] GameObject fireRateLv1;
+    [SerializeField] GameObject fireRateLv2;
+    [SerializeField] GameObject fireRateLv3;
     private Color activeLaser;
     private PlayerWeaponsController playerWeaponsController;
     private SoundManager soundManager;
@@ -25,44 +22,39 @@ public class FireRateBar : MonoBehaviour
     {
         playerWeaponsController = GetComponent<PlayerWeaponsController>();
         soundManager = GetComponent<SoundManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         updateLaserLvBar();
     }
 
     // Method to update the laser bar UI, NOT the player's laser fire rate
     public void updateLaserLvBar()
     {
-        if (playerWeaponsController.cooldownTime == 0.2f)
+        if (playerWeaponsController.cooldownTime <= 0.2f && playerWeaponsController.cooldownTime > 0.15f)
         {
-            fireRateLv0.color = new Color(206, 207, 231, 250);
-            fireRateLv1.color = new Color(206, 207, 231, 100);
-            fireRateLv2.color = new Color(206, 207, 231, 100);
-            fireRateLv3.color = new Color(206, 207, 231, 100);
+            fireRateLv0.SetActive(true);
+            fireRateLv1.SetActive(false);
+            fireRateLv2.SetActive(false);
+            fireRateLv3.SetActive(false);
         }
-        if (playerWeaponsController.cooldownTime == 0.15f)
+        if (playerWeaponsController.cooldownTime <= 0.15f && playerWeaponsController.cooldownTime > 0.1f)
         {
-            fireRateLv0.color = new Color(206, 207, 231, 100);
-            fireRateLv1.color = new Color(206, 207, 231, 250);
-            fireRateLv2.color = new Color(206, 207, 231, 100);
-            fireRateLv3.color = new Color(206, 207, 231, 100);
+            fireRateLv0.SetActive(false);
+            fireRateLv1.SetActive(true);
+            fireRateLv2.SetActive(false);
+            fireRateLv3.SetActive(false);
         }
-        if (playerWeaponsController.cooldownTime == 0.1f)
+        if (playerWeaponsController.cooldownTime <= 0.1f && playerWeaponsController.cooldownTime > 0.075f)
         {
-            fireRateLv0.color = new Color(206, 207, 231, 100);
-            fireRateLv1.color = new Color(206, 207, 231, 100);
-            fireRateLv2.color = new Color(206, 207, 231, 250);
-            fireRateLv3.color = new Color(206, 207, 231, 100);
+            fireRateLv0.SetActive(false);
+            fireRateLv1.SetActive(false);
+            fireRateLv2.SetActive(true);
+            fireRateLv3.SetActive(false);
         }
-        if (playerWeaponsController.cooldownTime == 0.075f)
+        if (playerWeaponsController.cooldownTime <= 0.075f && playerWeaponsController.cooldownTime > 0.99f)
         {
-            fireRateLv0.color = new Color(206, 207, 231, 100);
-            fireRateLv1.color = new Color(206, 207, 231, 100);
-            fireRateLv2.color = new Color(206, 207, 231, 100);
-            fireRateLv3.color = new Color(206, 207, 231, 250);
+            fireRateLv0.SetActive(false);
+            fireRateLv1.SetActive(false);
+            fireRateLv2.SetActive(false);
+            fireRateLv3.SetActive(true);
         }
     }
 }
