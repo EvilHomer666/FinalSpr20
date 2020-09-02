@@ -5087,6 +5087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRateValue: 0.05
+  laserLvValue: 1
   powerUpLocalSpeed: 2
   scoreValue: 450
 --- !u!54 &368280275723981609

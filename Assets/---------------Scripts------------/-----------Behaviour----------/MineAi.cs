@@ -6,7 +6,6 @@ public class MineAi : MonoBehaviour
 {
     [SerializeField] float enemyAcceleration;
     private float distance;
-    // References to player and enemy rigid body
     private GameObject playerPosition;
     private Rigidbody rigidBody;
     private bool playerInRange;
@@ -22,7 +21,7 @@ public class MineAi : MonoBehaviour
     private void FixedUpdate()
     {
         distance = (transform.position.x - playerPosition.transform.position.x);
-        if (distance < 16.0f && rigidBody != null)
+        if (distance < 13.0f && isActiveAndEnabled)
         {
             Vector3 lookDirection = (playerPosition.transform.position - transform.position).normalized;
             rigidBody.AddForce(lookDirection * enemyAcceleration);

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
-        playerSpeed = 15; // << Base speed
+        playerSpeed = 10; // << Base speed
     }
 
     void Update()

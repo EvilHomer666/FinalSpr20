@@ -7,7 +7,6 @@ public class PlayerWeaponsController : MonoBehaviour
     [SerializeField] GameObject playerProjectileLv1;
     [SerializeField] GameObject playerProjectileLv2;
     private SoundManager soundManager;
-    private FireRateBar fireRate;
     private bool canFire;
     public float playerFireRateCap;
     public float cooldownTime; // Controls the rate of fire => the smaller, the faster >> Default is 0.2f
@@ -26,7 +25,6 @@ public class PlayerWeaponsController : MonoBehaviour
     {
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
-        fireRate = FindObjectOfType<FireRateBar>();
         canFire = true;
 
         //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
@@ -82,11 +80,10 @@ public class PlayerWeaponsController : MonoBehaviour
         //}
     }
 
-    // Update player's rate of fire
+    // Update player's weapons rate of fire
     public void UpdatePlayerRateOfFire(float rateOfFireBoost)
     {
         cooldownTime -= rateOfFireBoost;
-        fireRate.updateLaserLvBar();
     }
 }
 

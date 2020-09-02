@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b176fcee6d539c04c8c4fe33f55694ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 15
+  playerSpeed: 10
   playerSpeedCap: 25
   speedReset: 10
   canEngage: 1
@@ -891,6 +891,7 @@ MonoBehaviour:
   fireRateLv1: {fileID: 0}
   fireRateLv2: {fileID: 0}
   fireRateLv3: {fileID: 0}
+  laserLv: 0
   numberOfLaserLevels: 3
 --- !u!1 &8313493014729571847
 GameObject:

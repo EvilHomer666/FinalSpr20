@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class FireRatePowerUp : MonoBehaviour
 {
-    [SerializeField] float fireRateValue;
+    [SerializeField] float fireRateValue; // Value to adjust fire rate
     [SerializeField] float powerUpLocalSpeed;
     [SerializeField] int scoreValue;
-    private int gatlingDemonBonus = 7;
     private ScoreManager scoreManager;
     private SoundManager soundManager;
     private DetectPlayerCollisions playerCollisions;
     private PlayerWeaponsController playerWeapons;
-    private FireRateBar fireRate;
+    private FireRateBar fireRateBar;
     private Renderer lineRenderer;
+    private float laserLvValue = 1.0f; // Value to show laserLv on the laser UI
+    private int gatlingDemonBonus = 7;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class FireRatePowerUp : MonoBehaviour
         soundManager = soundManagerObject.GetComponent<SoundManager>();
         playerCollisions = FindObjectOfType<DetectPlayerCollisions>();
         playerWeapons = FindObjectOfType<PlayerWeaponsController>();
+        fireRateBar = FindObjectOfType<FireRateBar>();
     }
 
     // Update is called once per frame
@@ -40,7 +43,7 @@ public class FireRatePowerUp : MonoBehaviour
         if (other.gameObject.tag == "Player" && playerWeapons.cooldownTime > playerWeapons.playerFireRateCap)
         {
             playerWeapons.UpdatePlayerRateOfFire(fireRateValue);
-            fireRate.updateLaserLvBar();
+            fireRateBar.laserLv += laserLvValue;
             soundManager.PlayerShieldUp(); // TO DO update to laser upgrade sound
             scoreManager.IncrementScore(scoreValue);
             Destroy(gameObject);
