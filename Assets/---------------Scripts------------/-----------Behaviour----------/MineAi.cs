@@ -5,6 +5,7 @@ using UnityEngine;
 public class MineAi : MonoBehaviour
 {
     [SerializeField] float enemyAcceleration;
+    private float detectionDiameter = 13.0f;
     private float distance;
     private GameObject playerPosition;
     private Rigidbody rigidBody;
@@ -21,7 +22,7 @@ public class MineAi : MonoBehaviour
     private void FixedUpdate()
     {
         distance = (transform.position.x - playerPosition.transform.position.x);
-        if (distance < 13.0f && isActiveAndEnabled)
+        if (distance < detectionDiameter && isActiveAndEnabled && rigidBody != null)
         {
             Vector3 lookDirection = (playerPosition.transform.position - transform.position).normalized;
             rigidBody.AddForce(lookDirection * enemyAcceleration);

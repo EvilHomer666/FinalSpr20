@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     // Enemy Projectile properties and VFX
-    [SerializeField] float speedLv01;
+    [SerializeField] float projectileSpeed;
     [SerializeField] bool homingProjectile;
     [SerializeField] GameObject impactExplosion;
-    private Vector3 target;
+    private Vector3 playerLastPosition;
     private Rigidbody enemyProjectileRigidBody;
     private GameObject player;
 
@@ -18,6 +18,15 @@ public class EnemyProjectile : MonoBehaviour
         // Fetch the game objects rigid bodies to apply movement
         enemyProjectileRigidBody = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+
+        // this condition needs to be set up only at start, otherwise if
+        // is set in update, the game object will continue to rack the player every frame
+        if (homingProjectile == false && player != null)
+        {
+            // Regular projectile
+            playerLastPosition = (player.transform.position - transform.position).normalized * projectileSpeed;
+            enemyProjectileRigidBody.velocity = new Vector3(playerLastPosition.x, playerLastPosition.y);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -26,12 +35,7 @@ public class EnemyProjectile : MonoBehaviour
         {
             // Homing projectile
             Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-            enemyProjectileRigidBody.AddForce(lookDirection * speedLv01);
-        }
-        if (homingProjectile == false && player != null)
-        {
-            // Regular projectile
-            enemyProjectileRigidBody.velocity = -transform.forward * speedLv01;
+            enemyProjectileRigidBody.AddForce(lookDirection * projectileSpeed);
         }
     }
 

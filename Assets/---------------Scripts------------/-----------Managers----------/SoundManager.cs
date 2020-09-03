@@ -167,7 +167,7 @@ public class SoundManager : MonoBehaviour
     }
     public void MineHit()
     {
-        audioSource.PlayOneShot(mineHit, 0.25f);
+        audioSource.PlayOneShot(mineHit, 0.075f);
         return;
     }
     public void AsteroidDestroyed()

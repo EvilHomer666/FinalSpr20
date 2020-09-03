@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 6200018942781936944}
   - component: {fileID: 6200018942781936957}
   - component: {fileID: 6745084172993493540}
+  - component: {fileID: -8783612848522551524}
   - component: {fileID: 5161637320612827575}
   - component: {fileID: 2764530514215221782}
   - component: {fileID: 1508183833525916270}
@@ -95,6 +96,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -121,6 +123,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &6200018942781936956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,7 +168,7 @@ MonoBehaviour:
   engine: {fileID: 0}
   extraFx: {fileID: 0}
   isMine: 1
-  enemySpeed: 3
+  enemySpeed: 5
 --- !u!114 &6745084172993493540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 250
-  enemyHitPoints: 1
+  enemyHitPoints: 5
   holdsPowerUp: 1
   powerUpSpawn: {fileID: 5865710804136418488}
   powerUpDrop: {fileID: 911274349570765602, guid: 66ef6f33ddf5fb24fa2e22c953b352af,
@@ -188,6 +191,23 @@ MonoBehaviour:
     type: 3}
   impactExplosion: {fileID: 4842643632494790688, guid: 053b465a4c90f0741aebd63cb5dbad8a,
     type: 3}
+--- !u!114 &-8783612848522551524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3833415236824954180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392d2171ab5c2a2438490a50b9f61542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  enemyProjectile: {fileID: 5238377259683966199, guid: 840c4efffeb00874bac62b1e6f9f55f9,
+    type: 3}
+  enemyFireSpawn: {fileID: 5865710804136418488}
+  delay: 0.5
 --- !u!135 &5161637320612827575
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -212,7 +232,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.03164, y: 1.2313557, z: 13.99117}
+  m_Size: {x: 55, y: 1.5, z: 15}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1508183833525916270
 MonoBehaviour:
@@ -226,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115db1c607fdefb42beef9c646ebcfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAcceleration: 18
+  enemyAcceleration: 20.5
 --- !u!1 &6200018942998203661
 GameObject:
   m_ObjectHideFlags: 0

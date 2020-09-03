@@ -6,16 +6,31 @@ public class PlayerProjectile : MonoBehaviour
 {
     // Player projectile properties and VFX
     [SerializeField] GameObject impactExplosion;
-    [SerializeField] float speedLv01;
-    [SerializeField] bool isSpread;
-    [SerializeField] bool isHoming;
+    [SerializeField] float laserSpeed;
+    [SerializeField] bool isRearCannnon;
+    private Rigidbody playerProjectileRigidBody;
     public float damageValueMultiplier; // << To be used in enemy detect collisions script to apply damage from player projectile
+    private GameObject player;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Enemy");
+    }
 
     // Update is called once per frame
     private void Update()
     {
-        // Standard laser 
-        transform.Translate(Vector3.right * Time.deltaTime * speedLv01);
+        if (isRearCannnon == true && player != null)
+        {
+            // Rear cannon projectiles
+            transform.Translate(Vector3.left * Time.deltaTime * laserSpeed);
+        }
+        if (isRearCannnon == false && player != null)
+        {
+            // Standard twin lasers 
+            transform.Translate(Vector3.right * Time.deltaTime * laserSpeed);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

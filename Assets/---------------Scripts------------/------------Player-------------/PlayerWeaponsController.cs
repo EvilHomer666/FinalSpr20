@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerWeaponsController : MonoBehaviour
 {
+    [SerializeField] GameObject playerProjectileLv0;
     [SerializeField] GameObject playerProjectileLv1;
     [SerializeField] GameObject playerProjectileLv2;
+    [SerializeField] GameObject playerProjectileLv3;
+    private FireRateBar fireRateBar;
     private SoundManager soundManager;
     private bool canFire;
     public float playerFireRateCap;
@@ -25,6 +28,8 @@ public class PlayerWeaponsController : MonoBehaviour
     {
         GameObject soundManagerObject = GameObject.FindWithTag("SoundManager");
         soundManager = soundManagerObject.GetComponent<SoundManager>();
+        fireRateBar = GetComponent<FireRateBar>();
+
         canFire = true;
 
         //  polarityModifier = false; // << TO DO Add player ability to use enemy fire against them
@@ -59,25 +64,68 @@ public class PlayerWeaponsController : MonoBehaviour
     private void FireCondition()
     {
         //Projectile launch condition with for each element to read array - Lv 00 - Twin laser default
-        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.JoystickButton0) || Input.GetKey(KeyCode.Space))
         {
-            foreach (var projectile in cannonsLv0)
+            if(fireRateBar.laserLv == 0)
             {
-                Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
+                foreach (var projectile in cannonsLv0)
+                {
+                    Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
+                }
+            }
+            if (fireRateBar.laserLv == 1)
+            {
+                foreach (var projectile in cannonsLv0)
+                {
+                    Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
+                }
+
+                foreach (var projectile in cannonsLv1)
+                {
+                    Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
+                }
+            }
+            if (fireRateBar.laserLv == 2)
+            {
+                foreach (var projectile in cannonsLv0)
+                {
+                    Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
+                }
+
+                foreach (var projectile in cannonsLv1)
+                {
+                    Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
+                }
+
+                foreach (var projectile in cannonsLv2)
+                {
+                    Instantiate(playerProjectileLv2, projectile.position, projectile.rotation);
+                }
+            }
+            if (fireRateBar.laserLv == 3)
+            {
+                foreach (var projectile in cannonsLv0)
+                {
+                    Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
+                }
+
+                foreach (var projectile in cannonsLv1)
+                {
+                    Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
+                }
+
+                foreach (var projectile in cannonsLv2)
+                {
+                    Instantiate(playerProjectileLv2, projectile.position, projectile.rotation);
+                }
+
+                foreach (var projectile in cannonsLv3)
+                {
+                    Instantiate(playerProjectileLv3, projectile.position, projectile.rotation);
+                }
             }
             soundManager.PlayerFireLaserLv1();
         }
-
-        // POW fire condition
-        //if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
-        //{
-
-        //    foreach (var projectile in cannonsLv1)
-        //    {
-        //        Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
-        //    }
-        //    soundManager.PlayerFireLaserLv1();
-        //}
     }
 
     // Update player's weapons rate of fire

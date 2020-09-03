@@ -17,7 +17,7 @@ public class DetectCollisions : MonoBehaviour
     private SoundManager soundManager;
     private TutorialManager tutorialCheck;
     private Scene activeScene;
-    private float minimumDamage = 1f;
+    private float minimumDamage = 0.5f;
     private string sceneName;
     private bool thereCanBeOnlyOne;
 
@@ -91,45 +91,45 @@ public class DetectCollisions : MonoBehaviour
             }
         }
 
-        //// Player collision check
-        //if (other.gameObject.tag == "Player")
-        //{
-        //    Debug.Log("Collision!");
-        //    if (damageMultiplier != null)
-        //    {
-        //        enemyHitPoints -= damageMultiplier.damageValueMultiplier;
-        //    }
-        //    else
-        //    {
-        //        enemyHitPoints -= minimumDamage;
-        //    }
+        // Player collision check
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Collision!");
+            if (damageMultiplier != null)
+            {
+                enemyHitPoints -= damageMultiplier.damageValueMultiplier;
+            }
+            else
+            {
+                enemyHitPoints -= minimumDamage;
+            }
 
-        //    if (other.gameObject.tag == "Player" && gameObject.tag == "Enemy")
-        //    {
-        //        soundManager.PlayerShieldDamage();
-        //    }
+            if (other.gameObject.tag == "Player" && gameObject.tag == "Enemy")
+            {
+                soundManager.PlayerShieldDamage();
+            }
 
-        //    if (other.gameObject.tag == "Player" && gameObject.tag == "Hazard")
-        //    {
-        //        soundManager.PlayerShieldDamage();
-        //    }
+            if (other.gameObject.tag == "Player" && gameObject.tag == "Hazard")
+            {
+                soundManager.PlayerShieldDamage();
+            }
 
-        //    if (enemyHitPoints <= 0)
-        //    {
-        //        if (gameObject.tag == "Enemy")
-        //        {
-        //            soundManager.EnemyShipDestroyed();
-        //        }
-        //        if (gameObject.tag == "Hazard")
-        //        {
-        //            soundManager.MineDestroyed();
-        //        }
-        //        Instantiate(onDestroyExplosion, transform.position, transform.rotation);
-        //        GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
-        //        Destroy(gameObject);
-        //        Debug.Log("Collision Damage!");
-        //    }
-        //}
+            if (enemyHitPoints <= 0)
+            {
+                if (gameObject.tag == "Enemy")
+                {
+                    soundManager.EnemyShipDestroyed();
+                }
+                if (gameObject.tag == "Hazard")
+                {
+                    soundManager.MineDestroyed();
+                }
+                Instantiate(onDestroyExplosion, transform.position, transform.rotation);
+                GameObject.Find("Flash").GetComponent<ParticleSystem>().Play();
+                Destroy(gameObject);
+                Debug.Log("Collision Damage!");
+            }
+        }
     }
     // Tutorial scene check
     private void TutorialModeCheck()
