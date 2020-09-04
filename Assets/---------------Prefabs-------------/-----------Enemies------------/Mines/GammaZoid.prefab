@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 250
-  enemyHitPoints: 5
+  enemyHitPoints: 3
   holdsPowerUp: 0
   powerUpSpawn: {fileID: 0}
   powerUpDrop: {fileID: 0}
@@ -384,8 +384,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 11.651793
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 13.367025
+  m_Center: {x: 0, y: 0.05914688, z: 0.8871722}
 --- !u!65 &8095063899980381827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -397,8 +397,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 55, y: 1.5, z: 15}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 76.173325, y: 1.5, z: 15}
+  m_Center: {x: -10.586662, y: 0, z: -0}
 --- !u!114 &2244920178842036152
 MonoBehaviour:
   m_ObjectHideFlags: 0

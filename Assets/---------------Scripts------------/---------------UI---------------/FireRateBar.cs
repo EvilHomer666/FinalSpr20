@@ -15,7 +15,7 @@ public class FireRateBar : MonoBehaviour
     public float laserLv;
     // Weapon Level power ups have a 0.05 boost that is subtracted from the players fire rate. 
     // The lower the fire rate, the faster the player will fire.
-    public int numberOfLaserLevels = 3; // Total number of laser levels - not counting default
+    //public int numberOfLaserLevels = 4; // Total number of laser levels - not counting default
 
     // Start is called before the first frame update
     void Start()

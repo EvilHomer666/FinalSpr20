@@ -8,6 +8,7 @@ public class PlayerWeaponsController : MonoBehaviour
     [SerializeField] GameObject playerProjectileLv1;
     [SerializeField] GameObject playerProjectileLv2;
     [SerializeField] GameObject playerProjectileLv3;
+    [SerializeField] GameObject playerFireSpark;
     private FireRateBar fireRateBar;
     private SoundManager soundManager;
     private bool canFire;
@@ -68,53 +69,50 @@ public class PlayerWeaponsController : MonoBehaviour
         {
             if(fireRateBar.laserLv == 0)
             {
-                foreach (var projectile in cannonsLv0)
+                foreach (var projectile in cannonsLv0) // Lv0 Standard side laser cannons
                 {
                     Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
+                    GameObject.Find("PlayerFireSparkL").GetComponent<ParticleSystem>().Play();
+                    GameObject.Find("PlayerFireSparkR").GetComponent<ParticleSystem>().Play();
                 }
             }
             if (fireRateBar.laserLv == 1)
             {
-                foreach (var projectile in cannonsLv0)
-                {
-                    Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
-                }
-
-                foreach (var projectile in cannonsLv1)
+                foreach (var projectile in cannonsLv1) // Lv1 side laser cannons
                 {
                     Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
+                    GameObject.Find("PlayerFireSparkL").GetComponent<ParticleSystem>().Play();
+                    GameObject.Find("PlayerFireSparkR").GetComponent<ParticleSystem>().Play();
                 }
             }
             if (fireRateBar.laserLv == 2)
             {
-                foreach (var projectile in cannonsLv0)
+                foreach (var projectile in cannonsLv0) // Lv2 Standard side laser cannons at inner position
                 {
                     Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
                 }
-
-                foreach (var projectile in cannonsLv1)
-                {
-                    Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
-                }
-
-                foreach (var projectile in cannonsLv2)
+                foreach (var projectile in cannonsLv2) // Lv2 side laser cannons
                 {
                     Instantiate(playerProjectileLv2, projectile.position, projectile.rotation);
+                    GameObject.Find("PlayerFireSparkL").GetComponent<ParticleSystem>().Play();
+                    GameObject.Find("PlayerFireSparkR").GetComponent<ParticleSystem>().Play();
                 }
             }
             if (fireRateBar.laserLv == 3)
             {
-                foreach (var projectile in cannonsLv0)
+                foreach (var projectile in cannonsLv0) // Lv3 Standard side laser cannons at inner position
                 {
                     Instantiate(playerProjectileLv0, projectile.position, projectile.rotation);
                 }
 
-                foreach (var projectile in cannonsLv1)
+                foreach (var projectile in cannonsLv1) // Lv3 side laser cannons
                 {
                     Instantiate(playerProjectileLv1, projectile.position, projectile.rotation);
+                    GameObject.Find("PlayerFireSparkL").GetComponent<ParticleSystem>().Play();
+                    GameObject.Find("PlayerFireSparkR").GetComponent<ParticleSystem>().Play();
                 }
 
-                foreach (var projectile in cannonsLv2)
+                foreach (var projectile in cannonsLv2) // Lv3 side laser cannons spread
                 {
                     Instantiate(playerProjectileLv2, projectile.position, projectile.rotation);
                 }

@@ -19,8 +19,8 @@ public class EnemyProjectile : MonoBehaviour
         enemyProjectileRigidBody = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
 
-        // this condition needs to be set up only at start, otherwise if
-        // is set in update, the game object will continue to rack the player every frame
+        // This condition needs to be set up only at start, otherwise if
+        // it's set in update, the game object will continue to track the player every frame
         if (homingProjectile == false && player != null)
         {
             // Regular projectile

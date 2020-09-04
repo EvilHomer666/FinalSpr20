@@ -8,6 +8,7 @@ public class DetectPlayerCollisions : MonoBehaviour
 {
     [SerializeField] GameObject playerExplosion;
     [SerializeField] int directCollisionDamageValue = 10;
+    [SerializeField] int enemyProjectileCollisionDamageValue = 2;
     private int enginesLv2 = 2;
     private int enginesLv3 = 3;
     private int enginesLv4 = 4;
@@ -87,11 +88,23 @@ public class DetectPlayerCollisions : MonoBehaviour
             lifeBar.SetLife(playerCurrentHitPoints);            
             Destroy(other.gameObject);
             soundManager.PlayerShieldDamage();
+        }
 
-            if (playerCurrentHitPoints <= lowShieldThreshold)
-            {
-                soundManager.PlayerDangerWarning();
-            }
+        // EnemyProjectile check to apply damage to player
+        if (other.gameObject.tag == "EnemyProjectile")
+        {
+            Debug.Log("Collision!");
+            shieldAnimation.shieldHit = true;
+            playerCurrentHitPoints -= enemyProjectileCollisionDamageValue;
+            shieldAnimation.PlayShieldAnimation();
+            lifeBar.SetLife(playerCurrentHitPoints);
+            //Destroy(other.gameObject);
+            soundManager.PlayerShieldDamage();
+        }
+
+        if (playerCurrentHitPoints <= lowShieldThreshold)
+        {
+            soundManager.PlayerDangerWarning();
         }
 
         // Check to never let player have more than allowed hit points 

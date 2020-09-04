@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362102366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41, y: 0.01971176, z: 0}
+  m_LocalPosition: {x: 0.496, y: 0.01971176, z: 0}
   m_LocalScale: {x: 1.0272743, y: 21.345238, z: 15.444419}
   m_Children: []
   m_Father: {fileID: 1211848329386703990}
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 1211848329386703950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0008484, y: 0.00051945, z: 0}
-  m_LocalScale: {x: 0.52632457, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.5, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 362102367}
   m_Father: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
   impactExplosion: {fileID: 7830264614960845730, guid: 896433a640c06ee4181bc9ca3e4c31fd,
     type: 3}
   laserSpeed: 40
-  isHoming: 0
-  damageValueMultiplier: 0.075
+  isRearCannnon: 0
+  damageValueMultiplier: 1
 --- !u!65 &1211848329386703948
 BoxCollider:
   m_ObjectHideFlags: 0
