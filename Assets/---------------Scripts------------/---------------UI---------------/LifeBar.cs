@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LifeBar : MonoBehaviour
 {
-    // the worlds most simple life bar slider script O_O - a bit buggy right now.
+    // The worlds most simple life bar slider script O_O - a bit buggy right now.
     public Slider slider;
     public void SetMaxLife(float life)
     {

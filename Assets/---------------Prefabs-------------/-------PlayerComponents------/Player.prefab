@@ -998,6 +998,7 @@ MonoBehaviour:
   playerExplosion: {fileID: 6480039668675574283, guid: ca1ea711c5563de4ba45ec3e86313fe9,
     type: 3}
   directCollisionDamageValue: 10
+  enemyProjectileCollisionDamageValue: 2
   enginesLv1: 1
   playerMaxHitPoints: 10
   playerCurrentHitPoints: 0

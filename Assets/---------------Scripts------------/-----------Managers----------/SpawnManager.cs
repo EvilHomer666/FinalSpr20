@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
     public float startDelay;
 
     // Spawn manager array for enemy prefabs
-    public GameObject[] enemyPrefabs;
+    public GameObject[]enemyPrefabs;
 
     // Start is called before the first frame update
     void Start()
